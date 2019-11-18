@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" href="CreateEventPage.css">
-  <script src="CreateEventPage.js"></script>
+    <link rel="stylesheet" href="CreateEventPage.css">
+    <script src="CreateEventPage.js"></script>
 </head>
 
 <body>
 
 <header>
-  <img src="hodgelogo.JFIF">
+    <img src="hodgelogo.JFIF">
 
-  <div class="navsection">
-    <nav>
-      <ul class="navcontainer">
-        <li><a class="navsectionlink">Home<a/></li>
-        <li><a class="navsectionlink">Create Event</a></li>
-        <li><a class="navsectionlink">Log In</a></li>
-      </ul>
-    </nav>
-  </div>
+    <div class="navsection">
+        <nav>
+            <ul class="navcontainer">
+                <li><a class="navsectionlink">Home<a/></li>
+                <li><a class="navsectionlink">Create Event</a></li>
+                <li><a class="navsectionlink">Log In</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <div class="main">
-  <h1>Create a New Event</h1>
+    <h1>Create a New Event</h1>
 
-  <div class="formcontainer">
-    <form>
-      <label for="eventtitle">Event Title</label>
-      <input type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
+    <div class="formcontainer">
+        <form>
+            <label for="eventtitle">Event Title</label>
+            <input type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
 
-      <label for="eventdescription">Description:<textarea id="eventdescription" name="eventdescription" placeholder="Event description..."></textarea></label>
-      <br>
+            <label for="eventdescription">Description:<textarea id="eventdescription" name="eventdescription"
+                                                                placeholder="Event description..."></textarea></label>
+            <br>
 
-      <label for="eventtime">Event Time</label>
-      <input type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
+            <label for="eventtime">Event Time</label>
+            <input type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
 
-      <label for="eventdate">Event Date</label>
-      <input type="date" id="eventdate" name="eventdate" placeholder="Event Date"><br>
+            <label for="eventdate">Event Date</label>
+            <input type="date" id="eventdate" name="eventdate" placeholder="Event Date"><br>
 
-      <label for="invites">Invites:</label>
-      <select id="invites" name="invites">
-      <option value="All Staff">All Staff</option>
-      <option value="IT">HR</option>
-      <option value="HR">IT</option>
-      </select><br>
+            <label for="invites">Invites:</label>
+            <select id="invites" name="invites">
+                <option value="All Staff">All Staff</option>
+                <option value="IT">HR</option>
+                <option value="HR">IT</option>
+            </select><br>
 
-     <input id="radioinput" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()"> Team Sign Up Event
-     <input id="radioinput" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()"> Individual Sign Up Event
+            <input id="radioinput" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()"> Team Sign
+            Up Event
+            <input id="radioinput" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
+            Individual Sign Up Event
 
-     <div id="eventtypeform">
-       <label for="teamsize">Maximum number of people in a team</label>
-       <input type="text" id="teaminput" name="teamsize">
-       <label for="numofteams">Maxiumum number of teams</label>
-       <input type="text" id="teaminput" name="numofteams">
-    </div><br>
+            <div id="eventtypeform">
+                <label for="teamsize">Maximum number of people in a team</label>
+                <input type="text" id="teaminput" name="teamsize">
+                <label for="numofteams">Maxiumum number of teams</label>
+                <input type="text" id="teaminput" name="numofteams">
+            </div>
+            <br>
 
-    <input id="submitbutton" type="submit" value="Submit"><br>
-  </form>
-</div>
+            <input id="submitbutton" type="submit" value="Submit"><br>
+        </form>
+    </div>
 </div>
 </body>
 </html>
