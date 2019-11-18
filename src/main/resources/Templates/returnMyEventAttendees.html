@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Your Event Attendees</h1>
+
+<div>
+    <table class ="table">
+        <tr>
+            <th>Attendee</th>
+            <th>Dietery Requirements</th>
+        </tr>
+        <tr th:each="attendees : ${myAttendees}">
+            <td th:text="${myAttendees.personId}">Person</td>
+            <td th:text = "${myAttendees.dietReq}">Dietery Requirements</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

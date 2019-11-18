@@ -27,7 +27,7 @@ public class Event {
     }
 
     public String getDate(){
-        return date
+        return date;
     }
 
     public boolean getDReq(){
