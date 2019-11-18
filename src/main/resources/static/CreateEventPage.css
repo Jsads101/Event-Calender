@@ -92,3 +92,16 @@ input, textarea {
 #teaminput {
     width: 2rem;
 }
+.eventDiv{
+
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+
+}
+.eventSection{
+
+    border: solid black 0.2em;
+    padding: 1em;
+    margin-bottom: 2em;
+}
