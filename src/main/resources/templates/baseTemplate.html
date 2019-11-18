@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header th:fragment="header">
+    <h1>My Auth System</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a th:if="${session.SESSION_USERNAME == null}" href="/register">Register</a>
+        <a th:if="${session.SESSION_USERNAME == null}" href="/login">Login</a>
+        <a th:if="${session.SESSION_USERNAME != null}" href="/userArea">User Area</a>
+        <a th:if="${session.SESSION_USERNAME != null}" href="/logout">Logout</a>
+    </nav>
+</header>
+
+</body>
+</html>

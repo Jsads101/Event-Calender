@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #loginForm > *{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+<header th:replace="baseTemplate :: header"></header>
+
+<main>
+    <p>Welcome to the user area, <span th:text="${session.SESSION_USERNAME}"></span></p>
+</main>
+
+</body>
+</html>
