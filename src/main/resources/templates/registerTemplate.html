@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+
     <style>
         #registerForm > *{
             display:block;
@@ -24,6 +26,11 @@ Go to baseTemplate.html and find the <header> element with the attribute th:frag
     <!-- If the model has an attribute named 'errors' (see RegController.java)
         Then paragraph elements detailing the errors will be shown
     -->
+    <header>
+        <img src="../static/hodgelogo.JFIF">
+
+    </header>
+
     <p th:if="${errors} != null" th:text="ERROR"></p>
     <p th:each="err : ${errors}" th:text="${err}"></p>
 

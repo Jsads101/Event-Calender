@@ -34,6 +34,6 @@ public class AuthSuccessHandler implements org.springframework.security.web.auth
          */
 
         //Send the user to /userArea page
-        new DefaultRedirectStrategy().sendRedirect(request, response, "/userArea");
+        new DefaultRedirectStrategy().sendRedirect(request, response, "/viewEvents");
     }
 }

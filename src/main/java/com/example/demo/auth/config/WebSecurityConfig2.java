@@ -66,7 +66,7 @@ public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
         */
         http.authorizeRequests().anyRequest().authenticated().and().formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/userArea")//
+                .defaultSuccessUrl("/viewEvents")
                 .failureUrl("/login?error")
                 .usernameParameter("username")
                 .passwordParameter("password")

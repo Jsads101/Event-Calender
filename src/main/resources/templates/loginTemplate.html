@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <script src="../static/CreateEventPage.js" th:href="@{CreateEventPage.js}"></script>
+
     <style>
         #loginForm > *{
             display:block;
@@ -18,13 +21,19 @@
 Syntax of th:replace value is "name_of_template_file :: value_of_html_element_with_th:fragment_as_an_attribute"
 Go to baseTemplate.html and find the <header> element with the attribute th:fragment="header"
 -->
-<header th:replace="baseTemplate :: header"></header>
+<!--<header th:replace="baseTemplate :: header"></header>-->
+
+<header>
+    <img src="../static/hodgelogo.JFIF">
+
+</header>
 
 <main>
     <!-- If the url contains a parameter called 'error'. Show
     a paragraph element detailing that an error occurred.
     See WebSecurityConfig2
     -->
+
     <p th:if="${param.error != null}" th:text="ERROR"></p>
 
     <form id="loginForm" action="/login" method="post">

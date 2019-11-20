@@ -14,11 +14,11 @@ public class BaseController {
     @GetMapping("/")
     public ModelAndView home(HttpSession session) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("homeTemplate");
+        mv.setViewName("loginTemplate");
         return mv;
     }
 
-    @GetMapping("/userArea")
+    @GetMapping("/viewEvents")
     public ModelAndView userArea(HttpSession session) {
         //For debugging, loop through the session attributes and print them
         /*Enumeration<String> attributeNames = session.getAttributeNames();
@@ -27,7 +27,7 @@ public class BaseController {
         }*/
 
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("userAreaTemplate");
+        mv.setViewName("viewEvents");
         return mv;
     }
 
