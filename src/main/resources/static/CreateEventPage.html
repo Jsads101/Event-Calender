@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="CreateEventPage.css">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="style.css">
     <script src="CreateEventPage.js"></script>
 </head>
 
@@ -28,6 +30,9 @@
             <form>
                 <label for="eventtitle">Event Title</label>
                 <input type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
+
+                <label for="location">Event Location</label>
+                <input type="text" id="location" name="location" placeholder="Event location.."><br>
 
                 <label for="eventdescription">Description:<textarea id="eventdescription" name="eventdescription"
                         placeholder="Event description..."></textarea></label>
@@ -62,6 +67,8 @@
                 <input id="submitbutton" type="submit" value="Submit"><br>
             </form>
         </div>
+
+
     </div>
 </body>
 

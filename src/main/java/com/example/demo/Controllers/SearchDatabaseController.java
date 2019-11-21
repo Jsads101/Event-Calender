@@ -7,11 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-    @Controller
+    @RestController
     public class SearchDatabaseController {
 
         private SearchDatabaseRepo repo;
@@ -23,11 +26,19 @@ import java.util.List;
 
         @GetMapping("/searchMyEvents")
         public ModelAndView getEventAttendees(@RequestParam int eventId) {
-            ModelAndView mv = new ModelAndView("returnMyEventAttendees");
-            List<BookingStatus> myAttendees = repo.findByEvent(eventId);
-            mv.addObject("myAttendees", myAttendees);
+            ModelAndView mv = new ModelAndView("returnMyAttendees");
+            List<BookingStatus> myPeople = repo.findByEvent(eventId);
+            mv.addObject("myPeople", myPeople);
             return mv;
         }
+
+       /* @GetMapping("/searchMyEvents")
+        public Object searchMyEvents(@RequestParam int eventId) {
+
+            List<BookingStatus> myAttendees= repo.findByEvent(eventId);
+
+            return myAttendees;
+        }*/
 
     }
 

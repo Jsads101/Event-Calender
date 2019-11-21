@@ -1,11 +1,7 @@
 package com.example.demo.Data;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
 import java.util.List;
 
 
@@ -20,13 +16,16 @@ import java.util.List;
             jdbcTemplate = aTemplate;
         }
 
-
-        public List<BookingStatus> findByEvent(int eventId) {
-            return jdbcTemplate.query("select PeopleId, DietReq",
-                    new Object[]{},
+@Override
+        public List<BookingStatus> findByEvent(int e) {
+            return jdbcTemplate.query("select bookingStatusId, peopleId, eventId, statusId, dietReq from BookingStatus where eventId = ?",
+                    new Object[]{e},
                     (rs, i) -> new BookingStatus(
-                            rs.getInt("PeopleId"),
-                            rs.getString("DietReq")
+                            rs.getInt("bookingStatusId"),
+                            rs.getInt("peopleId"),
+                            rs.getInt("eventId"),
+                            rs.getInt("statusId"),
+                            rs.getString("dietReq")
 
                     )
             );
