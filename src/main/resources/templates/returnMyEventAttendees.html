@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Return Attendees</title>
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Your Event Attendees</h1>
 
-<div>
-    <table class ="table">
+<header>
+    <header th:replace="baseTemplate.html :: header">
+        <img src="../static/hodgelogo.JFIF" alt = "Logo">
+    </header>
+</header>
+<section id="returnattendees">
+
+    <h1>Your Event Attendees for the Hodge Christmas Party</h1>
+    <table id="attendeetable">
         <tr>
             <th>Attendee</th>
             <th>Dietery Requirements</th>
+
         </tr>
-        <tr th:each="attendees : ${myAttendees}">
-            <td th:text="${myAttendees.personId}">Person</td>
-            <td th:text = "${myAttendees.dietReq}">Dietery Requirements</td>
+        <tr th:each="people : ${myPeople}">
+            <td th:text = "${people.peopleId}">Dietery Requirements</td>
+            <td th:text = "${people.dietReq}">Dietery Requirements</td>
         </tr>
     </table>
-</div>
+
+    <input id="submitbutton" type="submit" value="Send Email Update">
+
+</section>
 
 </body>
 </html>

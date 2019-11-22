@@ -21,12 +21,12 @@ import java.util.List;
         }
 
 
-        public List<BookingStatus> findByEvent(int eventId) {
-            return jdbcTemplate.query("select PeopleId, DietReq",
-                    new Object[]{},
+        public List<BookingStatus> findByEvent(int e) {
+            return jdbcTemplate.query("select peopleId, dietReq from BookingStatus where eventId =?",
+                    new Object[]{e},
                     (rs, i) -> new BookingStatus(
-                            rs.getInt("PeopleId"),
-                            rs.getString("DietReq")
+                            rs.getInt("peopleId"),
+                            rs.getString("dietReq")
 
                     )
             );

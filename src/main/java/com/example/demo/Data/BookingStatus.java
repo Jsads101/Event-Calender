@@ -1,18 +1,18 @@
 package com.example.demo.Data;
 
 public class BookingStatus {
-    private int bsId;
-    private int personId;
+    private int bookingStatusId;
+    private int peopleId;
     private int eventId;
     private int statusId;
     private String dietReq;
 
-    public int getBsId(){
-        return bsId;
+    public int getBookingStatusId(){
+        return bookingStatusId;
     }
 
-    public int getPersonId(){
-        return personId;
+    public int getPeopleId(){
+        return peopleId;
     }
 
     public int getEventId(){
@@ -28,16 +28,16 @@ public class BookingStatus {
     }
 
 
-    public BookingStatus (int bsId, int personId, int eventId, int statusId, String dietReq){
-        this.bsId = bsId;
-        this.personId = personId;
+    public BookingStatus (int bookingStatusId, int peopleId, int eventId, int statusId, String dietReq){
+        this.bookingStatusId = bookingStatusId;
+        this.peopleId = peopleId;
         this.eventId = eventId;
         this.statusId = statusId;
         this.dietReq = dietReq;
     }
 
-    public BookingStatus (int personId, String dietReq){
-        this.personId = personId;
+    public BookingStatus (int peopleId, String dietReq){
+        this.peopleId = peopleId;
         this.dietReq = dietReq;
     }
 
