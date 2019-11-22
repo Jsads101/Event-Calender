@@ -37,7 +37,6 @@
     <div class="main">
         <h1>Hodge Christmas Party</h1>
 
-        <div>
 
             <h3>Date</h3>
             <p>21st December 2019</p>
@@ -80,19 +79,20 @@
                             <input class="radioinput" type="radio" name="eventtype" value="individual"
                                 onclick="hideTeamEventForm1()"> No
                         </form>
+
                         <div id="eventtypeform1">
-
-
-                            <form><textarea id="dietary" name="dietary"></textarea></form>
+                            <form><textarea id="dietary" name="dietary"></textarea>
                         </div>
                         <input id="submitbutton" type="submit" value="Submit"><br>
+                    </form>
                     </div>
+
                 </div>
             </div>
-        </div>
+
         <div id="searchbyevent">
             <form method="GET" action="/searchMyEvents">
-                <button id="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button>
+                <button id="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button><br><br>
 
             </form>
         </div>
