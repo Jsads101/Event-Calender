@@ -3,67 +3,83 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
     <script src="../static/CreateEventPage.js" th:href="@{CreateEventPage.js}"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+    <link href="../static/jquery-ui/jquery-ui.css" type="text/css" rel="stylesheet">
+    <!-- Bootstrap styling for Typeahead -->
+    <link href="../static/inputTags/dist/css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
+    <!-- Tokenfield CSS -->
+    <link href="../static/inputTags/dist/css/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
+    <!-- Docs CSS -->
+    <link href="../static/inputTags/docs-assets/css/pygments-manni.css" type="text/css" rel="stylesheet">
+    <link href="../static/inputTags/docs-assets/css/docs.css" type="text/css" rel="stylesheet">
+
 </head>
 
 <body>
 
-<header>
-    <img src="../static/hodgelogo.JFIF">
+    <header th:replace="baseTemplate.html :: header">
+        <img src="../static/hodgelogo.JFIF" alt = "Logo">
+    </header>
 
-    <div class="navsection">
-        <nav>
-            <ul class="navcontainer">
-                <li><a class="navsectionlink">Home<a/></li>
-                <li><a class="navsectionlink">Create Event</a></li>
-                <li><a class="navsectionlink">Log In</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<div class="container">
 
-<div class="main">
-    <h1>Create a New Event</h1>
-
-    <div class="formcontainer">
-        <form>
-            <label for="eventtitle">Event Title</label>
-            <input type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
-
-            <label for="eventdescription">Description:<textarea id="eventdescription" name="eventdescription"
-                                                                placeholder="Event description..."></textarea></label>
-            <br>
-
-            <label for="eventtime">Event Time</label>
-            <input type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
-
-            <label for="eventdate">Event Date</label>
-            <input type="date" id="eventdate" name="eventdate" placeholder="Event Date"><br>
-
-            <label for="invites">Invites:</label>
-            <select id="invites" name="invites">
-                <option value="All Staff">All Staff</option>
-                <option value="IT">HR</option>
-                <option value="HR">IT</option>
-            </select><br>
-
-            <input id="radioinput" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()"> Team Sign
-            Up Event
-            <input id="radioinput" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
-            Individual Sign Up Event
-
-            <div id="eventtypeform">
-                <label for="teamsize">Maximum number of people in a team</label>
-                <input type="text" id="teaminput" name="teamsize">
-                <label for="numofteams">Maxiumum number of teams</label>
-                <input type="text" id="teaminput" name="numofteams">
+        <center><h1>Create a New Event</h1></center>
+    
+            <form class="form-horizontal">
+                <label for="eventtitle">Event Title</label>
+                <input class="form-control" type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
+    
+                <label for="eventdescription">Description</label>
+                <textarea class="form-control" id="eventdescription" name="eventdescription" placeholder="Event description..."></textarea>
+                <br>
+    
+                <label for="eventtime">Event Time</label>
+                <input class="form-control" type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
+    
+                <label for="eventdate">Event Date</label>
+                <input class="form-control" type="date" id="eventdate" name="eventdate" placeholder="Event Date"><br>
+            
+                <label for="Emails">Invite</label>
+                <input type="text" class="form-control" id="tokenfield-2" placeholder="Type email address and hit enter" />
+              
             </div>
-            <br>
-
-            <input id="submitbutton" type="submit" value="Submit"><br>
-        </form>
+            <div class="main">
+                <input id="radioinput" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()"> Team Sign
+                Up Event
+                <input id="radioinput" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
+                Individual Sign Up Event
+    
+                <div id="eventtypeform">
+                    <label for="teamsize">Maximum number of people in a team</label>
+                    <input type="text" id="teaminput" name="teamsize">
+                    <label for="numofteams">Maxiumum number of teams</label>
+                    <input type="text" id="teaminput" name="numofteams">
+                </div>
+                <br>
+    
+                <input id="submitbutton" type="submit" value="Submit"><br>
+            </form>
+       </div>
     </div>
-</div>
+
+<!--Script for email adress tokens -->
+<script type="text/javascript" src="../static/jQuery.js"></script>
+<script type="text/javascript" src="../static/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="../static/inputTags/dist/bootstrap-tokenfield.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/inputTags/docs-assets/js/scrollspy.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/inputTags/docs-assets/js/affix.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/inputTags/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/inputTags/docs-assets/js/docs.min.js" charset="UTF-8"></script><!--This file contains values for dropdown list (department/team names: HR, Finance, IT, etc.)-->
+
 </body>
 </html>
