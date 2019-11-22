@@ -36,5 +36,15 @@ public class BaseController {
         new SecurityContextLogoutHandler().logout(request, null, null);
         return "redirect:/";
     }
+    
+    @RequestMapping("/CreateEventPage")
+    public String createEventPage() {
+        return "CreateEventPage"; //CreateEventsPage.html page name to open it
+    }
+
+    @RequestMapping("/eventPage")
+    public String eventPage() {
+        return "eventPage"; //eventPage.html page name to open it
+    }
 
 }
