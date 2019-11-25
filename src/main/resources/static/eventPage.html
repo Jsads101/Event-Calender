@@ -5,40 +5,63 @@
 <head>
     <meta charset="utf-8">
     <title>Event Page</title>
-    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+
+    <link href="CreateEventPage.css" rel="stylesheet">
+    <script type="text/javascript" src="CreateEventPage.js"></script>
+    <!--Making static temporariliy...
+    <link href="CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <header th:replace="/baseTemplate :: header">
-        <img src="../static/hodgelogo.JFIF" alt = "Logo">
-    </header>
-    <div class="main">
-        <h1>Event Name</h1>
 
-        <div>
+<!-- mkaing static temporarily
+    <header th:replace="/baseTemplate :: header">
+        <img src="hodgelogo.JFIF" alt = "Logo">
+    </header>-->
+
+<header>
+    <img src="hodgelogo.JFIF">
+
+    <div class="navsection">
+        <nav>
+            <ul class="navcontainer">
+                <li><a class="navsectionlink" href="viewEvents.html">Home</a></li>
+                <li><a class="navsectionlink" href="CreateEventPage.html">Create Event</a></li>
+                <li><a class="navsectionlink">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <div class="main">
+        <h1>Hodge Christmas Party</h1>
+
 
             <h3>Date</h3>
-            <p>DateTime</p>
+            <p>21st December 2019</p>
+
+            <h3>Time</h3>
+            <p>19:00</p>
 
             <h3>Location</h3>
+            <p>Hilton Hotel, Cardiff</p>
 
-            <p><a href="https://www.google.com/maps/place/National+Software+Academy/@51.4710188,-3.1410048,10.29z/data=!4m5!3m4!1s0x0:0x684c1227f14b4a15!8m2!3d51.5896561!4d-2.9982376"
-                    target="_blank">
-                    National Software Academy</a></p>
 
             <h3>Organiser</h3>
-            <p>Name of Orginiser</p>
-            <h3>Description</h3>
+            <p>Joshua Elsmore</p>
 
-            <p>Lorem ipsum dolor sit amet...</p>
+            <h3>Description</h3>
+            <p>Dress Code: Black Tie</p>
+            <p>Schedule: Welcome Drink 7pm - 8pm followed by three course meal. DJ until 2am. </p>
 
             <form>
                 <!-- Trigger/Open The Modal -->
                 <input id="myBtn" class="radioinput" type="radio" name="eventtype" value="team"
                     onclick="hideTeamEventForm1()"> Going
                 <input class="radioinput" type="radio" name="eventtype" value="individual"
-                    onclick="hideTeamEventForm()">Not Going
+                    onclick="hideTeamEventForm()">Not Going<br>
+
 
             </form>
             <div id="eventtypeform">
@@ -56,15 +79,22 @@
                             <input class="radioinput" type="radio" name="eventtype" value="individual"
                                 onclick="hideTeamEventForm1()"> No
                         </form>
+
                         <div id="eventtypeform1">
-
-
-                            <form><textarea id="dietary" name="dietary"></textarea></form>
+                            <form><textarea id="dietary" name="dietary"></textarea>
                         </div>
                         <input id="submitbutton" type="submit" value="Submit"><br>
+                    </form>
                     </div>
+
                 </div>
             </div>
+
+        <div id="searchbyevent">
+            <form method="GET" action="/searchMyEvents">
+                <button id="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button><br><br>
+
+            </form>
         </div>
     </div>
 
