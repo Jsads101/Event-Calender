@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <title>Events Page</title>
+</head>
+
+<body>
+
+<header th:replace="baseTemplate.html :: header">
+    <img src="../static/hodgelogo.JFIF" alt = "Logo">
+</header>
+
+<div class="main">
+    <h1 id="eventtitle">Events</h1>
+    <div class="sBar">
+        <input type="text" placeholder="Search..">
+    </div>
+
+    <br/>
+    <div class="eventDiv">
+        <section class="eventSection">
+            <h2>Hodge Christmas Party</h2>
+            <p>Date : 21/12/2019</p>
+            <p>Location : Hilton Hotel, Cardiff</p>
+            <p>Organiser : Joshua Elsmore</p>
+            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
+        </section>
+        <section class="eventSection">
+            <h2>Pizza and a Pint</h2>
+            <p>Date : 31/11/2019</p>
+            <p>Location : Pieminister, Cardiff</p>
+            <p>Organiser : Joshua Elsmore</p>
+            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
+        </section>
+        <section class="eventSection">
+            <h2>Pub Quiz</h2>
+            <p>07/12/2019</p>
+            <p>Location : The Cricketers</p>
+            <p>Organiser : Joshua Elsmore</p>
+            <a href="">Link to Event</a>
+        </section>
+    </div>
+
+
+</div>
+</body>
+</html>
