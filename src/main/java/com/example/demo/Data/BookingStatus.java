@@ -36,6 +36,12 @@ public class BookingStatus {
         this.statusId = statusId;
         this.dietReq = dietReq;
     }
+    public BookingStatus ( int peopleId, int eventId, int statusId, String dietReq){
+        this.peopleId = peopleId;
+        this.eventId = eventId;
+        this.statusId = statusId;
+        this.dietReq = dietReq;
+    }
 
     public BookingStatus (int peopleId, String dietReq){
         this.peopleId = peopleId;
