@@ -38,7 +38,7 @@ public class RegController {
         not be possible
         */
         if (session.getAttribute("SESSION_USERNAME") != null)
-            return new ModelAndView("redirect:/");
+            return new ModelAndView("redirect:/viewEvent");
 
         //Use registerTemplate.html as the template to use
         ModelAndView mv = new ModelAndView();
@@ -104,8 +104,8 @@ public class RegController {
         }
         else {
             //User does not exist and was added to the database successfully.
-            //Direct the user to now log in
-            return new ModelAndView("redirect:/login");
+            //Direct the user to now homepage
+            return new ModelAndView("redirect:/viewEvents");
         }
     }
 
