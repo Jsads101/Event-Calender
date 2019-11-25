@@ -6,6 +6,7 @@ public class BookingStatus {
     private int statusId;
     private String dietReq;
     private String name;
+
     public int getBookingStatusId(){
         return bookingStatusId;
     }
