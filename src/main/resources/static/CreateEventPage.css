@@ -79,7 +79,7 @@ body{
   }
   
   
-  #submitbutton{
+  .submitbutton{
     width:30%;
     background-color: #ffcB05;
     color: #223B47;
@@ -88,7 +88,7 @@ body{
     font-weight: bold;
   }
   
-  #submitbutton:hover {
+  .submitbutton:hover {
     background-color: #B89100;
   }
 
