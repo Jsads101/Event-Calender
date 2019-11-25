@@ -6,6 +6,7 @@ public class BookingStatus {
     private int eventId;
     private int statusId;
     private String dietReq;
+    private String name;
 
     public int getBookingStatusId(){
         return bookingStatusId;
@@ -27,6 +28,14 @@ public class BookingStatus {
         return dietReq;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setPeopleFN(String name) {
+        this.name = name;
+    }
+
 
     public BookingStatus (int bookingStatusId, int peopleId, int eventId, int statusId, String dietReq){
         this.bookingStatusId = bookingStatusId;
@@ -34,10 +43,11 @@ public class BookingStatus {
         this.eventId = eventId;
         this.statusId = statusId;
         this.dietReq = dietReq;
+        this.name = "";
     }
 
-    public BookingStatus (int peopleId, String dietReq){
-        this.peopleId = peopleId;
+    public BookingStatus (String firstName, String surName, String dietReq){
+        this.name = firstName + " " + surName;
         this.dietReq = dietReq;
     }
 
