@@ -3,6 +3,7 @@ package com.example.demo.auth.base;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,16 @@ public class BaseController {
     public String logout(HttpServletRequest request) {
         new SecurityContextLogoutHandler().logout(request, null, null);
         return "redirect:/";
+    }
+
+    @RequestMapping("/CreateEventPage")
+    public String createEventPage() {
+        return "CreateEventPage"; //CreateEventsPage.html page name to open it
+    }
+
+    @RequestMapping("/eventPage")
+    public String eventPage() {
+        return "eventPage"; //eventPage.html page name to open it
     }
 
 }

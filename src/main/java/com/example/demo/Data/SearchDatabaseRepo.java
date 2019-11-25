@@ -28,7 +28,6 @@ import java.util.List;
                             rs.getString("FirstName"),
                             rs.getString("SurName"),
                             rs.getString("dietReq")
-
                     )
             );
         }

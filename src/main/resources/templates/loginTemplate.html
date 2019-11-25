@@ -24,7 +24,7 @@ Go to baseTemplate.html and find the <header> element with the attribute th:frag
 <!--<header th:replace="baseTemplate :: header"></header>-->
 
 <header>
-    <img src="../static/hodgelogo.JFIF">
+    <img src="../static/hodgelogo.JFIF" th:src="@{hodgeLogo.JFIF}">
 
 </header>
 
@@ -34,6 +34,11 @@ Go to baseTemplate.html and find the <header> element with the attribute th:frag
     See WebSecurityConfig2
     -->
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <p th:if="${param.error != null}" th:text="ERROR"></p>
 
     <form id="loginForm" action="/login" method="post">
