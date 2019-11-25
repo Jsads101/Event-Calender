@@ -22,12 +22,12 @@ import java.util.List;
 
 
         public List<BookingStatus> findByEvent(int e) {
-            return jdbcTemplate.query("select peopleId, dietReq from BookingStatus where eventId =?",
+            return jdbcTemplate.query("select FirstName,SurName, dietReq from BookingStatus bs Inner join People p on p.PeopleId = bs.PeopleID where eventId = ?",
                     new Object[]{e},
                     (rs, i) -> new BookingStatus(
-                            rs.getInt("peopleId"),
+                            rs.getString("FirstName"),
+                            rs.getString("SurName"),
                             rs.getString("dietReq")
-
                     )
             );
         }

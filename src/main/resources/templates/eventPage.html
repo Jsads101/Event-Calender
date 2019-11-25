@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <title>Event Page</title>
 
-    <link href="CreateEventPage.css" rel="stylesheet">
-    <script type="text/javascript" src="CreateEventPage.js"></script>
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
     <!--Making static temporariliy...
     <link href="CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,18 +21,9 @@
         <img src="hodgelogo.JFIF" alt = "Logo">
     </header>-->
 
-<header>
-    <img src="hodgelogo.JFIF">
+<header th:replace="baseTemplate :: header">
+    <img src="../static/hodgelogo.JFIF">
 
-    <div class="navsection">
-        <nav>
-            <ul class="navcontainer">
-                <li><a class="navsectionlink" href="viewEvents.html">Home</a></li>
-                <li><a class="navsectionlink" href="CreateEventPage.html">Create Event</a></li>
-                <li><a class="navsectionlink">Log Out</a></li>
-            </ul>
-        </nav>
-    </div>
 </header>
 
 <div class="main">
@@ -108,8 +99,8 @@
 
 
 
-<script src="CreateEventPage.js"></script>
 
+<script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 </body>
 
 </html>
