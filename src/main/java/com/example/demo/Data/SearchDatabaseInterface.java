@@ -6,4 +6,5 @@ public interface SearchDatabaseInterface {
 
     List<BookingStatus> findByEvent(int eventId);
 
+
 }

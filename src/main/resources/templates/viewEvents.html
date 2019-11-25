@@ -14,7 +14,7 @@
 </header>
 
 <div class="main">
-    <h1>Events</h1>
+    <h1 id="eventtitle">Events</h1>
     <div class="sBar">
         <input type="text" placeholder="Search..">
     </div>
@@ -22,17 +22,24 @@
     <br/>
     <div class="eventDiv">
         <section class="eventSection">
-            <h2>Postman Pat, the Movie</h2>
-            <p>31/11/2019</p>
-            <p>Cineworld</p>
-            <p>Joshua Elsmore</p>
-            <a href="">Link to Event</a>
+            <h2>Hodge Christmas Party</h2>
+            <p>Date : 21/12/2019</p>
+            <p>Location : Hilton Hotel, Cardiff</p>
+            <p>Organiser : Joshua Elsmore</p>
+            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
         </section>
         <section class="eventSection">
             <h2>Pizza and a Pint</h2>
-            <p>31/11/2019</p>
-            <p>Pizza and a Pint</p>
-            <p>Joshua Elsmore</p>
+            <p>Date : 31/11/2019</p>
+            <p>Location : Pieminister, Cardiff</p>
+            <p>Organiser : Joshua Elsmore</p>
+            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
+        </section>
+        <section class="eventSection">
+            <h2>Pub Quiz</h2>
+            <p>07/12/2019</p>
+            <p>Location : The Cricketers</p>
+            <p>Organiser : Joshua Elsmore</p>
             <a href="">Link to Event</a>
         </section>
     </div>

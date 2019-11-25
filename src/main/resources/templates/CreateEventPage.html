@@ -25,12 +25,25 @@
 </head>
 
 <body>
+<header>
+    <img src="../static/hodgelogo.JFIF" th:src="@{hodgeLogo.JFIF}">
 
-<header th:replace="baseTemplate :: header">
-    <img src="../static/hodgelogo.JFIF">
-
+<div class="navsection">
+    <nav>
+        <ul class="navcontainer">
+            <li><a class="navsectionlink" href="viewEvents.html" th:href="@{viewEvents}">Home</a></li>
+            <li><a class="navsectionlink"  th:href="@{CreateEventPage}">Create Event</a></li>
+            <li><a class="navsectionlink" th:if="${session.SESSION_USERNAME != null}" href="/logout">Log Out</a></li>
+        </ul>
+    </nav>
+</div>
 </header>
+<!--<header th:replace="baseTemplate :: header">-->
+<!--    <img src="../static/hodgelogo.JFIF">-->
 
+<!--</header>-->
+
+        <br><br>
         <center><h1>Create a New Event</h1></center>
 
             <form class="form-horizontal">
@@ -42,6 +55,10 @@
                 <label for="eventdescription">Description</label>
                 <textarea class="form-control" id="eventdescription" name="eventdescription" placeholder="Event description..."></textarea>
                 <br>
+
+                    <label for="eventLocation">Location</label>
+                    <textarea class="form-control" id="eventLocation" name="eventLocation" placeholder="Event location..."></textarea>
+                    <br>
     
                 <label for="eventtime">Event Time</label>
                 <input class="form-control" type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
@@ -53,25 +70,28 @@
                 <input type="text" class="form-control" id="tokenfield-2" placeholder="Type email address and hit enter" />
               
             </div>
-           <div class="main">
+                <br><br>
+
                <input id="radioTeam" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()">Team Sign
                Up Event
                <input id="radioIndividual" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
                Individual Sign Up Event
-
+                <br>
                <div id="eventtypeform">
                    <label for="teamsize">Maximum number of people in a team</label>
-                   <input type="text" id="teamsize" name="teamsize">
-                   <label for="teaminput">Maxiumum number of teams</label>
-                   <input type="text" id="teaminput" name="teaminput">
+                   <input type="text" id="teaminput" name="teamsize">
+                   <label for="numofteams">Maxiumum number of teams</label>
+                   <input type="text" id="teaminput" name="numofteams">
                 </div>
                <br>
            
                 <input id="submitbutton" type="submit" value="Submit"><br>
 <!--               th:name="${_csrf.parameterName}" th:value="${_csrf.token}-->
-            </div>
+
             </form>
     </div>
+
+<br>
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 

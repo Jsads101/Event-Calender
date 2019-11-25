@@ -1,3 +1,5 @@
+
+
 body{
     margin: 0;
     font-family: Lato, sans-serif;
@@ -10,6 +12,9 @@ body{
   .navsection{
     padding-right: 1rem;
   }
+.navsectionTest{
+    padding-right: 1rem;
+}
   
   header {
        background-color: #223B47;
@@ -34,7 +39,6 @@ body{
 
   .navsectionlink:visited{
       color: white;
-    color: #223B47;
   }
   
   li {
@@ -47,14 +51,13 @@ body{
       position: absolute;
       top:1rem;
       border: 0.2rem solid white;
-      border: 0.4rem solid white;
       height: 8rem;
   
   }
   
   .main {
     text-align: center;
-    margin-top: 2rem;
+
   }
   
   input, textarea {
@@ -88,12 +91,15 @@ body{
   #submitbutton:hover {
     background-color: #B89100;
   }
+
   
   #eventtypeform {
+      padding-top: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     display: none;
+      padding-left: 25%;
 }
 
 #returnattendees {
@@ -104,6 +110,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 
 table {
     font-family: sans-serif;
@@ -126,6 +133,7 @@ tr:nth-child(even) {
 #attendeetable{
     margin: 2rem;
 }
+
 
 #teaminput {
     width: 2rem;
@@ -167,6 +175,7 @@ tr:nth-child(even) {
     width:2rem;
   }
 
+
   #eventtitle {
       margin: 0;
       padding: 1.5rem;
@@ -185,11 +194,6 @@ tr:nth-child(even) {
 #myBtn:hover {
     background-color: #B89100;
 }
-
-  #dietary {
-    width:20rem;
-    height: 10rem;
-  }
   
   /* The Modal (background) */
   .modal {
@@ -211,9 +215,6 @@ tr:nth-child(even) {
     margin: 15% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -240,4 +241,3 @@ tr:nth-child(even) {
       width:20rem;
       height: 10rem;
   }
-
