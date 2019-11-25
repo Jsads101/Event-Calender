@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <link href="CreateEventPage.css" rel="stylesheet">
     <title>Events Page</title>
 </head>
 
 <body>
 
-<header th:replace="baseTemplate.html :: header">
-    <img src="../static/hodgelogo.JFIF" alt = "Logo">
+<header>
+    <img src="hodgelogo.JFIF">
+
+    <div class="navsection">
+        <nav>
+            <ul class="navcontainer">
+                <li><a class="navsectionlink" href="viewEvents.html">Home</a></li>
+                <li><a class="navsectionlink" href="CreateEventPage.html">Create Event</a></li>
+                <li><a class="navsectionlink">Log In</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <div class="main">

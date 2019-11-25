@@ -1,94 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92e08c86-e24b-479a-8bc6-a9844355ff16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="892686d0-208f-4b67-88d3-93ccc5046e22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/StatusAndBookingStatus.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authoritiesSQL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/createTeams.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jensql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LogInController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/SearchDatabaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/BookingStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/CreateEventInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/CreateEventRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/LogInInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/LogInRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/PTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/SearchDatabaseInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Data/SearchDatabaseRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Emails/EmailList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Emails/EmailListRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Templates/returnMyEventAttendees.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CreateEventPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/LoggedInHome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/viewEvents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usersSQL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/CreateNewEvent/NewEventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/base/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/reg/RegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/auth/reg/RegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/CreateEventPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CreateEventPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/CreateEventPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CreateEventPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/jQuery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/bootstrap-tokenfield.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/bootstrap-tokenfield.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/bootstrap-tokenfield.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/css/bootstrap-tokenfield.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/css/bootstrap-tokenfield.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/css/tokenfield-typeahead.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/dist/css/tokenfield-typeahead.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/css/docs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/css/pygments-manni.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/affix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/docs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/docs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/scrollspy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/typeahead.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/docs-assets/js/typeahead.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui-1.12.1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_444444_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_555555_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_777620_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_777777_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/jquery-ui.theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/jquery-ui/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/js/bootstrap-tokenfield.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/less/bootstrap-tokenfield.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/less/tokenfield-typeahead.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/test/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/test/helpers/jsdom-patch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/test/setup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/test/test.tokenfield.1.unit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/tokenfield/test/test.tokenfield.2.integration.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/CreateEventPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/CreateEventPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/baseTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/baseTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registerTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registerTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/eventPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/eventPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homeTemplate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userAreaTemplate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewEvents.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,78 +55,16 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1TmhLIWN66o5BxbLyTNtuYeCPkH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1U6Rt38ZLcexcl0gHLJEpf59yIU" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\krzys\Desktop\Study\Masters\client_project\login\src\main\resources\static" />
-      <recent name="C:\Users\krzys\Desktop\Study\Masters\client_project\login\src\main\resources\templates" />
-      <recent name="C:\Users\krzys\Desktop\Study\Masters\client_project\login\src\main\java\com\example\demo\auth\base" />
-      <recent name="C:\Users\C1987417\Desktop\groupAssignment\hodgebank\src\main\resources\static" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,26 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.login [bootRun]">
-    <configuration name="login [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootRun" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="HodgeBankApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.HodgeBankApplication" />
@@ -216,32 +86,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.login [bootRun]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="92e08c86-e24b-479a-8bc6-a9844355ff16" name="Default Changelist" comment="" />
-      <created>1574068747150</created>
+      <changelist id="892686d0-208f-4b67-88d3-93ccc5046e22" name="Default Changelist" comment="" />
+      <created>1574675270759</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574068747150</updated>
-      <workItem from="1574068748463" duration="1350000" />
-      <workItem from="1574071121921" duration="12207000" />
-      <workItem from="1574267602391" duration="6696000" />
-      <workItem from="1574329145506" duration="600000" />
-      <workItem from="1574330502996" duration="4699000" />
-      <workItem from="1574365014755" duration="7000" />
-      <workItem from="1574443170210" duration="6847000" />
-      <workItem from="1574458003899" duration="2895000" />
-      <workItem from="1574524594230" duration="6935000" />
-      <workItem from="1574605849194" duration="7531000" />
+      <updated>1574675270759</updated>
+      <workItem from="1574675276268" duration="1375000" />
     </task>
     <servers />
   </component>
@@ -253,28 +109,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

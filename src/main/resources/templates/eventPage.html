@@ -6,62 +6,70 @@
     <meta charset="utf-8">
     <title>Event Page</title>
     <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<style>
-    /* Set the size of the div element that contains the map */
-    #map {
-        height: 400px; /* The height is 400 pixels */
-        width: 100%; /* The width is the width of the web page */
-        background-color: grey;
-    }
-
-</style>
-
 <body>
-<header>
-    <img src="hodgelogo.JFIF" alt="logo"/>
+    <header th:replace="/baseTemplate :: header">
+        <img src="../static/hodgelogo.JFIF" alt = "Logo">
+    </header>
+    <div class="main">
+        <h1>Event Name</h1>
 
-    <div class="navsection">
-        <nav>
-            <ul class="navcontainer">
-                <li><a class="navsectionlink">Home<a/></li>
-                <li><a class="navsectionlink">Create Event</a></li>
-                <li><a class="navsectionlink">Log In</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<div class="main">
-    <h1>Event Name</h1>
+        <div>
 
-    <div>
+            <h3>Date</h3>
+            <p>DateTime</p>
 
-        <h3>Date</h3>
-        <p>DateTime</p>
+            <h3>Location</h3>
 
-        <h3>Location</h3>
+            <p><a href="https://www.google.com/maps/place/National+Software+Academy/@51.4710188,-3.1410048,10.29z/data=!4m5!3m4!1s0x0:0x684c1227f14b4a15!8m2!3d51.5896561!4d-2.9982376"
+                    target="_blank">
+                    National Software Academy</a></p>
 
-        <p>
-            <a href="https://www.google.com/maps/place/National+Software+Academy/@51.4710188,-3.1410048,10.29z/data=!4m5!3m4!1s0x0:0x684c1227f14b4a15!8m2!3d51.5896561!4d-2.9982376"
-               target="_blank">
-                National Software Academy</a></p>
+            <h3>Organiser</h3>
+            <p>Name of Orginiser</p>
+            <h3>Description</h3>
 
-        <h3>Organiser</h3>
-        <p>Name of Orginiser</p>
-        <h3>Description</h3>
+            <p>Lorem ipsum dolor sit amet...</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.</p>
+            <form>
+                <!-- Trigger/Open The Modal -->
+                <input id="myBtn" class="radioinput" type="radio" name="eventtype" value="team"
+                    onclick="hideTeamEventForm1()"> Going
+                <input class="radioinput" type="radio" name="eventtype" value="individual"
+                    onclick="hideTeamEventForm()">Not Going
 
-        <div class="btn-group">
-            <button>Going</button>
-            <button>Maybe</button>
+            </form>
+            <div id="eventtypeform">
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content container">
+                        <span class="close">&times;</span>
+                        <p>Do you have any dietary requirements?</p>
+
+                        <form>
+                            <input class="radioinput" type="radio" name="eventtype" value="team"
+                                onclick="showTeamEventForm1()"> Yes
+                            <input class="radioinput" type="radio" name="eventtype" value="individual"
+                                onclick="hideTeamEventForm1()"> No
+                        </form>
+                        <div id="eventtypeform1">
+
+
+                            <form><textarea id="dietary" name="dietary"></textarea></form>
+                        </div>
+                        <input id="submitbutton" type="submit" value="Submit"><br>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-</div>
+            <script src="CreateEventPage.js"></script>
+
 </body>
+
 </html>
