@@ -8,38 +8,48 @@ public class Events {
     private String location;
     private String date;
     private String time;
-    private boolean dReq;
+    private int dReq;
     private boolean teamBased;
+    private String description;
 
-    public int getEventID (){
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getEventID() {
         return eventID;
     }
 
-    public String getEventName(){
+    public String getTime() {
+        return time;
+    }
+
+    public String getEventName() {
         return eventName;
     }
 
-    public String getOrganiserName(){
+    public String getOrganiserName() {
         return organiserName;
     }
 
-    public String getLocation(){
+    public String getLocation() {
         return location;
     }
 
-    public String getDate(){
+    public String getDate() {
         return date;
     }
 
-    public boolean getDReq(){
+    public int getDReq() {
         return dReq;
     }
 
-    public boolean getTeamBased(){
+    public boolean getTeamBased() {
         return teamBased;
     }
 
-    public Events(String eventName, String organiserName, String location, String date, boolean dReq, boolean teamBased){
+    public Events(String eventName, String organiserName, String location, String date, int dReq, boolean teamBased) {
         this.eventName = eventName;
         this.organiserName = organiserName;
         this.location = location;
@@ -48,7 +58,7 @@ public class Events {
         this.teamBased = teamBased;
     }
 
-    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time,int eventID) {
+    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, int eventID) {
 
         this.eventName = eventName;
         this.organiserName = organiserFN + " " + organiserSN;
@@ -58,4 +68,13 @@ public class Events {
         this.eventID = eventID;
     }
 
+    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, String description, int eventID) {
+        this.eventName = eventName;
+        this.organiserName = organiserFN + " " + organiserSN;
+        this.location = location;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.eventID = eventID;
+    }
 }
