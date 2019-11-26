@@ -26,7 +26,11 @@
             <p>Date: <span th:text="${event.Date}"></span></p>
             <p>Location:<span th:text="${event.Location}"></span></p>
             <p>Organiser:<span th:text="${event.organiserName}"></span></p>
-            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
+            <!--<a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>-->
+            <form method="GET" action="/viewSpecificEvent">
+                <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">See more details</button><br><br>
+
+            </form>
         </section>
     </div>
 
