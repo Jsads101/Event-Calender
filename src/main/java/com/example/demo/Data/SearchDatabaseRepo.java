@@ -31,4 +31,32 @@ import java.util.List;
                     )
             );
         }
+
+
+        public List<Events> showByEventId(int e) {
+            return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId " +
+                            "from Events e inner join People p on p.PeopleId = e.Organiser where eventId =?",
+                    new Object[]{e},
+                    (rs, i) -> new Events(
+                            rs.getString("Name"),
+                            rs.getString("FirstName"),
+                            rs.getString("SurName"),
+                            rs.getString("Location"),
+                            rs.getString("Date"),
+                            rs.getString("Time"),
+                            rs.getString("Description"),
+                            rs.getInt("eventID")
+
+
+                    )
+            );
+        }
+
+
+
+
+
+
+
+
 }

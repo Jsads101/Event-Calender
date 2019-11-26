@@ -1,5 +1,5 @@
 package com.example.demo.Controllers;
-
+import com.example.demo.Data.Events;
 import com.example.demo.Data.BookingStatus;
 import com.example.demo.Data.SearchDatabaseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +26,14 @@ import java.util.List;
             ModelAndView mv = new ModelAndView("returnMyEventAttendees");
             List<BookingStatus> myPeople = repo.findByEvent(eventId);
             mv.addObject("myPeople", myPeople);
+            return mv;
+        }
+
+        @GetMapping("/viewSpecificEvent")
+        public ModelAndView viewSpecificEvent(@RequestParam int eventId) {
+            ModelAndView mv = new ModelAndView("eventPage");
+            List<Events> myEvent = repo.showByEventId(eventId);
+            mv.addObject("myEvent", myEvent);
             return mv;
         }
 
