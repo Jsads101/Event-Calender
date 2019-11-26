@@ -21,15 +21,15 @@ body{
        color: white;
        height:5rem;
        align-items: center;
-       display: flex;
-       justify-content: flex-end;
+       display: flex !important;
+       justify-content: flex-end !important;
 
      }
   
   .navsectionlink {
     padding: 1rem;
   color: white;
-      text-decoration: none;
+      text-decoration: none !important;
   }
   
   .navsectionlink:hover {
@@ -50,7 +50,7 @@ body{
       left: 1rem;
       position: absolute;
       top:1rem;
-      border: 0.2rem solid white;
+      border: 0.2rem solid white !important;
       height: 8rem;
   
   }
@@ -67,17 +67,29 @@ body{
     margin: 1.5rem;
     padding: 1px
   }
+
   
   #eventdescription {
      vertical-align: middle;
      height: 4rem;
   }
   
-  .radioinput {
-  width:1rem;
-  vertical-align: middle;
+  #radioinput {
+
+      display: flex !important;
   }
-  
+
+  .radiocontainer{
+      display: flex !important;
+      width: 40%;
+      margin: 0 auto;
+      font-size: 1rem;
+      justify-content: center;
+  }
+
+  .teamchoice{
+width:50%;
+  }
   
   #submitbutton{
     width:30%;
@@ -95,12 +107,20 @@ body{
   
   #eventtypeform {
       padding-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    display: none;
-      padding-left: 25%;
+      display: none;
 }
+
+  .teamcontainer{
+      display: flex;
+      justify-content: space-evenly;
+      width: 60%;
+      margin: 0 auto;
+      padding-bottom: 1rem;
+  }
+
+  #teaminput{
+      padding: 1rem;
+  }
 
 #returnattendees {
     padding: 2rem;
@@ -135,9 +155,6 @@ tr:nth-child(even) {
 }
 
 
-#teaminput {
-    width: 2rem;
-}
 .eventDiv{
 
     width: 50%;

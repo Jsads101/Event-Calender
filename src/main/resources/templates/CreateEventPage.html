@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
 
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../static/bootstrap/css/bootstrap.min.css" th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <!-- jQuery UI CSS -->
@@ -42,6 +42,7 @@
 <!--    <img src="../static/hodgelogo.JFIF">-->
 
 <!--</header>-->
+<div class="main">
 
         <br><br>
         <center><h1>Create a New Event</h1></center>
@@ -71,18 +72,24 @@
               
             </div>
                 <br><br>
-
-               <input id="radioTeam" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()">Team Sign
-               Up Event
-               <input id="radioIndividual" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
-               Individual Sign Up Event
+<div class="radiocontainer">
+               <input id="radioinput" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()">Team Event
+               <input id="radioinput" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
+               Individual Event
+</div>
                 <br>
                <div id="eventtypeform">
-                   <label for="teamsize">Maximum number of people in a team</label>
+                   <div class="teamcontainer">
+                       <div class="teamchoice">
+                   <label for="teamsize">Max. number of people per team</label>
                    <input type="text" id="teaminput" name="teamsize">
-                   <label for="numofteams">Maxiumum number of teams</label>
+                   </div>
+                   <div class="teamchoice">
+                   <label for="numofteams">Max. number of teams</label>
                    <input type="text" id="teaminput" name="numofteams">
+                   </div>
                 </div>
+               </div>
                <br>
            
                 <input id="submitbutton" type="submit" value="Submit"><br>
