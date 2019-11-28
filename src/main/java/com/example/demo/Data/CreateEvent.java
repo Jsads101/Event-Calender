@@ -7,13 +7,13 @@ public class CreateEvent {
     private String eventTitle;
     private String eventDesc;
     private String location;
-    private Time eventTime;
+    private String eventTime;
     private Date eventDate;
     //String attendees?
 
     public CreateEvent(){}
 
-    public CreateEvent(String eventTitle, String eventDesc, String location, Time eventTime, Date eventDate){
+    public CreateEvent(String eventTitle, String eventDesc, String location, String eventTime, Date eventDate){
         this.eventTitle = eventTitle;
         this.eventDesc = eventDesc;
         this.location = location;
@@ -45,11 +45,11 @@ public class CreateEvent {
         this.location = location;
     }
 
-    public Time getEventTime() {
+    public String getEventTime() {
         return eventTime;
     }
 
-    public void setEventTime(Time eventTime) {
+    public void setEventTime(String eventTime) {
         this.eventTime = eventTime;
     }
 

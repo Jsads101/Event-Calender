@@ -34,24 +34,24 @@
         <br><br>
         <center><h1>Create a New Event</h1></center>
 
-            <form class="form-horizontal" action="/eventcreation" method="post" > <!--th:object="${createEvent}-->
+            <form class="form-horizontal" action="/eventcreation" method="POST" th:object="${createEvent}"> <!---->
                 <div class="container">
 
                 <label for="eventTitle">Event Title</label>
-                <input class="form-control" type="text" id="eventTitle" name="eventtitle" placeholder="Event title.."><br> <!--th:field="*{eventTitle}"-->
+                <input class="form-control" type="text" id="eventTitle" name="eventTitle" placeholder="Event title.."><br> <!--th:field="*{eventTitle}"-->
     
                 <label for="eventDesc">Description</label>
-                <textarea class="form-control" id="eventDesc" name="eventdescription" placeholder="Event description..." ></textarea> <!-- th:field="*{eventDesc}"-->
+                <textarea class="form-control" id="eventDesc" name="eventDesc" placeholder="Event description..." ></textarea> <!-- th:field="*{eventDesc}"-->
                 <br>
                     <label for="location">Location</label>
-                    <textarea class="form-control" id="location" name="eventLocation" placeholder="Event location..." ></textarea> <!--th:field="*{location}"-->
+                    <textarea class="form-control" id="location" name="location" placeholder="Event location..." ></textarea> <!--th:field="*{location}"-->
                     <br>
     
                 <label for="eventTime">Event Time</label>
-                <input class="form-control" type="time" id="eventTime" name="eventtime" placeholder="Event Time" ><br> <!--th:field="*{eventTime}"-->
+                <input class="form-control" type="time" id="eventTime" name="eventTime" placeholder="Event Time" ><br> <!--th:field="*{eventTime}"-->
     
                 <label for="eventDate">Event Date</label>
-                <input class="form-control" type="date" id="eventDate" name="eventdate" placeholder="Event Date" ><br> <!--th:field="*{eventDate}"-->
+                <input class="form-control" type="date" id="eventDate" name="eventDate" placeholder="Event Date" ><br> <!--th:field="*{eventDate}"-->
             
 <!--                <label for="tokenfield-2">Invite</label>-->
 <!--                <input type="text" class="form-control" id="tokenfield-2" placeholder="Type email address and hit enter" />-->
@@ -71,6 +71,8 @@
 <!--                   <input type="text" id="teaminput" name="numofteams">-->
 <!--                </div>-->
 <!--               <br>-->
+
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
            
                 <input id="submitbutton" type="submit" value="Submit"><br>
 

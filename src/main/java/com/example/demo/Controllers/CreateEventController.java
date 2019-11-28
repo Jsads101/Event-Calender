@@ -100,15 +100,12 @@ public class CreateEventController {
 //    }
 
     @PostMapping("/eventcreation")
-    public ModelAndView registerUserAccount(@ModelAttribute("createEvent") CreateEvent createEvent) {
-        ModelAndView mv = new ModelAndView("CreateEventPage");
-        mv.addObject("createEvent", createEvent);
+    public ModelAndView newEvent(@ModelAttribute("createEvent") CreateEvent createEvent) {
+//        ModelAndView mv = new ModelAndView("CreateEventPage");
+//        mv.addObject("createEvent", createEvent);
 
-//        List<String> errors = new ArrayList<>(0);
-
-        String submittedEventTitle = createEvent.getEventTitle();
-//        String submittedPassword = user.getPassword();
-//        String submittedCPassword = user.getCpassword();
+        repo.addEvent(createEvent);
+        //TODO add database add
 
         //New event was successfully added
         return new ModelAndView("redirect:/viewEvents");

@@ -44,9 +44,8 @@ public class CreateEventRepo  implements CreateEventInterface{
                 createEvent.getLocation(),
                 0,
                 0,
-                createEvent.getEventTime(),
-                createEvent.getEventDate());
-
+                createEvent.getEventDate(),
+                createEvent.getEventTime());
     }
 
     /*
@@ -60,7 +59,7 @@ public class CreateEventRepo  implements CreateEventInterface{
     */
 //    public int addEvent(CreateEvent createEvent) {
 //        KeyHolder kh = new GeneratedKeyHolder();
-//        String sql="insert into Event(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)";
+//        String sql="insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)";
 //        jdbcTemplate.update(new PreparedStatementCreator() {
 //                                @Override
 //                                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
