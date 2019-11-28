@@ -96,7 +96,7 @@ width:50%;
     background-color: #ffcB05;
     color: #223B47;
     height: 3rem;
-    border: none;
+      border: none;
     font-weight: bold;
   }
   
@@ -262,3 +262,18 @@ tr:nth-child(odd) {
   #showevent {
       margin-top: 1.5rem;
   }
+
+  .searchsubmit{
+      background-color: #ffcB05;
+      color: #223B47;
+      font-weight: bold;
+      border: none;
+      padding: 0.1rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+  }
+
+.searchsubmit:hover {
+    background-color: #B89100;
+}
