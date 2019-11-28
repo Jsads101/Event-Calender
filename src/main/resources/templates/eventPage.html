@@ -27,25 +27,26 @@
 </header>
 
 <div class="main">
-    <h1>Hodge Christmas Party</h1>
+
+    <section class="eventSection" th:each="event : ${myEvent}">
+        <h1 th:text="${event.eventName}"></h1>
 
 
     <h3>Date</h3>
-    <p>21st December 2019</p>
+    <p><span th:text="${event.date}"></span></p>
 
     <h3>Time</h3>
-    <p>19:00</p>
+    <p><span th:text="${event.time}"></span></p>
 
     <h3>Location</h3>
-    <p>Hilton Hotel, Cardiff</p>
+    <p><span th:text="${event.location}"></span></p>
 
 
     <h3>Organiser</h3>
-    <p>Joshua Elsmore</p>
+    <p><span th:text="${event.organiserName}"></span></p>
 
     <h3>Description</h3>
-    <p>Dress Code: Black Tie</p>
-    <p>Schedule: Welcome Drink 7pm - 8pm followed by three course meal. DJ until 2am. </p><br>
+    <p> <span th:text="${event.description}"></span></p><br>
 
 
         <!-- Trigger/Open The Modal -->
@@ -64,7 +65,7 @@
                     <input id="peopleId" name="peopleId" type="hidden" value="1"/><br>
                 </div>
                 <div>
-                    <input id="eventId" name="eventId" type="hidden" value="1"/><br>
+                    <input id="eventId" name="eventId" type="hidden" th:value="${event.eventID}"/><br>
                 </div>
                 <div>
                     <input id="statusId" name="statusId" type="hidden" value="1"/><br>
@@ -89,7 +90,7 @@
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
-            <button id="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button><br><br>
+            <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
         </form>
     </div>
