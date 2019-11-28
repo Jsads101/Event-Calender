@@ -79,18 +79,19 @@ public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .passwordEncoder(passwordEncoder())
-                .dataSource(dataSource);
+                .dataSource(dataSource)
                 /*
                 Optional customised queries, e.g. if different tables are used
                  */
-                /*.usersByUsernameQuery("select username, password, enabled "
-                + "from users "
-                + "where username =?"
+                .usersByUsernameQuery("select Email, password, enabled "
+                + "from People "
+                + "where Email = ?"
                 )
-                .authoritiesByUsernameQuery("select username, authority "
-                + "from authorities "
-                + "where username = ?"
-                );*/
+                .authoritiesByUsernameQuery("select a.PeopleID, authority "
+                + "from authorities a inner join People p on p.PeopleID = a.PeopleID "
+                + "where Email = ?"
+                );
+
     }
 
 }

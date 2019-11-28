@@ -54,8 +54,8 @@ public class SearchEventsRepo{
                             "from Events e inner join People p on p.PeopleId = e.Organiser " +
                             "inner join BookingStatus bs on e.EventId = bs.EventId " +
                             "Inner join People p2 on p2.PeopleId = bs.PeopleId" +
-                            " WHERE DATE > NOW() AND p2.PeopleId = ? ORDER BY DATE",
-                    new Object[]{me},
+                            " WHERE DATE > NOW() AND p2.email = ? ORDER BY DATE",
+                    new Object[]{session.getAttribute("SESSION_USERNAME")},
                     (rs, i) -> new Events(
                             rs.getString("Name"),
                             rs.getString("FirstName"),
@@ -90,8 +90,8 @@ public class SearchEventsRepo{
                             "from Events e inner join People p on p.PeopleId = e.Organiser " +
                             "inner join BookingStatus bs on e.EventId = bs.EventId " +
                             "Inner join People p2 on p2.PeopleId = bs.PeopleId " +
-                            " WHERE DATE < NOW() AND p2.PeopleId = ? ORDER BY DATE DESC",
-                    new Object[]{me},
+                            " WHERE DATE < NOW() AND p2.email = ? ORDER BY DATE DESC",
+                    new Object[]{session.getAttribute("SESSION_USERNAME")},
                     (rs, i) -> new Events(
                             rs.getString("Name"),
                             rs.getString("FirstName"),
