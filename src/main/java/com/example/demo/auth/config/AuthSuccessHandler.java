@@ -21,6 +21,7 @@ public class AuthSuccessHandler implements org.springframework.security.web.auth
             Set the username of the user as a session attribute
         */
         String user = ((User) authentication.getPrincipal()).getUsername();
+        System.out.println(user);
         request.getSession().setAttribute("SESSION_USERNAME", user);
 
         /* Debug example. Get the list of authorities attached to a user.
