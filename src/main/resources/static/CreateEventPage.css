@@ -120,6 +120,7 @@ width:50%;
 
   #teaminput{
       padding: 1rem;
+      width: 2rem;
   }
 
 #returnattendees {
@@ -186,11 +187,6 @@ tr:nth-child(even) {
     border: none;
     font-size: 17px;
 }
-
-  
-  #teaminput {
-    width:2rem;
-  }
 
 
   #eventtitle {
