@@ -21,9 +21,9 @@ public class SearchController {
     }
 
     @GetMapping("/viewEvents")
-    public ModelAndView getEvents() {
+    public ModelAndView getEvents(@RequestParam(defaultValue = "1") int selectSQL) {
         ModelAndView mv = new ModelAndView("viewEvents");
-        List<Events> myEvent = repo.findByEvent();
+        List<Events> myEvent = repo.findByEvent(selectSQL);
         mv.addObject("myEvent", myEvent);
         return mv;
     }
