@@ -132,6 +132,10 @@ width:50%;
     align-items: center;
 }
 
+#eventtable{
+    margin: 0rem auto 2rem auto;
+}
+
 
 table {
     font-family: sans-serif;
@@ -147,7 +151,7 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
@@ -253,4 +257,8 @@ tr:nth-child(even) {
       vertical-align: middle;
       width:20rem;
       height: 10rem;
+  }
+
+  #showevent {
+      margin-top: 1.5rem;
   }
