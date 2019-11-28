@@ -49,7 +49,7 @@
 
 
         <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Sign Up</button>
+    <button class="myBtn">Sign Up</button>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -57,7 +57,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form name="signupform" method="PUT" action="/signUp">
+            <form name="signupform" method="GET" action="/signUp">
 
             <!--Hidden form elements to send constant data. peopleId and eventId will need to be dynamic eventually.-->
                 <div>
@@ -89,10 +89,15 @@
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
-            <button id="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button><br><br>
+            <button class="submitbutton" name="eventId" type="submit" value="1">View My Attendees</button><br><br>
 
         </form>
     </div>
+    <div>
+            <form method="post" action="/delete">
+                <button class="submitbutton" name="eventId" value="1" >Delete</button>
+            </form>
+        </div><br><br>
 </div>
 
 
