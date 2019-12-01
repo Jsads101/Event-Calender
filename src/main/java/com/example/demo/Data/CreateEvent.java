@@ -13,17 +13,14 @@ public class CreateEvent {
     private Date eventDate;
 //    @Value("#{$('#tokenfield-2').tokenfield('getTokensList')}")
     private String tokenField;
-    public static void main(String[] args){
-        CreateEvent e = new CreateEvent();
-        System.out.println(e.getTokenField());
-        System.out.println(e.tokenField);
-    }
+//    public static void main(String[] args){ //only for testing
+//        CreateEvent e = new CreateEvent();
+//        System.out.println(e.getTokenField());
+//        System.out.println(e.tokenField);//both souts return null :(((
+//    }
 
-    List<String> attendees = Arrays.asList(getTokenField().split("\\s*,\\s*")); //changing email addresses String to an ArrayList
-
-
-
-
+//    List<String> attendees = Arrays.asList(getTokenField().split("\\s*,\\s*")); //changing email addresses String to an ArrayList
+    //For now this throws NullPointerException
 
     public CreateEvent(){}
 

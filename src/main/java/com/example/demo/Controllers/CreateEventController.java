@@ -35,7 +35,7 @@ public class CreateEventController{
 //        mv.addObject("createEvent", createEvent);
 
         repo.addEvent(createEvent);
-        repo.addAttendees(attendees);
+//        repo.addAttendees(attendees);
 
         //New event was successfully added
         return new ModelAndView("redirect:/viewEvents");
@@ -51,9 +51,16 @@ public class CreateEventController{
     @RequestMapping(value = "/invite", method = RequestMethod.POST)
     @ResponseBody
     public String addAttendees(@RequestBody CreateEvent attendees) {
-        repo.addAttendees(attendees); //Should I be doing this here?
-        return attendees.getTokenField();
+//        repo.addAttendees(attendees); //Should I be doing this here?
+        return attendees.getTokenField(); //Am I really getting my emails here?
+        //There was an unexpected error (type=Bad Request, status=400).
+        //Validation failed for object='createEvent'. Error count: 1
     }
+
+//    @RequestMapping(value = "/invite", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+//    public @ResponseBody String create(@RequestParam("invitedJSON") CreateEvent attendees) {
+//        return attendees.getTokenField();
+//    }
 }
 
 

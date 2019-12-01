@@ -78,9 +78,10 @@
 
                 <button onclick="myFunction()">Click me</button>
                 <script>
-                    function myFunction() {
+
                     var invited = $('#tokenfield-2').tokenfield('getTokensList');
                     var invitedJSON = JSON.stringify(invited);
+                    //all email addresses entered are stored in the above String var (comma separated)
 
                     // $.ajax({
                     //     type: "POST",
@@ -97,6 +98,7 @@
                         success: function (result) { //not sure if needed
                         }
                     });
+
                     // function doRequest(url) {
 
                         // //Create a new XMLHttpRequestObject
@@ -123,12 +125,11 @@
 
                     // }
 
-                    // function getEmails(){
-                    // $('#tokenfield-2').tokenfield('getTokensList');
-                    // }
 
-                        // alert($('#tokenfield-2').tokenfield('getTokensList'));
-                    }
+                    // function myFunction() {
+                    //     // alert($('#tokenfield-2').tokenfield('getTokensList'));
+                    //     alert(invitedJSON);
+                    // }
                 </script>
                 </div>
             </form>

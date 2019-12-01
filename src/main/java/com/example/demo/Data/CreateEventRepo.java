@@ -49,23 +49,18 @@ public class CreateEventRepo  implements CreateEventInterface{
 //
 //    }
 
-    CreateEvent list = new CreateEvent();
+//    CreateEvent list = new CreateEvent();
 
-    @Override
-    public int addAttendees(CreateEvent attendees) {
-        for (int i = 0; i < list.attendees.size(); i++) {
-            return jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
-                            "select People.PeopleId, Events.EventId,? from People, Events " +
-                            "where Email = ? and EventId = ?",
-                    3,
-                    list.attendees.get(i),
-                    attendees.getEventId()); //it should get eventId form the above method
-        }
-    }
-
-//    public String[] emailList(){
-//
-//
+//    @Override
+//    public int addAttendees(CreateEvent attendees) {
+//        for (int i = 0; i < list.attendees.size(); i++) {
+//            return jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
+//                            "select People.PeopleId, Events.EventId,? from People, Events " +
+//                            "where Email = ? and EventId = ?",
+//                    3,
+//                    list.attendees.get(i),
+//                    attendees.getEventId()); //it should get eventId form the above method
+//        }
 //    }
 
 
