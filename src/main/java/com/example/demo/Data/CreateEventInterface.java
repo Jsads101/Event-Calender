@@ -8,4 +8,5 @@ public interface CreateEventInterface {
     */
         int addEvent(CreateEvent createEvent);
         int addAttendees(CreateEvent attendees);
+        List<Events> getEventId(int eventId);
 }

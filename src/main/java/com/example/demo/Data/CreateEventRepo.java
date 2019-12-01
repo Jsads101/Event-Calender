@@ -2,20 +2,12 @@ package com.example.demo.Data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-
 import javax.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.security.cert.Certificate;
+import java.util.Iterator;
 import java.util.List;
 
-/*
-This repository contains all SQL logic and database interaction via JDBC
-*/
 @Repository
 public class CreateEventRepo  implements CreateEventInterface{
 
@@ -33,11 +25,6 @@ public class CreateEventRepo  implements CreateEventInterface{
         this.session = session;
     }
 
-    /*
-    An example of inserting data into the database using data from a TVShow object
-    Note the JdbcTemplate 'update' method is used here still refers to an insert operation
-    See: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html#update-java.lang.String-java.lang.Object...-
-    */
     @Override
     public int addEvent(CreateEvent createEvent) {
         return jdbcTemplate.update("insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)",
@@ -51,14 +38,29 @@ public class CreateEventRepo  implements CreateEventInterface{
                 createEvent.getEventTime());
     }
 
+    //TODO create a function to select form the Events table EventId of the newly created event.
+    //Need to get eventId which is validated in terms of event name and date - there can be reoccurring events with the same name time location and desc.
+//    public List<Events> getEventId(int e) {
+//        return jdbcTemplate.query("select EventId from Events where Name = eventId.getEventTitle() and Date = eventId.getEventDate",
+//                new Object[]{e},
+//                (rs, i) -> new Events(
+//                rs.getInt("EventId")
+//                );
+//
+//    }
+
+    CreateEvent list = new CreateEvent();
+
     @Override
     public int addAttendees(CreateEvent attendees) {
-        return jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
-                        "select People.PeopleId, ?,? from People " +
-                        "where Email = ?",
-                21,
-                3,
-                attendees.getTokenField());
+        for (int i = 0; i < list.attendees.size(); i++) {
+            return jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
+                            "select People.PeopleId, Events.EventId,? from People, Events " +
+                            "where Email = ? and EventId = ?",
+                    3,
+                    list.attendees.get(i),
+                    attendees.getEventId()); //it should get eventId form the above method
+        }
     }
 
 //    public String[] emailList(){

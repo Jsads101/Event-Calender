@@ -1,23 +1,11 @@
 package com.example.demo.Data;
 
-import com.example.demo.Controllers.CreateEventController;
-import org.springframework.beans.factory.annotation.Value;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
-import javax.script.*;
 
 public class CreateEvent {
+    private int eventId;
     private String eventTitle;
     private String eventDesc;
     private String location;
@@ -31,7 +19,7 @@ public class CreateEvent {
         System.out.println(e.tokenField);
     }
 
-//    List<String> items = Arrays.asList(tokenField.split("\\s*,\\s*"));
+    List<String> attendees = Arrays.asList(getTokenField().split("\\s*,\\s*")); //changing email addresses String to an ArrayList
 
 
 
@@ -39,13 +27,22 @@ public class CreateEvent {
 
     public CreateEvent(){}
 
-    public CreateEvent(String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField){
+    public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField){
+        this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.eventDesc = eventDesc;
         this.location = location;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
         this.tokenField = tokenField;
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public String getEventTitle() {
@@ -92,6 +89,6 @@ public class CreateEvent {
         return tokenField;
     }
     public void setTokenField(String tokenField){
-        this.tokenField = ("#{$('#tokenfield-2').tokenfield('getTokensList')}");
+        this.tokenField = tokenField;
     }
 }
