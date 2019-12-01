@@ -7,6 +7,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -24,10 +25,12 @@ public class CreateEventRepo  implements CreateEventInterface{
     is configured from the properties defined in resources -> application.properties.
     */
     private JdbcTemplate jdbcTemplate;
+    HttpSession session;
 
     @Autowired
-    public CreateEventRepo(JdbcTemplate aTemplate) {
+    public CreateEventRepo(JdbcTemplate aTemplate, HttpSession session) {
         jdbcTemplate = aTemplate;
+        this.session = session;
     }
 
     /*
@@ -39,7 +42,7 @@ public class CreateEventRepo  implements CreateEventInterface{
     public int addEvent(CreateEvent createEvent) {
         return jdbcTemplate.update("insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)",
                 createEvent.getEventTitle(),
-                5,
+                5,   //session.getAttribute("SESSION_USERNAME"),
                 createEvent.getEventDesc(),
                 createEvent.getLocation(),
                 0,
@@ -48,35 +51,20 @@ public class CreateEventRepo  implements CreateEventInterface{
                 createEvent.getEventTime());
     }
 
-    /*
-    An alternative implementation that uses a PreparedStatement to insert the data rather than raw object data.
-    This is a means to help mitigate SQLInjection attacks.
-    https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html
-    https://docs.oracle.com/javase/10/docs/api/java/sql/Connection.html#prepareStatement(java.lang.String,int%5B%5D)
+    @Override
+    public int addAttendees(CreateEvent attendees) {
+        return jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
+                        "select People.PeopleId, ?,? from People " +
+                        "where Email = ?",
+                21,
+                3,
+                attendees.getTokenField());
+    }
 
-    Additionally, we are using a jdbc GeneratedKeyHolder object (see online docs) to capture the id of the added
-    row after it is placed in the database (as this is determined by the database rather than set here).
-    */
-//    public int addEvent(CreateEvent createEvent) {
-//        KeyHolder kh = new GeneratedKeyHolder();
-//        String sql="insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)";
-//        jdbcTemplate.update(new PreparedStatementCreator() {
-//                                @Override
-//                                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-//                                    PreparedStatement ps = connection.prepareStatement(sql, new String[]{"EventId"}); //list of auto-generated key columns
-//                                    ps.setString(1, createEvent.getEventTitle());
-//                                    ps.setInt(2, 5);
-//                                    ps.setString(3, createEvent.getEventDesc());
-//                                    ps.setString(4, createEvent.getLocation());
-//                                    ps.setInt(5, 0);
-//                                    ps.setInt(6, 0);
-//                                    ps.setTime(7, createEvent.getEventTime());
-//                                    ps.setDate(8, createEvent.getEventDate());
-//                                    return ps;
-//                                }
-//                            }
-//                , kh);
-//        return kh.getKey().intValue();
+//    public String[] emailList(){
+//
+//
 //    }
+
 
 }

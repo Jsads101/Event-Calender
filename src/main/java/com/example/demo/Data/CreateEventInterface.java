@@ -7,6 +7,5 @@ public interface CreateEventInterface {
     Define the methods that the repository will implement
     */
         int addEvent(CreateEvent createEvent);
-//        int addS(CreateEvent tvShow);
-
+        int addAttendees(CreateEvent attendees);
 }
