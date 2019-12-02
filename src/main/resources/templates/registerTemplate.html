@@ -6,21 +6,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
-
+    <link href="../static/CreateEventPage.css" th:href="@{/CreateEventPage.css}" rel="stylesheet" />
     <style>
         #registerForm > *{
             display:block;
         }
     </style>
+
 </head>
 <body>
-
-<!-- Thymeleaf fragments. Dynamically copies HTML contained another template file
-Syntax of th:replace value is "name_of_template_file :: value_of_html_element_with_th:fragment_as_an_attribute"
-Go to baseTemplate.html and find the <header> element with the attribute th:fragment="header"
--->
-<header th:replace="baseTemplate :: header"></header>
 
 <main>
     <!-- If the model has an attribute named 'errors' (see RegController.java)
@@ -39,7 +33,7 @@ Go to baseTemplate.html and find the <header> element with the attribute th:frag
             Assuming that it is passed through as an attribute to the model
             Access user object attributes using *{NAME_OF_ATTRIBUTE} syntax (rather than ${user.NAME_OF_ATTRIBUTE})
         -->
-        <label for="un">Username:</label>
+        <label for="un">Email:</label>
         <input id="un" name="username" type="text" th:field="*{username}"/>
         <!-- thfield: username is an attribute of the user object stored in the model.
              This allows the value of the username to remain in the form across page reloads (e.g., due to validation errors)
@@ -50,6 +44,10 @@ Go to baseTemplate.html and find the <header> element with the attribute th:frag
         <label for="cpw">Confirm Password:</label>
         <input id="cpw" name="cpassword" type="password"/>
 
+        <label for="fn">First Name:</label>
+        <input id="fn" name="fName" type="text"/>
+        <label for="sn">Surname:</label>
+        <input id="sn" name="sName" type="text"/>
         <!--
         Required to protect against CSRF attacks.
         See: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
