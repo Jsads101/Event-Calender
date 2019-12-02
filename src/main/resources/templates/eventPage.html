@@ -49,10 +49,6 @@
                 <tr>
                     <td th:text="${event.location}"></td>
                 </tr>
-
-    <h3>Time</h3>
-    <p><span th:text="${event.time}"></span></p>
-
                 <tr>
                     <th>Organiser</th>
                 </tr>
@@ -107,7 +103,7 @@
                                 <textarea id="dietReq" name="dietReq"></textarea>
                             </div>
                         </div>
-                        <input id="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
+                        <input class="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
                     </form>
                 </div>
 
@@ -115,7 +111,7 @@
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
-            <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
+            <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
             </form>
         </div>
