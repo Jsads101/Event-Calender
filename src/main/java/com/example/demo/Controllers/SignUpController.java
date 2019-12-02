@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
-@RestController
+@Controller
 public class SignUpController {
 
     private SignUpRepo repo;

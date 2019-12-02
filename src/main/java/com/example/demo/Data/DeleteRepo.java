@@ -1,6 +1,5 @@
 package com.example.demo.Data;
 
-import com.sun.java.accessibility.util.EventID;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -17,10 +16,10 @@ public class DeleteRepo implements DeleteInterface{
 
     @Override
     public int delete (int eventId) {
-        jdbcTemplate.update("DELETE FROM BookingStatus(eventID) value (?)",
+        jdbcTemplate.update("DELETE FROM BookingStatus WHERE eventId = (?);",
                 eventId
                 );
-        jdbcTemplate.update("DELETE FROM Events (EventId) value (?)",
+        jdbcTemplate.update("DELETE FROM Events WHERE EventId = (?);",
                 eventId
         );
         return 0;
