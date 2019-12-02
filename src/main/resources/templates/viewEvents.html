@@ -20,27 +20,24 @@
     </div>
 
     <br/>
+    <form>
+        <button type="submit" th:name="selectSQL" value="1">All Events</button>
+        <button type="submit" th:name="selectSQL" value="2">All Signed up to Events</button>
+        <button type="submit" th:name="selectSQL" value="3">Previous Events</button>
+        <button type="submit" th:name="selectSQL" value="4">My Previous Events</button>
+    </form>
+
     <div class="eventDiv">
-        <section class="eventSection">
-            <h2>Hodge Christmas Party</h2>
-            <p>Date : 21/12/2019</p>
-            <p>Location : Hilton Hotel, Cardiff</p>
-            <p>Organiser : Joshua Elsmore</p>
-            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
-        </section>
-        <section class="eventSection">
-            <h2>Pizza and a Pint</h2>
-            <p>Date : 31/11/2019</p>
-            <p>Location : Pieminister, Cardiff</p>
-            <p>Organiser : Joshua Elsmore</p>
-            <a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>
-        </section>
-        <section class="eventSection">
-            <h2>Pub Quiz</h2>
-            <p>07/12/2019</p>
-            <p>Location : The Cricketers</p>
-            <p>Organiser : Joshua Elsmore</p>
-            <a href="">Link to Event</a>
+        <section class="eventSection" th:each="event : ${myEvent}">
+            <h2 th:text="${event.eventName}"></h2>
+            <p>Date: <span th:text="${event.Date}"></span></p>
+            <p>Location:<span th:text="${event.Location}"></span></p>
+            <p>Organiser:<span th:text="${event.organiserName}"></span></p>
+            <!--<a href="/eventPage.html" th:href="@{eventPage}">Link to Event</a>-->
+            <form method="GET" action="/viewSpecificEvent">
+                <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">See more details</button><br><br>
+
+            </form>
         </section>
     </div>
 

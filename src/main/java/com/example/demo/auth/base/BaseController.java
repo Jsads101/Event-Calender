@@ -19,18 +19,18 @@ public class BaseController {
         return mv;
     }
 
-    @GetMapping("/viewEvents")
+    /*@GetMapping("/viewEvents")
     public ModelAndView userArea(HttpSession session) {
         //For debugging, loop through the session attributes and print them
         /*Enumeration<String> attributeNames = session.getAttributeNames();
         while (attributeNames.hasMoreElements()){
             System.out.println(attributeNames.nextElement());
-        }*/
+        }
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("viewEvents");
         return mv;
-    }
+    }*/
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
