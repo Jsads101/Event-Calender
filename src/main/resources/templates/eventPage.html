@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Event Page</title>
+
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+    <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+    <!--Making static temporariliy...
+    <link href="CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- mkaing static temporarily
+    <header th:replace="/baseTemplate :: header">
+        <img src="hodgelogo.JFIF" alt = "Logo">
+    </header>-->
+
+<header th:replace="baseTemplate :: header">
+    <img src="../static/hodgelogo.JFIF">
+
+</header>
+
+<div class="main">
+
+    <section class="eventSection" th:each="event : ${myEvent}">
+        <h1 th:text="${event.eventName}"></h1>
+
+
+    <h3>Date</h3>
+    <p><span th:text="${event.date}"></span></p>
+
+    <h3>Time</h3>
+    <p><span th:text="${event.time}"></span></p>
+
+    <h3>Location</h3>
+    <p><span th:text="${event.location}"></span></p>
+
+
+    <h3>Organiser</h3>
+    <p><span th:text="${event.organiserName}"></span></p>
+
+    <h3>Description</h3>
+    <p> <span th:text="${event.description}"></span></p><br>
+
+
+        <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Sign Up</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form name="signupform" method="PUT" action="/signUp">
+
+            <!--Hidden form elements to send constant data. peopleId and eventId will need to be dynamic eventually.-->
+                <div>
+                    <input id="peopleId" name="peopleId" type="hidden" value="1"/><br>
+                </div>
+                <div>
+                    <input id="eventId" name="eventId" type="hidden" th:value="${event.eventID}"/><br>
+                </div>
+                <div>
+                    <input id="statusId" name="statusId" type="hidden" value="1"/><br>
+                </div>
+                <!--End of hidden input-->
+
+            <p>Do you have any dietary requirements?</p>
+                <input class="radioinput" type="radio" name="dietReqInput" value="Yes"
+                       onclick="showDietReq()"> Yes
+                <input class="radioinput" type="radio" name="dietReqInput" value="No"
+                       onclick="hideDietReq()"> No <br>
+
+            <div id="dietReqForm">
+                <label for="dietReq">Enter Your Requirements:</label>
+                    <textarea id="dietReq" name="dietReq"></textarea>
+            </div>
+            <input id="submitbutton" type="submit" value="Submit"><br><br><br>
+            </form>
+        </div>
+
+    </div><br><br>
+
+    <div id="searchbyevent">
+        <form method="GET" action="/searchMyEvents">
+            <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
+
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+</body>
+
+</html>
