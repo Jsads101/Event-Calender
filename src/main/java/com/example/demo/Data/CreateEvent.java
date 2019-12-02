@@ -12,7 +12,7 @@ public class CreateEvent {
     private String eventTime;
     private Date eventDate;
 //    @Value("#{$('#tokenfield-2').tokenfield('getTokensList')}")
-    private String tokenField;
+    private List<String> tokenField;
 //    public static void main(String[] args){ //only for testing
 //        CreateEvent e = new CreateEvent();
 //        System.out.println(e.getTokenField());
@@ -22,7 +22,9 @@ public class CreateEvent {
 //    List<String> attendees = Arrays.asList(getTokenField().split("\\s*,\\s*")); //changing email addresses String to an ArrayList
     //For now this throws NullPointerException
 
-    public CreateEvent(){}
+    public CreateEvent(){
+
+    }
 
     public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField){
         this.eventId = eventId;
@@ -31,7 +33,9 @@ public class CreateEvent {
         this.location = location;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
-        this.tokenField = tokenField;
+        //this.tokenField = tokenField;
+        this.tokenField = Arrays.asList(tokenField.split("\\s*,\\s*")); //changing email addresses String to an ArrayList
+
     }
 
     public int getEventId() {
@@ -82,10 +86,10 @@ public class CreateEvent {
         this.eventDate = eventDate;
     }
 
-    public String getTokenField(){
+    public List<String> getTokenField(){
         return tokenField;
     }
-    public void setTokenField(String tokenField){
+    public void setTokenField(List<String> tokenField){
         this.tokenField = tokenField;
     }
 }

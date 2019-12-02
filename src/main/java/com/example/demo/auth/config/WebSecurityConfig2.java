@@ -51,7 +51,7 @@ public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
         /*
             These pages can be public and not need auth
         */
-        http.authorizeRequests().antMatchers("/", "/login", "/register", "/registration", "static/**").permitAll();
+        http.authorizeRequests().antMatchers("/", "/login", "/register", "/registration", "static/**", "/invite").permitAll();
 
         /*
             Use built in login form

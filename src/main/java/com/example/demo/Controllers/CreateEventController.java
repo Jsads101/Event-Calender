@@ -5,6 +5,8 @@ import com.example.demo.Data.CreateEventRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +19,26 @@ public class CreateEventController{
     public CreateEventController(CreateEventRepo r) {
         repo = r;
     }
+
+    @GetMapping("/CreateEventPage")
+    public String createEventPage(Model model) {
+        model.addAttribute("createEvent", new CreateEvent());
+
+        return "CreateEventPage"; //CreateEventsPage.html page name to open it
+    }
+
+    @PostMapping("/CreateEventPage")
+    @ResponseBody
+    public String greetingSubmit(@ModelAttribute CreateEvent event) {
+        System.out.println("!!!!!!!!!");
+        System.out.println(event);
+        System.out.println(event.getTokenField());
+
+        return "TEST";
+    }
+
+
+
 
     /*
     GET HTTP request handler, equivalent to the above that uses the alternative addShow2 method
@@ -50,9 +72,13 @@ public class CreateEventController{
 
     @RequestMapping(value = "/invite", method = RequestMethod.POST)
     @ResponseBody
-    public String addAttendees(@RequestBody CreateEvent attendees) {
+    public String addAttendees(@ModelAttribute("createEvent") CreateEvent createEvent) {
+        System.out.println("!!!!!!!!!");
+        System.out.println(createEvent);
+
+
 //        repo.addAttendees(attendees); //Should I be doing this here?
-        return attendees.getTokenField(); //Am I really getting my emails here?
+        return "TEST";//attendees.getTokenField(); //Am I really getting my emails here?
         //There was an unexpected error (type=Bad Request, status=400).
         //Validation failed for object='createEvent'. Error count: 1
     }
