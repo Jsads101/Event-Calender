@@ -77,4 +77,7 @@ public class Events {
         this.description = description;
         this.eventID = eventID;
     }
+    public Events(int eventID){
+        this.eventID = eventID;
+    }
 }
