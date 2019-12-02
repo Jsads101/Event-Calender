@@ -3,133 +3,99 @@
 body{
     margin: 0;
     font-family: Lato, sans-serif;
-  }
-  
-  .navcontainer {
+}
+
+.navcontainer {
     display:flex;
-  }
-  
-  .navsection{
-    padding-right: 1rem;
-  }
-.navsectionTest{
+}
+
+.navsection{
     padding-right: 1rem;
 }
-  
-  header {
-       background-color: #223B47;
-       color: white;
-       height:5rem;
-       align-items: center;
-       display: flex !important;
-       justify-content: flex-end !important;
 
-     }
-  
-  .navsectionlink {
+header {
+    background-color: #223B47;
+    color: white;
+    height:5rem;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.navsectionlink {
     padding: 1rem;
-  color: white;
-      text-decoration: none !important;
-  }
-  
-  .navsectionlink:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.navsectionlink:hover {
     background: white;
     color: #223B47 !important;
-  }
+}
 
-  .navsectionlink:visited{
-      color: white;
-  }
-  
-  li {
+.navsectionlink:visited{
+    color: white;
+}
+
+li {
     list-style: none;
-  }
-  
-  img {
+}
+
+img {
     border-radius: 50%;
-      left: 1rem;
-      position: absolute;
-      top:1rem;
-      border: 0.2rem solid white !important;
-      height: 8rem;
-  
-  }
-  
-  .main {
+    left: 1rem;
+    position: absolute;
+    top:1rem;
+    border: 0.2rem solid white;
+    height: 8rem;
+
+}
+
+.main {
     text-align: center;
 
-  }
-  
-  input, textarea {
+}
+
+input, textarea {
     width:60%;
     height: 2rem;
     border: 0.1rem solid #223B47;
     margin: 1.5rem;
     padding: 1px
-  }
+}
 
-  #dietradio{
-      display: flex;
-  }
+#eventdescription {
+    vertical-align: middle;
+    height: 4rem;
+}
 
-  
-  #eventdescription {
-     vertical-align: middle;
-     height: 4rem;
-  }
-  
-  #radioinput {
+.radioinput {
+    width:1rem;
+    vertical-align: middle;
+}
 
-      display: flex !important;
-  }
 
-  .radiocontainer{
-      display: flex !important;
-      width: 40%;
-      margin: 0 auto;
-      font-size: 1rem;
-      justify-content: center;
-  }
-
-  #dietradio{
-      margin-top: 1px;
-
-  }
-
-  .teamchoice{
-width:50%;
-  }
-  
-  .submitbutton{
+.submitbutton{
     width:30%;
     background-color: #ffcB05;
     color: #223B47;
     height: 3rem;
-      border: none;
+    border: none;
     font-weight: bold;
-  }
-  
-  .submitbutton:hover {
-    background-color: #B89100;
-  }
-
-  
-  #eventtypeform {
-      padding-top: 1rem;
-      display: none;
 }
 
-  .teamcontainer{
-      display: flex;
-      justify-content: space-evenly;
-      width: 60%;
-      margin: 0 auto;
-      padding-bottom: 1rem;
-  }
+.submitbutton:hover {
+    background-color: #B89100;
+}
 
-  #teaminput{
-      width: 2rem;
-  }
+
+#eventtypeform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
 
 #returnattendees {
     padding: 2rem;
@@ -138,10 +104,6 @@ width:50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#eventtable{
-    margin: 0rem auto 2rem auto;
 }
 
 
@@ -159,7 +121,7 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
     background-color: #dddddd;
 }
 
@@ -168,6 +130,9 @@ tr:nth-child(odd) {
 }
 
 
+#teaminput {
+    width: 2rem;
+}
 .eventDiv{
 
     width: 50%;
@@ -201,12 +166,17 @@ tr:nth-child(odd) {
 }
 
 
-  #eventtitle {
-      margin: 0;
-      padding: 1.5rem;
-      background-color: #c3c3c3;
-  }
-  /* added on 16/11/2019 */
+#teaminput {
+    width:2rem;
+}
+
+
+#eventtitle {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #c3c3c3;
+}
+/* added on 16/11/2019 */
 #myBtn{
     width:30%;
     background-color: #ffcB05;
@@ -219,9 +189,9 @@ tr:nth-child(odd) {
 #myBtn:hover {
     background-color: #B89100;
 }
-  
-  /* The Modal (background) */
-  .modal {
+
+/* The Modal (background) */
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -232,56 +202,37 @@ tr:nth-child(odd) {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #dietReqForm {
-      display: none;
-  }
+#dietReqForm {
+    display: none;
+}
 
-  #dietReq {
-      vertical-align: middle;
-      width:20rem;
-      height: 10rem;
-  }
-
-  #showevent {
-      margin-top: 1.5rem;
-  }
-
-  .searchsubmit{
-      background-color: #ffcB05;
-      color: #223B47;
-      font-weight: bold;
-      border: none;
-      padding: 0.1rem;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      margin-right: 0.5rem;
-  }
-
-.searchsubmit:hover {
-    background-color: #B89100;
+#dietReq {
+    vertical-align: middle;
+    width:20rem;
+    height: 10rem;
 }

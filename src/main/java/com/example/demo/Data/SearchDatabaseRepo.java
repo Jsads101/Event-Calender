@@ -34,7 +34,7 @@ import java.util.List;
 
 
         public List<Events> showByEventId(int e) {
-            return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId " +
+            return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId, dietReq " +
                             "from Events e inner join People p on p.PeopleId = e.Organiser where eventId =?",
                     new Object[]{e},
                     (rs, i) -> new Events(
@@ -45,7 +45,8 @@ import java.util.List;
                             rs.getString("Date"),
                             rs.getString("Time"),
                             rs.getString("Description"),
-                            rs.getInt("eventID")
+                            rs.getInt("eventID"),
+                            rs.getInt("DietReq")
 
 
                     )
