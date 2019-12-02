@@ -76,31 +76,35 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
+            <br>
+            <br>
+            <h1> You are signing up to the <span th:text="${event.eventName}"></span> Event</h1>
+
             <form name="signupform" method="PUT" action="/signUp">
 
             <!--Hidden form elements to send constant data. peopleId and eventId will need to be dynamic eventually.-->
-                <div>
+
                     <input id="peopleId" name="peopleId" type="hidden" value="1"/><br>
-                </div>
-                <div>
                     <input id="eventId" name="eventId" type="hidden" th:value="${event.eventID}"/><br>
-                </div>
-                <div>
                     <input id="statusId" name="statusId" type="hidden" value="1"/><br>
-                </div>
+
                 <!--End of hidden input-->
-
+<div th:if="${event.DReq == 1}">
             <p>Do you have any dietary requirements?</p>
-                <input class="radioinput" type="radio" name="dietReqInput" value="Yes"
+    <br>
+    <br>
+    <div class="radiocontainer">
+                <input id="dietradio" class="radioinput" type="radio" name="dietReqInput" value="Yes"
                        onclick="showDietReq()"> Yes
-                <input class="radioinput" type="radio" name="dietReqInput" value="No"
-                       onclick="hideDietReq()"> No <br>
-
+                <input id="dietradio" class="radioinput" type="radio" name="dietReqInput" value="No"
+                       onclick="hideDietReq()"> No
+    </div>
             <div id="dietReqForm">
                 <label for="dietReq">Enter Your Requirements:</label>
                     <textarea id="dietReq" name="dietReq"></textarea>
             </div>
-            <input id="submitbutton" type="submit" value="Submit"><br><br><br>
+</div>
+            <input id="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
             </form>
         </div>
 

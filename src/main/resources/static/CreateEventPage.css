@@ -68,6 +68,10 @@ body{
     padding: 1px
   }
 
+  #dietradio{
+      display: flex;
+  }
+
   
   #eventdescription {
      vertical-align: middle;
@@ -85,6 +89,11 @@ body{
       margin: 0 auto;
       font-size: 1rem;
       justify-content: center;
+  }
+
+  #dietradio{
+      margin-top: 1px;
+
   }
 
   .teamchoice{
@@ -119,7 +128,6 @@ width:50%;
   }
 
   #teaminput{
-      padding: 1rem;
       width: 2rem;
   }
 

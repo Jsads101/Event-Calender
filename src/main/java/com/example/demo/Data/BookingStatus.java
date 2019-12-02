@@ -7,6 +7,10 @@ public class BookingStatus {
     private String dietReq;
     private String name;
 
+    public BookingStatus(int peopleID) {
+        this.peopleId = peopleID;
+    }
+
     public int getBookingStatusId(){
         return bookingStatusId;
     }
