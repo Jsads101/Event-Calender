@@ -77,4 +77,18 @@ public class Events {
         this.description = description;
         this.eventID = eventID;
     }
+
+    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, String description, int eventID, int dReq) {
+        this.eventName = eventName;
+        this.organiserName = organiserFN + " " + organiserSN;
+        this.location = location;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.eventID = eventID;
+        this.dReq=dReq;
+    }
+    public Events(int eventID){
+        this.eventID = eventID;
+    }
 }

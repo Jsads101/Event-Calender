@@ -26,7 +26,7 @@ public class EmailListRepo {
                         "on PT.PeopleID = p.PeopleID " +
                         "inner join Teams t " +
                         "on t.TeamID = PT.TeamID " +
-                        "where TeamName like \"Developer\";",
+                        "where TeamName like \"Developers\";",
                 new Object[]{},
                 (rs,i) -> new EmailList(
                         rs.getString("Email")
