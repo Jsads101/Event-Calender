@@ -11,6 +11,12 @@ public class BookingStatus {
         this.peopleId = peopleID;
     }
 
+    public BookingStatus(int eventId, int statusId, String dietReq) {
+        this.eventId = eventId;
+        this.statusId = statusId;
+        this.dietReq = dietReq;
+    }
+
     public int getBookingStatusId(){
         return bookingStatusId;
     }

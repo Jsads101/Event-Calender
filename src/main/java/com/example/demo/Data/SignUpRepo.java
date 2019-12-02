@@ -17,23 +17,25 @@ public class SignUpRepo implements SignUpInterface {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     private HttpSession session;
-    private int peopleID;
 
 
-    public SignUpRepo (JdbcTemplate aTemplate) {
+    public SignUpRepo (JdbcTemplate aTemplate,HttpSession session) {
         jdbcTemplate = aTemplate;
+        this.session=session;
     }
 
     @Override
     public int signUp (BookingStatus bookingStatus) {
-        /*peopleID = jdbcTemplate.query("select PeopleId from people where Email = ?",
+
+        int peopleID = jdbcTemplate.queryForObject("select PeopleId from People where Email = ?",
                 new Object[]{session.getAttribute("SESSION_USERNAME")},
-                (rs, i) -> new BookingStatus(
-                        rs.getInt("peopleID")
+                (rs,i) -> new Integer(
+                        rs.getInt("PeopleId")
                 )
-        );*/
+        );
+
         return jdbcTemplate.update("insert into BookingStatus(peopleId, eventId, statusId, dietReq)  values(?,?,?,?)",
-                bookingStatus.getPeopleId(), bookingStatus.getEventId(), bookingStatus.getStatusId(), bookingStatus.getDietReq());
+                peopleID, bookingStatus.getEventId(), bookingStatus.getStatusId(), bookingStatus.getDietReq());
 
     }
 }
