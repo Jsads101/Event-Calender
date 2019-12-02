@@ -94,6 +94,9 @@
 
         </form>
     </div>
+    <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID}, peopleId=${uid})}">
+        <button class="submitbutton" type="submit">Cancel Attending</button>
+    </form>
 </div>
 </div>
 
