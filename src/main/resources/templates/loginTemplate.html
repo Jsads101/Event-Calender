@@ -3,11 +3,15 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
-    <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+    <link href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet">
+    <title>Hodge Bank Social Planner</title>
+    <script src="../static/CreateEventPage.js" th:href="@{CreateEventPage.js}"></script>
 
     <style>
         #loginForm > *{
@@ -21,7 +25,7 @@
     <img src="../static/hodgelogo.JFIF" th:src="@{hodgelogo.JFIF}" alt="Logo">
 </header>
 
-<main class="main">
+<main>
     <!-- If the url contains a parameter called 'error'. Show
     a paragraph element detailing that an error occurred.
     See WebSecurityConfig2
@@ -37,7 +41,6 @@
     <form id="loginForm" action="/login" method="post">
         <label for="un">Email:</label>
         <input id="un" name="username" type="text"/>
-        <br>
         <label for="pw">Password:</label>
         <input id="pw" name="password" type="password"/>
         <br>
