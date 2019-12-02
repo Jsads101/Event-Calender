@@ -20,7 +20,7 @@ public class CancelAttendingRepo implements CancelAttendingInterface {
     }
 
     @Override
-    public int cancelAttending(int peopleId, int eventId) {
+    public int cancelAttending(int eventId) {
         jdbcTemplate.update("DELETE FROM BookingStatus WHERE peopleId=(?) AND eventId=(?);",
                 getSessionID(), eventId
         );

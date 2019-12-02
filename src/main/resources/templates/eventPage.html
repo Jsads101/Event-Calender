@@ -63,13 +63,7 @@
                 <tr>
                     <td th:text="${event.description}"></td>
                 </tr><br>
-
-    <h3>Organiser</h3>
-    <p><span th:text="${event.organiserName}"></span></p>
-
-    <h3>Description</h3>
-    <p> <span th:text="${event.description}"></span></p><br>
-
+            </table>
 
         <!-- Trigger/Open The Modal -->
     <button id="myBtn">Sign Up</button>
@@ -116,7 +110,7 @@
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
-            <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
+            <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
             </form>
         </div>
@@ -125,12 +119,12 @@
                 <button class="submitbutton" type="submit">Delete</button>
             </form>
         </div><br><br>
+                <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
+                    <button class="submitbutton" type="submit">Cancel Attending</button>
+                </form>
     </section>
-        </form>
     </div>
-    <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID}, peopleId=${uid})}">
-        <button class="submitbutton" type="submit">Cancel Attending</button>
-    </form>
+
 </div>
 </div>
 

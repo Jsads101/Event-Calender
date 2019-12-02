@@ -20,9 +20,9 @@ public class CancelAttendingController {
 
     @PostMapping("/cancelAttending")
 
-    public String cancelAttending(@RequestParam int peopleId, @RequestParam int eventId) {
+    public String cancelAttending(@RequestParam int eventId) {
 
-        repo.cancelAttending(peopleId, eventId);
+        repo.cancelAttending(eventId);
         return "redirect:/viewEvents";
     }
 
