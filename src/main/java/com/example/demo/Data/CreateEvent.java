@@ -11,22 +11,12 @@ public class CreateEvent {
     private String location;
     private String eventTime;
     private Date eventDate;
-//    @Value("#{$('#tokenfield-2').tokenfield('getTokensList')}")
     private List<String> tokenField;
-//    public static void main(String[] args){ //only for testing
-//        CreateEvent e = new CreateEvent();
-//        System.out.println(e.getTokenField());
-//        System.out.println(e.tokenField);//both souts return null :(((
-//    }
+    private int dietaryReq;
 
-//    List<String> attendees = Arrays.asList(getTokenField().split("\\s*,\\s*")); //changing email addresses String to an ArrayList
-    //For now this throws NullPointerException
+    public CreateEvent(){}
 
-    public CreateEvent(){
-
-    }
-
-    public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField){
+    public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField, int dietaryReq){
         this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.eventDesc = eventDesc;
@@ -35,7 +25,7 @@ public class CreateEvent {
         this.eventDate = eventDate;
         //this.tokenField = tokenField;
         this.tokenField = Arrays.asList(tokenField.split("\\s*,\\s*")); //changing email addresses String to an ArrayList
-
+        this.dietaryReq = dietaryReq;
     }
 
     public int getEventId() {
@@ -92,4 +82,8 @@ public class CreateEvent {
     public void setTokenField(List<String> tokenField){
         this.tokenField = tokenField;
     }
+
+    public int getDietaryReq(){return dietaryReq;}
+
+    public void setDietaryReq(int dietaryReq) {this.dietaryReq = dietaryReq;}
 }

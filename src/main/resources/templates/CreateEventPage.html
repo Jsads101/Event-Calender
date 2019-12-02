@@ -58,48 +58,28 @@
               
             </div>
                 <br><br>
-
-<!--               <input id="radioTeam" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()">Team Sign-->
-<!--               Up Event-->
-<!--               <input id="radioIndividual" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">-->
-<!--               Individual Sign Up Event-->
-<!--                <br>-->
-<!--               <div id="eventtypeform">-->
-<!--                   <label for="teamsize">Maximum number of people in a team</label>-->
-<!--                   <input type="text" id="teaminput" name="teamsize">-->
-<!--                   <label for="numofteams">Maxiumum number of teams</label>-->
-<!--                   <input type="text" id="teaminput" name="numofteams">-->
-<!--                </div>-->
-<!--               <br>-->
+                <p>Dietary requirements?</p>
+               <input id="dietaryReqTrue" type="radio" name="dietaryReq" value="1">Yes
+               <input id="dietaryReqFalse" type="radio" name="dietaryReq" value="0">No
+                <br>
+               <br>
 
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
            
-                <input id="submitbutton" type="submit" value="Submit" onclick="myFunction()" /><br>
-
-
+                <input id="submitbutton" type="submit" value="Submit" onclick="getInvited()" /><br>
 
                 </div>
             </form>
     </div>
 
-<button onclick="myFunction()">Click me</button>
-
 <br>
 
 <script>
-
-    function myFunction() {
-        //event.preventDefault();
+    function getInvited() {
 
         var invited = $('#tokenfield-2').tokenfield('getTokensList');
         var invitedJSON = JSON.stringify(invited);
         //all email addresses entered are stored in the above String var (comma separated)
-
-        // $.ajax({
-        //     type: "POST",
-        //     url: "invite",
-        //     data: { name: invitedJSON } // parameters
-        // })
 
         $.ajax({
             type: "GET",
@@ -107,7 +87,7 @@
             dataType: 'json',
             url: "/invite",
             data: invitedJSON, // assignment of the variable
-            success: function (result) { //not sure if needed
+            success: function (result) {
                 console.log("sucess");
                 console.log(result);
             },
@@ -116,40 +96,7 @@
                 console.log(r);
             }
         });
-
     }
-
-    // function doRequest(url) {
-
-    // //Create a new XMLHttpRequestObject
-    // var xhttp = new XMLHttpRequest();
-    //
-    // //Define a function to run when the request is attempted (after send())
-    // xhttp.onreadystatechange = function() {
-    //     //if the request is completed (https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
-    //     //and the response is successful https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
-    //     if (this.readyState == 4 && this.status == 200) {
-    //
-    //         //Grab the HTML element with the id "theContent" and change its inner HTML (all of its contents)
-    //         //to be the response that is sent back from the server
-    //         document.getElementById("theContent").innerHTML = this.responseText;
-    //     }
-    // };
-
-    // //Set the request to be a GET request, to the url provided, and do the request asynchronously
-    // //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open
-    // xhttp.open("POST", url, true);
-    //
-    // //Send the request
-    // xhttp.send(invitedJSON);
-
-    // }
-
-
-    // function myFunction() {
-    //     // alert($('#tokenfield-2').tokenfield('getTokensList'));
-    //     alert(invitedJSON);
-    // }
 </script>
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>

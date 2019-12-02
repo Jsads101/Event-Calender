@@ -36,7 +36,7 @@ public class CreateEventRepo  implements CreateEventInterface{
                 createEvent.getEventDesc(),
                 createEvent.getLocation(),
                 0,
-                0,
+                createEvent.getDietaryReq(),
                 createEvent.getEventDate(),
                 createEvent.getEventTime());
     }
