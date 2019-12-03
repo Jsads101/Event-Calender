@@ -88,4 +88,7 @@ public class Events {
         this.eventID = eventID;
         this.dReq=dReq;
     }
+    public Events(int eventID){
+        this.eventID = eventID;
+    }
 }

@@ -13,6 +13,11 @@ repositories {
 }
 
 dependencies {
+
+    implementation 'org.webjars:bootstrap-tokenfield:0.12.1'
+
+
+    implementation ('com.h2database:h2')
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
     implementation('org.springframework.session:spring-session-jdbc')

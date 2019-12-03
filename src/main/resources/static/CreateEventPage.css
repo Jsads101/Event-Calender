@@ -100,7 +100,7 @@ body{
 width:50%;
   }
   
-  #submitbutton{
+  .submitbutton{
     width:30%;
     background-color: #ffcB05;
     color: #223B47;
@@ -109,7 +109,7 @@ width:50%;
     font-weight: bold;
   }
   
-  #submitbutton:hover {
+  .submitbutton:hover {
     background-color: #B89100;
   }
 

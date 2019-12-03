@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" dir="ltr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Event Page</title>
@@ -14,13 +15,13 @@
 
 <body>
 
-    <!-- mkaing static temporarily
+<!-- mkaing static temporarily
     <header th:replace="/baseTemplate :: header">
         <img src="hodgelogo.JFIF" alt = "Logo">
     </header>-->
 
-    <header th:replace="baseTemplate :: header">
-        <img src="../static/hodgelogo.JFIF">
+<header th:replace="baseTemplate :: header">
+    <img src="../static/hodgelogo.JFIF" alt="hodgelogo">
 
     </header>
 
@@ -48,8 +49,6 @@
                 <tr>
                     <td th:text="${event.location}"></td>
                 </tr>
-
-
                 <tr>
                     <th>Organiser</th>
                 </tr>
@@ -67,11 +66,11 @@
             </table>
 
 
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Sign Up</button>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" class="submitbutton">Sign Up</button>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
@@ -104,28 +103,31 @@
                                 <textarea id="dietReq" name="dietReq"></textarea>
                             </div>
                         </div>
-                        <input id="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
+                        <input class="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
                     </form>
                 </div>
 
-            </div><br><br>
+        </div><br><br>
 
-            <div id="searchbyevent">
-                <form method="GET" action="/searchMyEvents">
-                    <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My
-                        Attendees</button><br><br>
+    <div id="searchbyevent">
+        <form method="GET" action="/searchMyEvents">
+            <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
-                </form>
-            </div>
-        </section>
-    </div>
+            </form>
+        </div>
+    <div>
+            <form method="post" th:action="@{/delete?eventId={id}(id=${event.eventID})}">
+                <button class="submitbutton" type="submit">Delete</button>
+            </form>
+        </div><br><br>
+    </section>
+</div>
 
 
 
 
 
-
-    <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+<script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 </body>
 
 </html>
