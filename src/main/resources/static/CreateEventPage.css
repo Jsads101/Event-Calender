@@ -267,6 +267,12 @@ tr:nth-child(odd) {
       height: 10rem;
   }
 
+  #teammembers {
+    vertical-align: middle;
+    width:20rem;
+    height: 10rem;
+  }
+
   #showevent {
       margin-top: 1.5rem;
   }

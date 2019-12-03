@@ -9,7 +9,7 @@ public class Events {
     private String date;
     private String time;
     private int dReq;
-    private boolean teamBased;
+    private int teamBased;
     private String description;
 
 
@@ -45,11 +45,11 @@ public class Events {
         return dReq;
     }
 
-    public boolean getTeamBased() {
+    public int getTeamBased() {
         return teamBased;
     }
 
-    public Events(String eventName, String organiserName, String location, String date, int dReq, boolean teamBased) {
+    public Events(String eventName, String organiserName, String location, String date, int dReq, int teamBased) {
         this.eventName = eventName;
         this.organiserName = organiserName;
         this.location = location;
@@ -88,6 +88,20 @@ public class Events {
         this.eventID = eventID;
         this.dReq=dReq;
     }
+
+
+    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, String description, int eventID, int dReq, int teamBased) {
+        this.eventName = eventName;
+        this.organiserName = organiserFN + " " + organiserSN;
+        this.location = location;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.eventID = eventID;
+        this.dReq=dReq;
+        this.teamBased=teamBased;
+    }
+
     public Events(int eventID){
         this.eventID = eventID;
     }
