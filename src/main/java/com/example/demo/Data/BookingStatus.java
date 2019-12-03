@@ -6,6 +6,7 @@ public class BookingStatus {
     private int statusId;
     private String dietReq;
     private String name;
+    private String teamMembers;
 
     public BookingStatus(int peopleID) {
         this.peopleId = peopleID;
@@ -38,6 +39,10 @@ public class BookingStatus {
     public void setPeopleFN(String name) {
         this.name = name;
     }
+    public String getTeamMembers(){
+        return teamMembers;
+    }
+
 
     public BookingStatus (int bookingStatusId, int peopleId, int eventId, int statusId, String dietReq){
         this.bookingStatusId = bookingStatusId;
@@ -52,10 +57,18 @@ public class BookingStatus {
         this.dietReq = dietReq;
     }
 
-    public BookingStatus(int peopleId, int eventId, int statusId, String dietReq){
+    public BookingStatus(int peopleId, int eventId, int statusId, String dietReq, String teamMembers){
         this.peopleId = peopleId;
         this.eventId = eventId;
         this.statusId = statusId;
         this.dietReq = dietReq;
+        this.teamMembers=teamMembers;
+    }
+
+    public BookingStatus(int eventId, int statusId, String dietReq, String teamMembers){
+        this.eventId = eventId;
+        this.statusId = statusId;
+        this.dietReq = dietReq;
+        this.teamMembers=teamMembers;
     }
 }
