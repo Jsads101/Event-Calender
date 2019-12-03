@@ -134,10 +134,12 @@ width:50%;
 #returnattendees {
     padding: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+}
+
+#attendeetable{
+    margin: 0 auto;
 }
 
 #eventtable{
@@ -163,9 +165,6 @@ tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
-#attendeetable{
-    margin: 2rem;
-}
 
 
 .eventDiv{
