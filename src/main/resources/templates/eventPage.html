@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -62,12 +63,10 @@
                 <tr>
                     <td th:text="${event.description}"></td>
                 </tr><br>
-
             </table>
 
-
         <!-- Trigger/Open The Modal -->
-        <button id="myBtn" class="submitbutton">Sign Up</button>
+    <button id="myBtn">Sign Up</button>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -114,7 +113,7 @@
                     </form>
                 </div>
 
-        </div><br><br>
+    </div><br><br>
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
@@ -127,7 +126,13 @@
                 <button class="submitbutton" type="submit">Delete</button>
             </form>
         </div><br><br>
+                <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
+                    <button class="submitbutton" type="submit">Cancel Attending</button>
+                </form>
     </section>
+    </div>
+
+</div>
 </div>
 
 
