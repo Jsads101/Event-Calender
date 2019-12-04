@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div th:if="${event.teamBased==1}">
-                            <p>List your team mates below (up to ...people)</p>
+                            <p>List your team mates below (up to <span th:text="${event.teamSize}"></span> people)</p>
                             <div id="TeamMembersForm">
                                 <textarea id="teamMembers" name="teamMembers"></textarea>
                             </div>

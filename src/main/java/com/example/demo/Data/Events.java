@@ -11,7 +11,11 @@ public class Events {
     private int dReq;
     private int teamBased;
     private String description;
+    private int teamSize;
 
+    public int getTeamSize(){
+        return teamSize;
+    }
 
     public String getDescription() {
         return description;
@@ -49,13 +53,14 @@ public class Events {
         return teamBased;
     }
 
-    public Events(String eventName, String organiserName, String location, String date, int dReq, int teamBased) {
+    public Events(String eventName, String organiserName, String location, String date, int dReq, int teamBased, int teamSize) {
         this.eventName = eventName;
         this.organiserName = organiserName;
         this.location = location;
         this.date = date;
         this.dReq = dReq;
         this.teamBased = teamBased;
+        this.teamSize=teamSize;
     }
 
     public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, int eventID) {
@@ -87,10 +92,11 @@ public class Events {
         this.description = description;
         this.eventID = eventID;
         this.dReq=dReq;
+
     }
 
 
-    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, String description, int eventID, int dReq, int teamBased) {
+    public Events(String eventName, String organiserFN, String organiserSN, String location, String date, String time, String description, int eventID, int dReq, int teamBased, int teamSize) {
         this.eventName = eventName;
         this.organiserName = organiserFN + " " + organiserSN;
         this.location = location;
@@ -100,6 +106,7 @@ public class Events {
         this.eventID = eventID;
         this.dReq=dReq;
         this.teamBased=teamBased;
+        this.teamSize=teamSize;
     }
 
     public Events(int eventID){

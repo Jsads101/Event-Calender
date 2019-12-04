@@ -22,19 +22,20 @@ import java.util.List;
 
 
         public List<BookingStatus> findByEvent(int e) {
-            return jdbcTemplate.query("select FirstName,SurName, dietReq from BookingStatus bs Inner join People p on p.PeopleId = bs.PeopleID where eventId = ?",
+            return jdbcTemplate.query("select FirstName,SurName, dietReq, teammembers from BookingStatus bs Inner join People p on p.PeopleId = bs.PeopleID where eventId = ?",
                     new Object[]{e},
                     (rs, i) -> new BookingStatus(
                             rs.getString("FirstName"),
                             rs.getString("SurName"),
-                            rs.getString("dietReq")
+                            rs.getString("dietReq"),
+                            rs.getString("teammembers")
                     )
             );
         }
 
 
         public List<Events> showByEventId(int e) {
-            return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId, dietReq, TeamBased " +
+            return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId, DietReq, TeamBased, TeamSize " +
                             "from Events e inner join People p on p.PeopleId = e.Organiser where eventId =?",
                     new Object[]{e},
                     (rs, i) -> new Events(
@@ -47,7 +48,8 @@ import java.util.List;
                             rs.getString("Description"),
                             rs.getInt("eventID"),
                             rs.getInt("DietReq"),
-                            rs.getInt("TeamBased")
+                            rs.getInt("TeamBased"),
+                            rs.getInt("TeamSize")
 
 
                     )

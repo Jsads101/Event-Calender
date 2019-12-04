@@ -58,22 +58,31 @@
               
             </div>
                 <br><br>
-                <p>Dietary requirements?</p>
-               <input id="dietaryReqTrue" type="radio" name="dietaryReq" value="1">Yes
-               <input id="dietaryReqFalse" type="radio" name="dietaryReq" value="0">No
+                <div class="createcontainer">
+
+                    <p><strong>Are dietery requirements needed?</strong></p><br>
+                    <div class="radiocontainer">
+               <input class="smallradio" id="dietaryReqTrue" type="radio" name="dietaryReq" value="1">Yes
+               <input class="smallradio" id="dietaryReqFalse" type="radio" name="dietaryReq" value="0">No
+                    </div>
                 <br>
                <br>
-                <p>TeamBased?</p>
-                <input id="TeamBasedTrue" type="radio" name="teamBased" value="1">Yes
-                <input id="TeamBasedFalse" type="radio" name="teamBased" value="0">No
-<p>How many per team?</p>
-                <label for="teamSize">Maximum number of people in a team</label>
-                <input type="text" id="teamSize" name="teamSize">
+                    <p><strong>Is this a Team Event?</strong></p><br>
+                    <div class="radiocontainer">
+                <input class ="smallradio" id="TeamBasedTrue" type="radio" name="teamBased" value="1" onclick="showTeamEventForm()">Yes
+                <input class="smallradio" id="TeamBasedFalse" type="radio" name="teamBased" value="0" onclick="hideTeamEventForm()">No
+                    </div><br>
+
+                    <div id="eventtypeform">
+                <label for="teaminput">Maximum number of people in a team</label>
+                <input type="text" id="teaminput" name="teamSize"><br><br>
+                    </div>
 
 
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
            
-                <input id="submitbutton" type="submit" value="Submit" onclick="getInvited()" /><br>
+                <input class="submitbutton" type="submit" value="Submit" onclick="getInvited()" /><br>
+                </div>
             </form>
 
 <br>

@@ -61,7 +61,7 @@ public class CreateEventRepo  implements CreateEventInterface{
         for (int i = 0; i < attendees.getTokenField().size(); i++) {
             System.out.println("Token Number = " + i);
             System.out.println(attendees.getEventId());
-            jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
+            jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId)" +
                             "select People.PeopleId, Events.EventId,? from People, Events " +
                             "where Email = ? and EventId = ?",
                     3,

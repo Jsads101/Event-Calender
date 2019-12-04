@@ -68,9 +68,22 @@ body{
     padding: 1px
   }
 
+  #sub{
+      background-color: #ffcB05;
+      font-weight: bold;
+  }
+
+#sub:hover {
+    background-color: #B89100;
+}
+
   #dietradio{
       display: flex;
   }
+.smallradio {
+    width: 25%;
+    height: 1.3rem;
+}
 
   
   #eventdescription {
@@ -127,6 +140,11 @@ width:50%;
       padding-bottom: 1rem;
   }
 
+  .createcontainer{
+      text-align: center;
+
+  }
+
   #teaminput{
       width: 2rem;
   }
@@ -134,14 +152,16 @@ width:50%;
 #returnattendees {
     padding: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+
 }
 
 #eventtable{
     margin: 0rem auto 2rem auto;
+}
+
+#attendeetable {
+    margin: 0 auto;
 }
 
 
@@ -163,9 +183,7 @@ tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
-#attendeetable{
-    margin: 2rem;
-}
+
 
 
 .eventDiv{

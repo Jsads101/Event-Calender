@@ -52,9 +52,10 @@ public class BookingStatus {
         this.dietReq = dietReq;
         this.name = "";
     }
-    public BookingStatus (String firstName, String surName, String dietReq){
+    public BookingStatus (String firstName, String surName, String dietReq, String teamMembers){
         this.name = firstName + " " + surName;
         this.dietReq = dietReq;
+        this.teamMembers=teamMembers;
     }
 
     public BookingStatus(int peopleId, int eventId, int statusId, String dietReq, String teamMembers){
