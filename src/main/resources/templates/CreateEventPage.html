@@ -25,19 +25,7 @@
 </head>
 
 <body>
-<header>
-    <img src="../static/hodgelogo.JFIF" th:src="@{hodgeLogo.JFIF}">
-
-<div class="navsection">
-    <nav>
-        <ul class="navcontainer">
-            <li><a class="navsectionlink" href="viewEvents.html" th:href="@{viewEvents}">Home</a></li>
-            <li><a class="navsectionlink"  th:href="@{CreateEventPage}">Create Event</a></li>
-            <li><a class="navsectionlink" th:if="${session.SESSION_USERNAME != null}" href="/logout">Log Out</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
+<header th:replace="baseTemplate.html :: header"></header>
 <!--<header th:replace="baseTemplate :: header">-->
 <!--    <img src="../static/hodgelogo.JFIF">-->
 
@@ -46,52 +34,83 @@
         <br><br>
         <center><h1>Create a New Event</h1></center>
 
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="/CreateEventPage" method="POST" th:object="${createEvent}"> <!---->
                 <div class="container">
 
-                <label for="eventtitle">Event Title</label>
-                <input class="form-control" type="text" id="eventtitle" name="eventtitle" placeholder="Event title.."><br>
+                <label for="eventTitle">Event Title</label>
+                <input class="form-control" type="text" id="eventTitle" name="eventTitle" placeholder="Event title.."><br> <!--th:field="*{eventTitle}"-->
     
-                <label for="eventdescription">Description</label>
-                <textarea class="form-control" id="eventdescription" name="eventdescription" placeholder="Event description..."></textarea>
+                <label for="eventDesc">Description</label>
+                <textarea class="form-control" id="eventDesc" name="eventDesc" placeholder="Event description..." ></textarea> <!-- th:field="*{eventDesc}"-->
                 <br>
-
-                    <label for="eventLocation">Location</label>
-                    <textarea class="form-control" id="eventLocation" name="eventLocation" placeholder="Event location..."></textarea>
+                    <label for="location">Location</label>
+                    <textarea class="form-control" id="location" name="location" placeholder="Event location..." ></textarea> <!--th:field="*{location}"-->
                     <br>
     
-                <label for="eventtime">Event Time</label>
-                <input class="form-control" type="time" id="eventtime" name="eventtime" placeholder="Event Time"><br>
+                <label for="eventTime">Event Time</label>
+                <input class="form-control" type="time" id="eventTime" name="eventTime" placeholder="Event Time" ><br> <!--th:field="*{eventTime}"-->
     
-                <label for="eventdate">Event Date</label>
-                <input class="form-control" type="date" id="eventdate" name="eventdate" placeholder="Event Date"><br>
+                <label for="eventDate">Event Date</label>
+                <input class="form-control" type="date" id="eventDate" name="eventDate" placeholder="Event Date" ><br> <!--th:field="*{eventDate}"-->
             
                 <label for="tokenfield-2">Invite</label>
-                <input type="text" class="form-control" id="tokenfield-2" placeholder="Type email address and hit enter" />
+                <input type="text" class="form-control" id="tokenfield-2" name="tokenField" placeholder="Type email address and hit enter" />
               
             </div>
                 <br><br>
+                <div class="createcontainer">
 
-               <input id="radioTeam" type="radio" name="eventtype" value="team" onclick="showTeamEventForm()">Team Sign
-               Up Event
-               <input id="radioIndividual" type="radio" name="eventtype" value="individual" onclick="hideTeamEventForm()">
-               Individual Sign Up Event
-                <br>
-               <div id="eventtypeform">
-                   <label for="teamsize">Maximum number of people in a team</label>
-                   <input type="text" id="teaminput" name="teamsize">
-                   <label for="numofteams">Maxiumum number of teams</label>
-                   <input type="text" id="teaminput" name="numofteams">
-                </div>
+                    <p><strong>Are dietery requirements needed?</strong></p><br>
+                    <div class="radiocontainer" for="dietaryReq">
+               <input class="smallradio" id="dietaryReqTrue" type="radio" name="dietaryReq" value="1"/>Yes
+               <input class="smallradio" id="dietaryReqFalse" type="radio" name="dietaryReq" value="0"/>No
+                    </div>
+                    <br>
                <br>
-           
-                <input id="submitbutton" type="submit" value="Submit"><br>
-<!--               th:name="${_csrf.parameterName}" th:value="${_csrf.token}-->
+                    <p><strong>Is this a Team Event?</strong></p><br>
+                    <div class="radiocontainer" for="teamBased">
+                <input class ="smallradio" id="TeamBasedTrue" type="radio" name="teamBased" value="1" onclick="showTeamEventForm()"/>Yes
+                <input class="smallradio" id="TeamBasedFalse" type="radio" name="teamBased" value="0" onclick="hideTeamEventForm()"/>No
+                    </div><br>
 
+                    <div id="eventtypeform">
+                <label for="teaminput">Maximum number of people in a team</label>
+                <input type="text" id="teaminput" name="teamSize" value="0"><br><br>
+                    </div>
+
+
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+           
+                <input class="submitbutton" type="submit" value="Submit" onclick="getInvited()" /><br>
+                </div>
             </form>
-    </div>
 
 <br>
+
+<script>
+    function getInvited() {
+
+        var invited = $('#tokenfield-2').tokenfield('getTokensList');
+        var invitedJSON = JSON.stringify(invited);
+        //all email addresses entered are stored in the above String var (comma separated)
+
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            url: "/invite",
+            data: invitedJSON, // assignment of the variable
+            success: function (result) {
+                console.log("sucess");
+                console.log(result);
+            },
+            failure: function (r) {
+                console.log("failed");
+                console.log(r);
+            }
+        });
+    }
+</script>
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 

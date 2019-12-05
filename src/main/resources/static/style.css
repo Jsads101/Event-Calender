@@ -3,94 +3,98 @@
 body{
     margin: 0;
     font-family: Lato, sans-serif;
-  }
-  
-  .navcontainer {
+}
+
+.navcontainer {
     display:flex;
-  }
-  
-  .navsection{
+}
+
+.navsection{
     padding-right: 1rem;
-  }
-  
-  header {
+}
+
+header {
     background-color: #223B47;
     color: white;
     height:5rem;
     align-items: center;
     display: flex;
     justify-content: flex-end;
-  
-  }
-  
-  .navsectionlink {
+
+}
+
+.navsectionlink {
     padding: 1rem;
-  }
-  
-  .navsectionlink:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.navsectionlink:hover {
     background: white;
-    color: #223B47;
-  }
-  
-  li {
+    color: #223B47 !important;
+}
+
+.navsectionlink:visited{
+    color: white;
+}
+
+li {
     list-style: none;
-  }
-  
-  img {
+}
+
+img {
     border-radius: 50%;
-      left: 1rem;
-      position: absolute;
-      top:1rem;
-      border: 0.4rem solid white;
-      height: 8rem;
-  
-  }
-  
-  .main {
+    left: 1rem;
+    position: absolute;
+    top:1rem;
+    border: 0.2rem solid white;
+    height: 8rem;
+
+}
+
+.main {
     text-align: center;
-    margin-top: 2rem;
-  }
-  
-  input, textarea {
+
+}
+
+input, textarea {
     width:60%;
     height: 2rem;
     border: 0.1rem solid #223B47;
     margin: 1.5rem;
     padding: 1px
-  }
-  
-  #eventdescription {
-     vertical-align: middle;
-     height: 4rem;
-  }
-  
-  .radioinput {
-  width:1rem;
-  vertical-align: middle;
-  }
-  
-  
-  #submitbutton{
+}
+
+#eventdescription {
+    vertical-align: middle;
+    height: 4rem;
+}
+
+.radioinput {
+    width:1rem;
+    vertical-align: middle;
+}
+
+
+.submitbutton{
     width:30%;
     background-color: #ffcB05;
     color: #223B47;
     height: 3rem;
     border: none;
     font-weight: bold;
-  }
-  
-  #submitbutton:hover {
+}
+
+.submitbutton:hover {
     background-color: #B89100;
-  }
+}
 
 
-  #eventtypeform {
-      padding-top: 1rem;
+#eventtypeform {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     display: none;
-      padding-left: 25%;
 }
 
 #returnattendees {
@@ -161,18 +165,18 @@ tr:nth-child(even) {
     font-size: 17px;
 }
 
-  
-  #teaminput {
+
+#teaminput {
     width:2rem;
-  }
+}
 
 
-  #eventtitle {
-      margin: 0;
-      padding: 1.5rem;
-      background-color: #c3c3c3;
-  }
-  /* added on 16/11/2019 */
+#eventtitle {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #c3c3c3;
+}
+/* added on 16/11/2019 */
 #myBtn{
     width:30%;
     background-color: #ffcB05;
@@ -185,9 +189,9 @@ tr:nth-child(even) {
 #myBtn:hover {
     background-color: #B89100;
 }
-  
-  /* The Modal (background) */
-  .modal {
+
+/* The Modal (background) */
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -198,38 +202,37 @@ tr:nth-child(even) {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #dietReqForm {
-      display: none;
-  }
+#dietReqForm {
+    display: none;
+}
 
-  #dietReq {
-      vertical-align: middle;
-      width:20rem;
-      height: 10rem;
-  }
+#dietReq {
+    vertical-align: middle;
+    width:20rem;
+    height: 10rem;
+}

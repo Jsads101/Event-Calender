@@ -38,10 +38,7 @@ public class BaseController {
         return "redirect:/";
     }
 
-    @RequestMapping("/CreateEventPage")
-    public String createEventPage() {
-        return "CreateEventPage"; //CreateEventsPage.html page name to open it
-    }
+
 
     @RequestMapping("/eventPage")
     public String eventPage() {
