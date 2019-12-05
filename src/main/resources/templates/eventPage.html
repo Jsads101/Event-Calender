@@ -69,11 +69,11 @@
     <button id="myBtn">Sign Up</button>
 
         <!-- The Modal -->
-        <div id="myModal" class="modal">
+        <div id="myModal-one" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <span class="close1">&times;</span>
                     <br>
                     <br>
                     <h1> You are signing up to the <span th:text="${event.eventName}"></span> Event</h1>
@@ -125,10 +125,25 @@
             <form method="post" th:action="@{/delete?eventId={id}(id=${event.eventID})}">
                 <button class="submitbutton" type="submit">Delete</button>
             </form>
-        </div><br><br>
+        </div><br>
+
+    <button id="cancelBtn-one">Cancel Attending</button>
+
+        <div id="myModal-two" class="modal">
+            <div class="modal-content">
+
+                <span class="close2">&times;</span>
+
+                <h1>Are you sure you wish to cancel attending the <span th:text="${event.eventName}"></span> event?</h1>
+
                 <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
-                    <button class="submitbutton" type="submit">Cancel Attending</button>
-                </form>
+                    <button id="cancelBtn-two" class="submitbutton" type="submit">Yes, I'm sure</button>
+                </form><br>
+
+            </div>
+        </div>
+    <br><br>
+
     </section>
     </div>
 
