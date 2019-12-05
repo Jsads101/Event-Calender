@@ -21,9 +21,9 @@ public class SignUpController {
 
     @GetMapping("/signUp")
 
-    public String addReview(@RequestParam int eventId, int statusId, String dietReq) {
+    public String addReview(@RequestParam int eventId, int statusId, String dietReq, String teamMembers) {
 
-        BookingStatus newSignUp = new BookingStatus(eventId, statusId, dietReq);
+        BookingStatus newSignUp = new BookingStatus(eventId, statusId, dietReq, teamMembers);
         repo.signUp(newSignUp);
         return "redirect:/viewEvents";
     }

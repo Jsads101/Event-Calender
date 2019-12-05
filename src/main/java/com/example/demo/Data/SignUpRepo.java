@@ -34,8 +34,8 @@ public class SignUpRepo implements SignUpInterface {
                 )
         );
 
-        return jdbcTemplate.update("insert into BookingStatus(peopleId, eventId, statusId, dietReq)  values(?,?,?,?)",
-                peopleID, bookingStatus.getEventId(), bookingStatus.getStatusId(), bookingStatus.getDietReq());
+        return jdbcTemplate.update("insert into BookingStatus(peopleId, eventId, statusId, dietReq, teamMembers)  values(?,?,?,?,?)",
+                peopleID, bookingStatus.getEventId(), bookingStatus.getStatusId(), bookingStatus.getDietReq(), bookingStatus.getTeamMembers());
 
     }
 }
