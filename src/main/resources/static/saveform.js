@@ -1,5 +1,5 @@
 const formId = "createEventForm"; // ID of the form
-const url = CreateEventPage.html; //  href for the page
+const url = location.href; //  href for the page
 const formIdentifier = `${url} ${formId}`; // Identifier used to identify the form
 const saveButton = document.querySelector("#save"); // select save button
 const alertBox = document.querySelector(".alert"); // select alert display div
@@ -41,7 +41,7 @@ const getFormData = () => {
     alertBox.style.display = "block"; // make the alert box visible
     setTimeout(function() {
       alertBox.style.display = "none"; // hide the alert box after 1 second
-    }, 1000);
+    }, 2000);
   };
 
 /**

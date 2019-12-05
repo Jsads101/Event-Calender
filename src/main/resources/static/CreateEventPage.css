@@ -121,6 +121,10 @@ width:50%;
       border: none;
     font-weight: bold;
   }
+  
+  .submitbutton:hover {
+    background-color: #B89100;
+  }
 /*styling for save button in create event form.*/
 #save{
     margin-left: 2rem;
@@ -134,11 +138,6 @@ width:50%;
 #save:hover {
     background-color: #B89100;
 }
-  
-  .submitbutton:hover {
-    background-color: #B89100;
-  }
-
   
   #eventtypeform {
       padding-top: 1rem;
