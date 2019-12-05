@@ -97,9 +97,16 @@
                                 <input id="dietradio" class="radioinput" type="radio" name="dietReqInput" value="No"
                                     onclick="hideDietReq()"> No
                             </div>
+
                             <div id="dietReqForm">
-                                <label for="dietReq">Enter Your Requirements:</label>
+                                <p>Enter your requirements below:</p>
                                 <textarea id="dietReq" name="dietReq"></textarea>
+                            </div>
+                        </div>
+                        <div th:if="${event.teamBased==1}">
+                            <p>List your team mates below (up to <span th:text="${event.teamSize}"></span> people)</p>
+                            <div id="TeamMembersForm">
+                                <textarea id="teamMembers" name="teamMembers"></textarea>
                             </div>
                         </div>
                         <input class="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
