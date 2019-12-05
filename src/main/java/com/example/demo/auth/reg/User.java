@@ -1,45 +1,40 @@
 package com.example.demo.auth.reg;
 public class User {
 
-    private String firstName;
-    private String surname;
-    private String username;
+    public int id;
+    private String email;
+
     private String password;
+
     private String cpassword;
+
+    private String fName;
+    private String sName;
 
     public User() {
     }
 
-    public User(String firstName, String surname, String username, String password, String cpassword) {
-        this.firstName = firstName;
-        this.surname = surname;
-        this.username = username;
+    public User(String email, String password, String cpassword, String fName, String sName) {
+        this.email = email;
+        this.password = password;
+        this.cpassword = cpassword;
+        this.fName = fName;
+        this.sName = sName;
+    }
+
+    public User(String username, String password, String cpassword) {
+        this.email = username;
         this.password = password;
         this.cpassword = cpassword;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
     public String getUsername() {
-        return username;
+        return email;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.email = username;
     }
 
     public String getPassword() {
@@ -56,5 +51,29 @@ public class User {
 
     public void setCpassword(String cpassword) {
         this.cpassword = cpassword;
+    }
+
+    public String getFName() {
+        return fName;
+    }
+
+    public void setFName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getSName() {
+        return sName;
+    }
+
+    public void setSName(String sName) {
+        this.sName = sName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

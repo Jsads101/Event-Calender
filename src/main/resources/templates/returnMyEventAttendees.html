@@ -15,7 +15,9 @@
 </header>
 <section id="returnattendees">
 
-    <h1>Your Event Attendees for the Hodge Christmas Party</h1>
+    <section th:each="event : ${myEvent}">
+        <h1><span th:text="${event.eventName}"></span> Attendees</h1>
+    </section>
     <table id="attendeetable">
         <tr>
             <th>Attendee</th>
@@ -29,7 +31,7 @@
 
     </table>
 
-    <input id="submitbutton" type="submit" value="Send Email Update">
+    <input class="submitbutton" type="submit" value="Send Email Update">
 
 </section>
 

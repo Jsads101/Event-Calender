@@ -21,15 +21,15 @@ body{
        color: white;
        height:5rem;
        align-items: center;
-       display: flex;
-       justify-content: flex-end;
+       display: flex !important;
+       justify-content: flex-end !important;
 
      }
   
   .navsectionlink {
     padding: 1rem;
   color: white;
-      text-decoration: none;
+      text-decoration: none !important;
   }
   
   .navsectionlink:hover {
@@ -50,7 +50,7 @@ body{
       left: 1rem;
       position: absolute;
       top:1rem;
-      border: 0.2rem solid white;
+      border: 0.2rem solid white !important;
       height: 8rem;
   
   }
@@ -67,24 +67,58 @@ body{
     margin: 1.5rem;
     padding: 1px
   }
+
+  #sub{
+      background-color: #ffcB05;
+      font-weight: bold;
+  }
+
+#sub:hover {
+    background-color: #B89100;
+}
+
+  #dietradio{
+      display: flex;
+  }
+.smallradio {
+    width: 25%;
+    height: 1.3rem;
+}
+
   
   #eventdescription {
      vertical-align: middle;
      height: 4rem;
   }
   
-  .radioinput {
-  width:1rem;
-  vertical-align: middle;
+  #radioinput {
+
+      display: flex !important;
+  }
+
+  .radiocontainer{
+      display: flex !important;
+      width: 40%;
+      margin: 0 auto;
+      font-size: 1rem;
+      justify-content: center;
+  }
+
+  #dietradio{
+      margin-top: 1px;
+
+  }
+
+  .teamchoice{
+width:50%;
   }
   
-  
-  #submitbutton{
+  .submitbutton{
     width:30%;
     background-color: #ffcB05;
     color: #223B47;
     height: 3rem;
-    border: none;
+      border: none;
     font-weight: bold;
   }
 /*styling for save button in create event form.*/
@@ -101,27 +135,46 @@ body{
     background-color: #B89100;
 }
   
-  #submitbutton:hover {
+  .submitbutton:hover {
     background-color: #B89100;
   }
 
   
   #eventtypeform {
       padding-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    display: none;
-      padding-left: 25%;
+      display: none;
 }
+
+  .teamcontainer{
+      display: flex;
+      justify-content: space-evenly;
+      width: 60%;
+      margin: 0 auto;
+      padding-bottom: 1rem;
+  }
+
+  .createcontainer{
+      text-align: center;
+
+  }
+
+  #teaminput{
+      width: 2rem;
+  }
 
 #returnattendees {
     padding: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+}
+
+#eventtable{
+    margin: 0rem auto 2rem auto;
+}
+
+#attendeetable {
+    margin: 0 auto;
 }
 
 
@@ -139,18 +192,13 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
-#attendeetable{
-    margin: 2rem;
-}
 
 
-#teaminput {
-    width: 2rem;
-}
+
 .eventDiv{
 
     width: 50%;
@@ -182,11 +230,6 @@ tr:nth-child(even) {
     border: none;
     font-size: 17px;
 }
-
-  
-  #teaminput {
-    width:2rem;
-  }
 
 
   #eventtitle {
@@ -254,3 +297,28 @@ tr:nth-child(even) {
       width:20rem;
       height: 10rem;
   }
+
+  #teammembers {
+    vertical-align: middle;
+    width:20rem;
+    height: 10rem;
+  }
+
+  #showevent {
+      margin-top: 1.5rem;
+  }
+
+  .searchsubmit{
+      background-color: #ffcB05;
+      color: #223B47;
+      font-weight: bold;
+      border: none;
+      padding: 0.1rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+  }
+
+.searchsubmit:hover {
+    background-color: #B89100;
+}

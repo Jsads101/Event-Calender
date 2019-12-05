@@ -23,8 +23,10 @@ import java.util.List;
 
         @GetMapping("/searchMyEvents")
         public ModelAndView getEventAttendees(@RequestParam int eventId) {
-            ModelAndView mv = new ModelAndView("returnMyEventAttendees");
+            ModelAndView mv = new ModelAndView("returnMyAttendees");
             List<BookingStatus> myPeople = repo.findByEvent(eventId);
+            List<Events> myEvent = repo.showByEventId(eventId);
+            mv.addObject("myEvent", myEvent);
             mv.addObject("myPeople", myPeople);
             return mv;
         }
