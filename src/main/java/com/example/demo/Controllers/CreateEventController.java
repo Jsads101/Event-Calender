@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.internet.MimeMessage;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class CreateEventController{
     private CreateEventRepo repo;
@@ -30,15 +32,14 @@ public class CreateEventController{
         return "CreateEventPage"; //CreateEventsPage.html page name to open it
     }
 
-    @PostMapping("/CreateEventPage")
-    @ResponseBody
-    public ModelAndView greetingSubmit(@ModelAttribute CreateEvent event) {
+    @PostMapping("/eventCreation")
+    public String greetingSubmit(@ModelAttribute CreateEvent event) {
         repo.addEvent(event);
         repo.setEventID(event);
         repo.addAttendees(event);
         createEventEmail(event);
 
-        return new ModelAndView("redirect:/viewEvents");
+        return "redirect:/viewSpecificEvent?eventId="+String.valueOf(event.getEventId());
     }
 
     public void createEventEmail(CreateEvent event){
@@ -52,6 +53,7 @@ public class CreateEventController{
                 helper.setText("You have been invited to " + event.getEventTitle() +
                         " at " + event.getLocation() + " on " + event.getEventDate() + " at " + event.getEventTime());
 
+        repo.addEvent(createEvent);
 
                 sender.send(message);
             }
@@ -59,7 +61,6 @@ public class CreateEventController{
             System.out.println("Error Sending email " + ex);
         }
 
-    }
 }
 
 
