@@ -22,78 +22,116 @@
     </header>-->
 
 <header th:replace="baseTemplate :: header">
-    <img src="../static/hodgelogo.JFIF">
+    <img src="../static/hodgelogo.JFIF" alt="hodgelogo">
 
-</header>
+    </header>
 
-<div class="main">
+    <div class="main">
 
-    <section class="eventSection" th:each="event : ${myEvent}">
-        <h1 th:text="${event.eventName}"></h1>
+        <section id="showevent" th:each="event : ${myEvent}">
+            <h1><span th:text="${event.eventName}"></span></h1>
+            <table class="table" id="eventtable">
+                <tr>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td th:text="${event.date}"></td>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td th:text="${event.time}"></td>
+                </tr>
 
+                <tr>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td th:text="${event.location}"></td>
+                </tr>
+                <tr>
+                    <th>Organiser</th>
+                </tr>
+                <tr>
+                    <td th:text="${event.organiserName}"></td>
+                </tr>
 
-    <h3>Date</h3>
-    <p><span th:text="${event.date}"></span></p>
-
-    <h3>Time</h3>
-    <p><span th:text="${event.time}"></span></p>
-
-    <h3>Location</h3>
-    <p><span th:text="${event.location}"></span></p>
-
-
-    <h3>Organiser</h3>
-    <p><span th:text="${event.organiserName}"></span></p>
-
-    <h3>Description</h3>
-    <p> <span th:text="${event.description}"></span></p><br>
-
+                <tr>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td th:text="${event.description}"></td>
+                </tr><br>
+            </table>
 
         <!-- Trigger/Open The Modal -->
     <button id="myBtn">Sign Up</button>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form name="signupform" method="PUT" action="/signUp">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <br>
+                    <h1> You are signing up to the <span th:text="${event.eventName}"></span> Event</h1>
 
-            <!--Hidden form elements to send constant data. peopleId and eventId will need to be dynamic eventually.-->
-                <div>
-                    <input id="peopleId" name="peopleId" type="hidden" value="1"/><br>
+                    <form name="signupform" method="PUT" action="/signUp">
+
+                        <!--Hidden form elements to send constant data. peopleId and eventId will need to be dynamic eventually.-->
+
+
+                        <input id="eventId" name="eventId" type="hidden" th:value="${event.eventID}" /><br>
+                        <input id="statusId" name="statusId" type="hidden" value="1" /><br>
+
+                        <!--End of hidden input-->
+                        <div th:if="${event.DReq == 1}">
+                            <p>Do you have any dietary requirements?</p>
+                            <br>
+                            <br>
+                            <div class="radiocontainer">
+                                <input id="dietradio" class="radioinput" type="radio" name="dietReqInput" value="Yes"
+                                    onclick="showDietReq()"> Yes
+                                <input id="dietradio" class="radioinput" type="radio" name="dietReqInput" value="No"
+                                    onclick="hideDietReq()"> No
+                            </div>
+
+                            <div id="dietReqForm">
+                                <p>Enter your requirements below:</p>
+                                <textarea id="dietReq" name="dietReq"></textarea>
+                            </div>
+                        </div>
+                        <div th:if="${event.teamBased==1}">
+                            <p>List your team mates below (up to <span th:text="${event.teamSize}"></span> people)</p>
+                            <div id="TeamMembersForm">
+                                <textarea id="teamMembers" name="teamMembers"></textarea>
+                            </div>
+                        </div>
+                        <input class="submitbutton" type="submit" value="Sign Me Up!"><br><br><br>
+                    </form>
                 </div>
-                <div>
-                    <input id="eventId" name="eventId" type="hidden" th:value="${event.eventID}"/><br>
-                </div>
-                <div>
-                    <input id="statusId" name="statusId" type="hidden" value="1"/><br>
-                </div>
-                <!--End of hidden input-->
-
-            <p>Do you have any dietary requirements?</p>
-                <input class="radioinput" type="radio" name="dietReqInput" value="Yes"
-                       onclick="showDietReq()"> Yes
-                <input class="radioinput" type="radio" name="dietReqInput" value="No"
-                       onclick="hideDietReq()"> No <br>
-
-            <div id="dietReqForm">
-                <label for="dietReq">Enter Your Requirements:</label>
-                    <textarea id="dietReq" name="dietReq"></textarea>
-            </div>
-            <input id="submitbutton" type="submit" value="Submit"><br><br><br>
-            </form>
-        </div>
 
     </div><br><br>
 
     <div id="searchbyevent">
         <form method="GET" action="/searchMyEvents">
-            <button id="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
+            <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
-        </form>
+            </form>
+        </div>
+    <div>
+            <form method="post" th:action="@{/delete?eventId={id}(id=${event.eventID})}">
+                <button class="submitbutton" type="submit">Delete</button>
+            </form>
+        </div><br><br>
+                <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
+                    <button class="submitbutton" type="submit">Cancel Attending</button>
+                </form>
+    </section>
     </div>
+
 </div>
 </div>
 
