@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class CreateEventController{
     private CreateEventRepo repo;
@@ -24,24 +26,23 @@ public class CreateEventController{
         return "CreateEventPage"; //CreateEventsPage.html page name to open it
     }
 
-    @PostMapping("/CreateEventPage")
-    @ResponseBody
-    public ModelAndView greetingSubmit(@ModelAttribute CreateEvent event) {
+    @PostMapping("/eventCreation")
+    public String greetingSubmit(@ModelAttribute CreateEvent event) {
         repo.addEvent(event);
         repo.setEventID(event);
         repo.addAttendees(event);
 
-        return new ModelAndView("redirect:/viewEvents");
+        return "redirect:/viewSpecificEvent?eventId="+String.valueOf(event.getEventId());
     }
 
-    @PostMapping("/eventcreation")
+
+    /*@PostMapping("/eventcreation")
     public ModelAndView newEvent(@ModelAttribute("createEvent") CreateEvent createEvent, @ModelAttribute("attendees") CreateEvent attendees) {
 
         repo.addEvent(createEvent);
 
-        return new ModelAndView("redirect:/viewEvents");
-    }
+        return new ModelAndView("redirect:/viewSpecificEvent?eventId=repo.getEventID(createEvent)");
+    }*/
 
 }
-
 

@@ -5,7 +5,6 @@ const saveButton = document.querySelector("#save"); // select save button
 const alertBox = document.querySelector(".alert"); // select alert display div
 let form = document.querySelector(`#${formId}`); // select form
 let formElements = form.elements; // get the elements in the form
-
 /**
  * This function gets the values in the form
  * and returns them as an object with the
@@ -15,7 +14,7 @@ let formElements = form.elements; // get the elements in the form
 const getFormData = () => {
     let data = { [formIdentifier]: {} }; // create an empty object with the formIdentifier as the key and an empty object as its value
     for (const element of formElements) {
-      if (element.name.length > 0) {
+      if (element.name.length > 0 && element.name !== "_csrf") { //checks is the element contains any value AND if the element name does not equal to "_csrf"
         data[formIdentifier][element.name] = element.value;
       }
     }
@@ -25,6 +24,7 @@ const getFormData = () => {
   saveButton.onclick = event => {
     event.preventDefault();
     data = getFormData();
+    console.log(data);
     localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
     const message = "Form draft has been saved!";
     displayAlert(message);
