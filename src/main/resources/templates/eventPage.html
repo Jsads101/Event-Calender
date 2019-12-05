@@ -29,6 +29,7 @@
     <div class="main">
 
         <section id="showevent" th:each="event : ${myEvent}">
+
             <h1><span th:text="${event.eventName}"></span></h1>
             <table class="table" id="eventtable">
                 <tr>
@@ -131,6 +132,14 @@
                 <h1>Are you sure you wish to cancel attending the <span th:text="${event.eventName}"></span> event?</h1>
 
                 <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
+                    <button class="submitbutton" type="submit">Cancel Attending</button>
+                </form>
+
+
+<!--            <div th:if="${event.organiserEmail == getSessionEmail()}">-->
+<!--                <p>test</p>-->
+<!--            </div>-->
+        </section>
                     <button id="cancelBtn-two" class="submitbutton" type="submit">Yes, I'm sure</button>
                 </form><br>
 
