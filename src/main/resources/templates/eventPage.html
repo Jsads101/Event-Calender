@@ -121,12 +121,6 @@
 
             </form>
         </div>
-    <div>
-            <form method="post" th:action="@{/delete?eventId={id}(id=${event.eventID})}">
-                <button class="submitbutton" type="submit">Delete</button>
-            </form>
-        </div><br>
-
     <button id="cancelBtn-one">Cancel Attending</button>
 
         <div id="myModal-two" class="modal">
@@ -142,6 +136,23 @@
 
             </div>
         </div>
+            <br/>
+            <br/>
+            <div class="deleteeventsection">
+                <button class="submitbutton" onclick="deleteEvent()">Delete Event</button>
+                <div id="myModalTwo" class="modal">
+                    <div class="modal-content">
+                        <br>
+                        <br>
+                        <h1> Are you sure you want to cancel the <span th:text="${event.eventName}"></span> Event?</h1>
+
+                        <form method="post" th:action="@{/delete(eventId=${event.eventID})}">
+                            <button class="submitbutton" type="submit">Delete Event</button><br><br>
+                        </form>
+                        <button class="submitbutton" onclick="returnToEvent()">No, Take Me Back</button><br><br>
+                    </div>
+                </div><br>
+            </div>
     <br><br>
 
     </section>
@@ -150,8 +161,17 @@
 </div>
 </div>
 
+<script>
+    function deleteEvent() {
+        document.getElementById('myModalTwo').style.display = "block";
+    }
+
+    function returnToEvent(){
+        document.getElementById("myModalTwo").style.display = "none";
+    }
 
 
+</script>
 
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
