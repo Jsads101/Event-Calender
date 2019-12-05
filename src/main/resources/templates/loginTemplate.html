@@ -25,7 +25,7 @@
     <img src="../static/hodgelogo.JFIF" th:src="@{hodgelogo.JFIF}" alt="Logo">
 </header>
 
-<main>
+<main id="loginmain">
     <!-- If the url contains a parameter called 'error'. Show
     a paragraph element detailing that an error occurred.
     See WebSecurityConfig2
@@ -51,7 +51,7 @@
         See: https://www.baeldung.com/csrf-thymeleaf-with-spring-security
         -->
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-        <input id="sub" type="submit"/>
+        <input class="submitbutton" id="sub" type="submit"/>
     </form>
     <p>No account? Register <a href="/register">Here</a></p>
 </main>
