@@ -42,24 +42,26 @@ public class CreateEventController{
         return "redirect:/viewSpecificEvent?eventId="+String.valueOf(event.getEventId());
     }
 
-    public void createEventEmail(CreateEvent event){
+    public void createEventEmail(CreateEvent event) {
         try {
             MimeMessage message = sender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message);
 
             for (int i = 0; i < event.getTokenField().size(); i++) {
+                System.out.println(i);
                 helper.setTo(event.getTokenField().get(i));
                 helper.setSubject("You have been invited to " + event.getEventTitle());
                 helper.setText("You have been invited to " + event.getEventTitle() +
                         " at " + event.getLocation() + " on " + event.getEventDate() + " at " + event.getEventTime());
 
-        repo.addEvent(createEvent);
+
 
                 sender.send(message);
             }
         } catch (Exception ex) {
             System.out.println("Error Sending email " + ex);
         }
+    }
 
 }
 
