@@ -31,8 +31,31 @@ public class CreateEvent {
         this.dietaryReq = dietaryReq;
     }
 
+    public CreateEvent(String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, int dietaryReq, int teamSize, int teamBased) {
+        this.eventTitle = eventTitle;
+        this.eventDesc = eventDesc;
+        this.location = location;
+        this.eventTime = eventTime;
+        this.eventDate = eventDate;
+        this.dietaryReq = dietaryReq;
+        this.teamSize = teamSize;
+        this.teamBased = teamBased;
+    }
+
     public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField, int dietaryReq, int teamSize, int teamBased) {
         this.eventId = eventId;
+        this.eventTitle = eventTitle;
+        this.eventDesc = eventDesc;
+        this.location = location;
+        this.eventTime = eventTime;
+        this.eventDate = eventDate;
+        //this.tokenField = tokenField;
+        this.tokenField = Arrays.asList(tokenField.split("\\s*,\\s*")); //changing email addresses String to an ArrayList
+        this.dietaryReq = dietaryReq;
+        this.teamSize = teamSize;
+        this.teamBased = teamBased;
+    }
+    public CreateEvent(String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField, int dietaryReq, int teamSize, int teamBased) {
         this.eventTitle = eventTitle;
         this.eventDesc = eventDesc;
         this.location = location;
@@ -115,5 +138,13 @@ public class CreateEvent {
 
     public int getTeamBased() {
         return teamBased;
+    }
+
+    public void setTeamSize(int teamSize) {
+        this.teamSize = teamSize;
+    }
+
+    public void setTeamBased(int teamBased) {
+        this.teamBased = teamBased;
     }
 }

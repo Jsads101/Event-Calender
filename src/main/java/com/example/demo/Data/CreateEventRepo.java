@@ -29,7 +29,6 @@ public class CreateEventRepo  implements CreateEventInterface{
     @Override
     public int addEvent(CreateEvent createEvent) {
         int PersonID = getSessionID();
-
         return jdbcTemplate.update("insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time, TeamSize)  values(?,?,?,?,?,?,?,?,?)",
                 createEvent.getEventTitle(),
                 PersonID,
@@ -56,11 +55,7 @@ public class CreateEventRepo  implements CreateEventInterface{
 
     @Override
     public void addAttendees(CreateEvent attendees) {
-
-        System.out.println(attendees.getTokenField().size());
         for (int i = 0; i < attendees.getTokenField().size(); i++) {
-            System.out.println("Token Number = " + i);
-            System.out.println(attendees.getEventId());
             jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId)" +
                             "select People.PeopleId, Events.EventId,? from People, Events " +
                             "where Email = ? and EventId = ?",
