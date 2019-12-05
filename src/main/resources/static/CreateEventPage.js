@@ -41,25 +41,6 @@ window.onclick = function(event) {
     }
 }
 
-
-
-// // Display buttons depending on
-// function DisplayOptions(){
-//     if (){
-//         $('body').append('bla bla bla')
-//     }else{
-//         $('body').append('bla bla bla')
-//     }
-// }
-//
-//
-// function getSessionEmail(){
-//     var sEmail = '<%= session.getAttribute("SESSION_USERNAME)%>';
-//     alert(sEmail);
-// }
-
-
-
 // Modal for cancel attending
 // Get the modal
 var modal2 = document.getElementById("myModal-two");
