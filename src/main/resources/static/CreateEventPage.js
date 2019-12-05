@@ -37,3 +37,20 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
+// // Display buttons depending on
+// function DisplayOptions(){
+//     if (){
+//         $('body').append('bla bla bla')
+//     }else{
+//         $('body').append('bla bla bla')
+//     }
+// }
+//
+//
+// function getSessionEmail(){
+//     var sEmail = '<%= session.getAttribute("SESSION_USERNAME)%>';
+//     alert(sEmail);
+// }

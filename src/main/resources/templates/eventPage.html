@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<section>
 
 <!-- mkaing static temporarily
     <header th:replace="/baseTemplate :: header">
@@ -29,6 +29,7 @@
     <div class="main">
 
         <section id="showevent" th:each="event : ${myEvent}">
+
             <h1><span th:text="${event.eventName}"></span></h1>
             <table class="table" id="eventtable">
                 <tr>
@@ -129,17 +130,17 @@
                 <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
                     <button class="submitbutton" type="submit">Cancel Attending</button>
                 </form>
-    </section>
+
+
+<!--            <div th:if="${event.organiserEmail == getSessionEmail()}">-->
+<!--                <p>test</p>-->
+<!--            </div>-->
+        </section>
     </div>
 
-</div>
-</div>
-
-
-
-
-
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+
+</section>
 </body>
 
 </html>
