@@ -4,6 +4,21 @@ body{
     margin: 0;
     font-family: Lato, sans-serif;
   }
+
+#loginmain p{
+   width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#loginForm, #registerForm{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#loginForm input, #registerForm input {
+    width: 100%;
+}
   
   .navcontainer {
     display:flex;
@@ -68,14 +83,7 @@ body{
     padding: 1px
   }
 
-  #sub{
-      background-color: #ffcB05;
-      font-weight: bold;
-  }
 
-#sub:hover {
-    background-color: #B89100;
-}
 
   #dietradio{
       display: flex;
@@ -261,7 +269,7 @@ tr:nth-child(odd) {
   }
   
   /* The Close Button */
-  .close {
+  .close, .closetwo {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -269,7 +277,7 @@ tr:nth-child(odd) {
   }
   
   .close:hover,
-  .close:focus {
+  .close:focus, .closetwo:hover, .closetwo:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
