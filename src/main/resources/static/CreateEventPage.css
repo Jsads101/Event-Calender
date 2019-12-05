@@ -87,6 +87,19 @@ body{
     border: none;
     font-weight: bold;
   }
+/*styling for save button in create event form.*/
+#save{
+    margin-left: 2rem;
+    width:30%;
+    background-color: #ffcB05;
+    color: #223B47;
+    height: 3rem;
+    border: none;
+    font-weight: bold;
+}
+#save:hover {
+    background-color: #B89100;
+}
   
   #submitbutton:hover {
     background-color: #B89100;

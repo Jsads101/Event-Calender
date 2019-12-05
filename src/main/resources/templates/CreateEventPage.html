@@ -22,6 +22,18 @@
     <link href="../static/inputTags/docs-assets/css/pygments-manni.css" th:href="@{inputTags/docs-assets/css/pygments-manni.css}" type="text/css" rel="stylesheet">
     <link href="../static/inputTags/docs-assets/css/docs.css" th:href="@{inputTags/docs-assets/css/docs.css}" type="text/css" rel="stylesheet">
 
+    <style>
+        .alert {
+            width: 80vw;
+            margin: 2rem auto;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.25rem;
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -33,9 +45,9 @@
 
         <br><br>
         <center><h1>Create a New Event</h1></center>
-
-            <form class="form-horizontal" action="/CreateEventPage" method="POST" th:object="${createEvent}"> <!---->
-                <div class="container">
+<div class="container">
+        <div class="alert"></div>
+            <form id="createEventForm" class="form-horizontal" action="/CreateEventPage" method="POST" th:object="${createEvent}"> <!---->
 
                 <label for="eventTitle">Event Title</label>
                 <input class="form-control" type="text" id="eventTitle" name="eventTitle" placeholder="Event title.."><br> <!--th:field="*{eventTitle}"-->
@@ -55,8 +67,7 @@
             
                 <label for="tokenfield-2">Invite</label>
                 <input type="text" class="form-control" id="tokenfield-2" name="tokenField" placeholder="Type email address and hit enter" />
-              
-            </div>
+
                 <br><br>
                 <p>Dietary requirements?</p>
                <input id="dietaryReqTrue" type="radio" name="dietaryReq" value="1">Yes
@@ -65,11 +76,13 @@
                <br>
 
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-           
+                <div class="row">
                 <input id="submitbutton" type="submit" value="Submit" onclick="getInvited()" /><br>
-
+                <button id="save">Save</button>
                 </div>
+
             </form>
+
     </div>
 
 <br>
@@ -100,8 +113,10 @@
 </script>
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
+<script src="../static/draft.js" th:src="@{draft.js}"></script>
 
 <!--Script for email adress tokens -->
+<script type="text/javascript" src="../static/saveform.js" th:src="@{saveform.js}"></script>
 <script type="text/javascript" src="../static/jQuery.js" th:src="@{jQuery.js}"></script>
 <script type="text/javascript" src="../static/jquery-ui/jquery-ui.js" th:src="@{jquery-ui/jquery-ui.js}"></script>
 <script type="text/javascript" src="../static/inputTags/dist/bootstrap-tokenfield.js" th:src="@{inputTags/dist/bootstrap-tokenfield.js}" charset="UTF-8"></script>
