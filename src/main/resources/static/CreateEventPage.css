@@ -20,6 +20,12 @@ body{
     width: 100%;
 }
 
+.createquestion {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
   .navcontainer {
     display:flex;
   }
@@ -157,6 +163,9 @@ width:50%;
   #eventtypeform {
       padding-top: 1rem;
       display: none;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
 }
 
   .teamcontainer{
@@ -288,7 +297,7 @@ tr:nth-child(odd) {
   }
   
   /* The Close Button */
-  .close, .closetwo {
+  .close, .close2 {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -296,10 +305,18 @@ tr:nth-child(odd) {
   }
   
   .close:hover,
-  .close:focus, .closetwo:hover, .closetwo:focus {
+  .close:focus, .close2:hover, .close2:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .row{
+      display: flex;
+      -ms-flex-wrap: wrap;
+      width: 80%;
+      margin: 0 auto !important;
+      justify-content: center;
   }
 
   #dietReqForm {

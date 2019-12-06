@@ -66,15 +66,16 @@
                 </tr><br>
             </table>
 
+<!--SIGN UP MODAL------------------------------------------------------------->
         <!-- Trigger/Open The Modal -->
     <button id="myBtn">Sign Up</button>
 
         <!-- The Modal -->
-        <div id="myModal-one" class="modal">
+        <div id="myModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close1">&times;</span>
+                    <span class="close">&times;</span>
                     <br>
                     <br>
                     <h1> You are signing up to the <span th:text="${event.eventName}"></span> Event</h1>
@@ -116,12 +117,21 @@
 
     </div><br><br>
 
+            <!--End of SIgn Up Modal----------------------------------------------->
+
+            <!--View Attendees Button and Modal------------------------------------->
+
     <div id="searchbyevent" th:if="${event.organiserEmail == session.SESSION_USERNAME}">
         <form method="GET" action="/searchMyEvents">
             <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
             </form>
         </div>
+
+            <!--End of View Attendees button and Modal------------------------>
+
+            <!--Cancel Attending Button and Modal------------------------------>
+
     <button class="submitbutton" id="cancelBtn-one">Cancel Attending</button>
 
         <div id="myModal-two" class="modal">
@@ -140,9 +150,11 @@
 
         </div>
 
+            <!--ENd of Cancel Attending Event Button and Modal---------------------------------->
+<br/>
+<br/>
 
-<br/>
-<br/>
+            <!--Delete Event Button and Modal------------------------------------------------>
 <div class="deleteeventsection" th:if="${event.organiserEmail == session.SESSION_USERNAME}">
     <button class="submitbutton" onclick="deleteEvent()">Delete Event</button>
     <div id="myModalTwo" class="modal">
@@ -158,11 +170,12 @@
         </div>
     </div><br>
 </div>
+            <!--End of delete event button and modal--------------------------------------->
 <br><br>
         </section>
 
 
-    </section>
+
     </div>
 
 </div>

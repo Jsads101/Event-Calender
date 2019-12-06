@@ -71,14 +71,14 @@
                 <br><br>
 
 
-                    <p><strong>Are dietery requirements needed?</strong></p><br>
+                    <p class="createquestion"><strong>Are dietery requirements needed?</strong></p><br>
                     <div class="radiocontainer" for="dietaryReq">
                <input class="smallradio" id="dietaryReqTrue" type="radio" name="dietaryReq" value="1"/>Yes
                <input class="smallradio" id="dietaryReqFalse" type="radio" name="dietaryReq" value="0"/>No
                     </div>
                     <br>
                <br>
-                    <p><strong>Is this a Team Event?</strong></p><br>
+                    <p class="createquestion"><strong>Is this a Team Event?</strong></p><br>
                     <div class="radiocontainer" for="teamBased">
                 <input class ="smallradio" id="TeamBasedTrue" type="radio" name="teamBased" value="1" onclick="showTeamEventForm()"/>Yes
                 <input class="smallradio" id="TeamBasedFalse" type="radio" name="teamBased" value="0" onclick="hideTeamEventForm()"/>No
@@ -92,7 +92,7 @@
                 <input id="csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
                 <div class="row">
-                <input id="submitbutton" type="submit" value="Submit"  /><br><!--onclick="getInvited()"-->
+                <input class="submitbutton" type="submit" value="Submit"  /><br><!--onclick="getInvited()"-->
                 <button id="save">Save</button>
                 </div>
             </form>
