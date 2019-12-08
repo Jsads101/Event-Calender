@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import javax.servlet.http.HttpSession;
 
 @Repository
-public class CreateEventRepo  implements CreateEventInterface{
+public class CreateEventRepo  implements CreateEventInterface {
 
     private JdbcTemplate jdbcTemplate;
     HttpSession session;
@@ -17,10 +17,10 @@ public class CreateEventRepo  implements CreateEventInterface{
         this.session = session;
     }
 
-    public int getSessionID(){
+    public int getSessionID() {
         return jdbcTemplate.queryForObject("select PeopleId from People where Email = ?",
                 new Object[]{session.getAttribute("SESSION_USERNAME")},
-                (rs,i) -> new Integer(
+                (rs, i) -> new Integer(
                         rs.getInt("PeopleId")
                 )
         );
@@ -45,7 +45,8 @@ public class CreateEventRepo  implements CreateEventInterface{
     public int getEventId(CreateEvent event) {
         return event.getEventId();
     }
-    public void setEventID(CreateEvent event){
+
+    public void setEventID(CreateEvent event) {
         event.setEventId(jdbcTemplate.queryForObject("select EventId from Events where Name = ? and Date = ?",
                 new Object[]{event.getEventTitle(), event.getEventDate()},
                 (rs, i) -> new Integer(
@@ -63,8 +64,5 @@ public class CreateEventRepo  implements CreateEventInterface{
                     attendees.getTokenField().get(i),
                     attendees.getEventId()); //it should get eventId form the above method
         }
-
     }
-
-
 }

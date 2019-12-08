@@ -22,7 +22,6 @@ public class CreateEventController{
     @GetMapping("/CreateEventPage")
     public String createEventPage(Model model) {
         model.addAttribute("createEvent", new CreateEvent());
-
         return "CreateEventPage"; //CreateEventsPage.html page name to open it
     }
 

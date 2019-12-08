@@ -89,42 +89,16 @@
                 <input type="text" id="teaminput" name="teamSize"/><br><br>
                     </div>
 
-                <input id="csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <input id="csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 
                 <div class="row">
-                <input id="submitbutton" type="submit" value="Submit"  /><br><!--onclick="getInvited()"-->
+                <input id="submitbutton" type="submit" value="Submit"/><br>
                 <button id="save">Save</button>
                 </div>
             </form>
     </div>
 
 <br>
-
-<!--<script>-->
-<!--    //Function to retrieve all email addresses of invited people-->
-<!--    function getInvited() {-->
-
-<!--        var invited = $('#tokenfield-2').tokenfield('getTokensList');-->
-<!--        var invitedJSON = JSON.stringify(invited);-->
-<!--        //all email addresses entered are stored in the above String var (comma separated)-->
-
-<!--        $.ajax({-->
-<!--            type: "GET",-->
-<!--            contentType: 'application/json; charset=utf-8',-->
-<!--            dataType: 'json',-->
-<!--            url: "/invite",-->
-<!--            data: invitedJSON, // assignment of the variable-->
-<!--            success: function (result) {-->
-<!--                console.log("sucess");-->
-<!--                console.log(result);-->
-<!--            },-->
-<!--            failure: function (r) {-->
-<!--                console.log("failed");-->
-<!--                console.log(r);-->
-<!--            }-->
-<!--        });-->
-<!--    }-->
-<!--</script>-->
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 <script src="../static/saveform.js.js" th:src="@{saveform.js}"></script> <!--Script for save as a draft -->
