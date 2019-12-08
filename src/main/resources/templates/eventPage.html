@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body >
 
 <!-- mkaing static temporarily
     <header th:replace="/baseTemplate :: header">
@@ -29,6 +29,7 @@
     <div class="main">
 
         <section id="showevent" th:each="event : ${myEvent}">
+
             <h1><span th:text="${event.eventName}"></span></h1>
             <table class="table" id="eventtable">
                 <tr>
@@ -65,15 +66,16 @@
                 </tr><br>
             </table>
 
+<!--SIGN UP MODAL------------------------------------------------------------->
         <!-- Trigger/Open The Modal -->
     <button id="myBtn">Sign Up</button>
 
         <!-- The Modal -->
-        <div id="myModal-one" class="modal">
+        <div id="myModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close1">&times;</span>
+                    <span class="close">&times;</span>
                     <br>
                     <br>
                     <h1> You are signing up to the <span th:text="${event.eventName}"></span> Event</h1>
@@ -115,13 +117,22 @@
 
     </div><br><br>
 
-    <div id="searchbyevent">
+            <!--End of SIgn Up Modal----------------------------------------------->
+
+            <!--View Attendees Button and Modal------------------------------------->
+
+    <div id="searchbyevent" th:if="${event.organiserEmail == session.SESSION_USERNAME}">
         <form method="GET" action="/searchMyEvents">
             <button class="submitbutton" name="eventId" type="submit" th:value="${event.eventID}">View My Attendees</button><br><br>
 
             </form>
         </div>
-    <button id="cancelBtn-one">Cancel Attending</button>
+
+            <!--End of View Attendees button and Modal------------------------>
+
+            <!--Cancel Attending Button and Modal------------------------------>
+
+    <button class="submitbutton" id="cancelBtn-one">Cancel Attending</button>
 
         <div id="myModal-two" class="modal">
             <div class="modal-content">
@@ -132,30 +143,39 @@
 
                 <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
                     <button id="cancelBtn-two" class="submitbutton" type="submit">Yes, I'm sure</button>
-                </form><br>
+                    <br><br>
+                </form>
 
             </div>
+
         </div>
-            <br/>
-            <br/>
-            <div class="deleteeventsection">
-                <button class="submitbutton" onclick="deleteEvent()">Delete Event</button>
-                <div id="myModalTwo" class="modal">
-                    <div class="modal-content">
-                        <br>
-                        <br>
-                        <h1> Are you sure you want to cancel the <span th:text="${event.eventName}"></span> Event?</h1>
 
-                        <form method="post" th:action="@{/delete(eventId=${event.eventID})}">
-                            <button class="submitbutton" type="submit">Delete Event</button><br><br>
-                        </form>
-                        <button class="submitbutton" onclick="returnToEvent()">No, Take Me Back</button><br><br>
-                    </div>
-                </div><br>
-            </div>
-    <br><br>
+            <!--ENd of Cancel Attending Event Button and Modal---------------------------------->
+<br/>
+<br/>
 
-    </section>
+            <!--Delete Event Button and Modal------------------------------------------------>
+<div class="deleteeventsection" th:if="${event.organiserEmail == session.SESSION_USERNAME}">
+    <button class="submitbutton" onclick="deleteEvent()">Delete Event</button>
+    <div id="myModalTwo" class="modal">
+        <div class="modal-content">
+            <br>
+            <br>
+            <h1> Are you sure you want to cancel the <span th:text="${event.eventName}"></span> Event?</h1>
+
+            <form method="post" th:action="@{/delete(eventId=${event.eventID})}">
+                <button class="submitbutton" type="submit">Delete Event</button><br><br>
+            </form>
+            <button class="submitbutton" onclick="returnToEvent()">No, Take Me Back</button><br><br>
+        </div>
+    </div><br>
+</div>
+            <!--End of delete event button and modal--------------------------------------->
+<br><br>
+        </section>
+
+
+
     </div>
 
 </div>
@@ -169,10 +189,14 @@
     function returnToEvent(){
         document.getElementById("myModalTwo").style.display = "none";
     }
-
-
 </script>
 
+<!--<script type="text/javascript">-->
+<!--    function getSessionEmail(){-->
+<!--        var sEmail = '<%= session.getAttribute("SESSION_USERNAME")%>';-->
+<!--        alert(sEmail);-->
+<!--    }-->
+<!--</script>-->
 
 <script src="../static/CreateEventPage.js" th:src="@{CreateEventPage.js}"></script>
 </body>

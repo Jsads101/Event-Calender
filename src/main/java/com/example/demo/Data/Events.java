@@ -12,6 +12,21 @@ public class Events {
     private int teamBased;
     private String description;
     private int teamSize;
+    private String organiserEmail;
+
+    public Events(String name, String firstName, String surName, String location, String date, String time, String description, int eventID, int dietReq, int teamBased, int teamSize, String email) {
+    this.eventName = name;
+        this.organiserName = firstName + " " + surName;
+        this.location = location;
+        this.date = date;
+        this.time = time;
+        this.dReq = dietReq;
+        this.teamBased = teamBased;
+        this.description = description;
+        this.teamSize = teamSize;
+        this.organiserEmail = email;
+        this.eventID = eventID;
+    }
 
     public int getTeamSize(){
         return teamSize;
@@ -51,6 +66,27 @@ public class Events {
 
     public int getTeamBased() {
         return teamBased;
+    }
+
+    public String getOrganiserEmail() {
+        return organiserEmail;
+    }
+
+    public void setOrganiserEmail(String organiserEmail) {
+        this.organiserEmail = organiserEmail;
+    }
+
+    public Events(String eventName, String organiserName, String location, String date, String time, int dReq, int teamBased, String description, int teamSize, String organiserEmail) {
+        this.eventName = eventName;
+        this.organiserName = organiserName;
+        this.location = location;
+        this.date = date;
+        this.time = time;
+        this.dReq = dReq;
+        this.teamBased = teamBased;
+        this.description = description;
+        this.teamSize = teamSize;
+        this.organiserEmail = organiserEmail;
     }
 
     public Events(String eventName, String organiserName, String location, String date, int dReq, int teamBased, int teamSize) {
