@@ -92,13 +92,18 @@
                 <input id="csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
                 <div class="row">
-                <input class="submitbutton" type="submit" value="Submit"  /><br><!--onclick="getInvited()"-->
+                <input class="submitbutton" type="submit" value="Submit"  onclick="clearUp()"/><br><!--onclick="getInvited()"-->
                 <button id="save">Save</button>
                 </div>
             </form>
     </div>
 
 <br>
+<script>
+    function clearUp(){
+        localStorage.clear();
+    }
+</script>
 
 <!--<script>-->
 <!--    //Function to retrieve all email addresses of invited people-->
