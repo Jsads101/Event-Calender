@@ -4,6 +4,8 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="../static/CreateEventPage.css" th:href="@{CreateEventPage.css}" rel="stylesheet">
+
     <title>Title</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
         <nav>
             <ul class="navcontainer">
                 <li><a class="navsectionlink" href="viewEvents.html" th:href="@{viewEvents}">Home</a></li>
-                <li><a class="navsectionlink"  th:href="@{CreateEventPage}">Create Event</a></li>
+                <li><a class="navsectionlink"  href="CreateEventPage.html" th:href="@{CreateEventPage}">Create Event</a></li>
                 <li><a class="navsectionlink" th:if="${session.SESSION_USERNAME != null}" href="/logout">Log Out</a></li>
             </ul>
         </nav>

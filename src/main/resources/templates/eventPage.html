@@ -100,7 +100,13 @@
             <form method="post" th:action="@{/delete?eventId={id}(id=${event.eventID})}">
                 <button class="submitbutton" type="submit">Delete</button>
             </form>
-        </div><br><br>
+    </div><br>
+
+    <div>
+        <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
+            <button class="submitbutton" type="submit">Cancel Attending</button>
+        </form>
+    </div>
     </section>
 </div>
 

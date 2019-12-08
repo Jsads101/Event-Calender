@@ -57,7 +57,7 @@ body{
   
   .main {
     text-align: center;
-
+    display: -ms-flexbox;
   }
   
   input, textarea {
