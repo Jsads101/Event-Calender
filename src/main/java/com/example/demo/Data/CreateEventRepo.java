@@ -29,16 +29,16 @@ public class CreateEventRepo  implements CreateEventInterface{
     @Override
     public int addEvent(CreateEvent createEvent) {
         int PersonID = getSessionID();
-
-        return jdbcTemplate.update("insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time)  values(?,?,?,?,?,?,?,?)",
+        return jdbcTemplate.update("insert into Events(Name, Organiser, Description, Location, TeamBased, DietReq, Date, Time, TeamSize)  values(?,?,?,?,?,?,?,?,?)",
                 createEvent.getEventTitle(),
                 PersonID,
                 createEvent.getEventDesc(),
                 createEvent.getLocation(),
-                0,
+                createEvent.getTeamBased(),
                 createEvent.getDietaryReq(),
                 createEvent.getEventDate(),
-                createEvent.getEventTime());
+                createEvent.getEventTime(),
+                createEvent.getTeamSize());
     }
 
     //Need to get eventId which is validated in terms of event name and date - there can be reoccurring events with the same name time location and desc.
@@ -55,12 +55,8 @@ public class CreateEventRepo  implements CreateEventInterface{
 
     @Override
     public void addAttendees(CreateEvent attendees) {
-
-        System.out.println(attendees.getTokenField().size());
         for (int i = 0; i < attendees.getTokenField().size(); i++) {
-            System.out.println("Token Number = " + i);
-            System.out.println(attendees.getEventId());
-            jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId) " +
+            jdbcTemplate.update("insert into BookingStatus(PeopleId, eventId, statusId)" +
                             "select People.PeopleId, Events.EventId,? from People, Events " +
                             "where Email = ? and EventId = ?",
                     3,

@@ -4,7 +4,28 @@ body{
     margin: 0;
     font-family: Lato, sans-serif;
   }
-  
+
+#loginmain p{
+   width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#loginForm, #registerForm{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#loginForm input, #registerForm input {
+    width: 100%;
+}
+
+.createquestion {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
   .navcontainer {
     display:flex;
   }
@@ -68,9 +89,22 @@ body{
     padding: 1px
   }
 
+  #sub{
+      background-color: #ffcB05;
+      font-weight: bold;
+  }
+
+#sub:hover {
+    background-color: #B89100;
+}
+
   #dietradio{
       display: flex;
   }
+.smallradio {
+    width: 25%;
+    height: 1.3rem;
+}
 
   
   #eventdescription {
@@ -112,11 +146,26 @@ width:50%;
   .submitbutton:hover {
     background-color: #B89100;
   }
-
+/*styling for save button in create event form.*/
+#save{
+    margin-left: 2rem;
+    width:30%;
+    background-color: #ffcB05;
+    color: #223B47;
+    height: 3rem;
+    border: none;
+    font-weight: bold;
+}
+#save:hover {
+    background-color: #B89100;
+}
   
   #eventtypeform {
       padding-top: 1rem;
       display: none;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
 }
 
   .teamcontainer{
@@ -125,6 +174,11 @@ width:50%;
       width: 60%;
       margin: 0 auto;
       padding-bottom: 1rem;
+  }
+
+  .createcontainer{
+      text-align: center;
+
   }
 
   #teaminput{
@@ -138,12 +192,12 @@ width:50%;
 
 }
 
-#attendeetable{
-    margin: 0 auto;
-}
-
 #eventtable{
     margin: 0rem auto 2rem auto;
+}
+
+#attendeetable {
+    margin: 0 auto;
 }
 
 
@@ -164,6 +218,7 @@ td, th {
 tr:nth-child(odd) {
     background-color: #dddddd;
 }
+
 
 
 
@@ -242,7 +297,7 @@ tr:nth-child(odd) {
   }
   
   /* The Close Button */
-  .close {
+  .close, .close2 {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -250,10 +305,18 @@ tr:nth-child(odd) {
   }
   
   .close:hover,
-  .close:focus {
+  .close:focus, .close2:hover, .close2:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .row{
+      display: flex;
+      -ms-flex-wrap: wrap;
+      width: 80%;
+      margin: 0 auto !important;
+      justify-content: center;
   }
 
   #dietReqForm {
@@ -264,6 +327,12 @@ tr:nth-child(odd) {
       vertical-align: middle;
       width:20rem;
       height: 10rem;
+  }
+
+  #teammembers {
+    vertical-align: middle;
+    width:20rem;
+    height: 10rem;
   }
 
   #showevent {
