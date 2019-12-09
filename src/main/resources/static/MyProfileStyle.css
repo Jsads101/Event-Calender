@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    font-family: Lato, sans-serif;
+}
+
+.navcontainer {
+    display:flex;
+}
+
+.navsection{
+    padding-right: 1rem;
+}
+
+header {
+    background-color: #223B47;
+    color: white;
+    height:5rem;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.navsectionlink {
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navsectionlink:hover {
+    background: white;
+    color: #223B47;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border-radius: 50%;
+    left: 1rem;
+    position: absolute;
+    top:1rem;
+    border: 0.4rem solid white;
+    height: 8rem;
+
+}
+
+.mainsection {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    padding: 1rem;
+}
+
+.eventsection {
+    border: 2px solid black;
+    width:70%;
+    margin: 1rem auto;
+    padding-bottom: 2rem;
+    background-color: #e9e9e9;
+}
+
+.singleevent{
+    border: 1px solid black;
+    width: 70%;
+    margin: 1rem auto;
+    padding-bottom: 0.5rem;
+    background-color: white;
+}
+
+input, textarea {
+    width:60%;
+    height: 2rem;
+    border: 0.1rem solid #223B47;
+}
+
+
+.submitbutton{
+    width:30%;
+    background-color: #ffcB05;
+    color: #223B47;
+    height: 3rem;
+    border: none;
+    font-weight: bold;
+}
+
+.submitbutton:hover {
+    background-color: #B89100;
+}
