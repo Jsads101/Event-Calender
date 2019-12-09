@@ -14,7 +14,8 @@ let formElements = form.elements; // get the elements in the form
 const getFormData = () => {
     let data = { [formIdentifier]: {} }; // create an empty object with the formIdentifier as the key and an empty object as its value
     for (const element of formElements) {
-      if (element.name.length > 0 && element.name !== "_csrf") { //checks is the element contains any value AND if the element name does not equal to "_csrf"
+      if (element.name.length > 0 && element.name !== "_csrf" && element.name !== "dietaryReq" && element.name !== "teamBased") {
+        // above if statement checks is the element contains any value AND if the element name does not equal to "_csrf" or is not a radio button
         data[formIdentifier][element.name] = element.value;
       }
     }
