@@ -43,5 +43,19 @@
 
 
 </div>
+<footer>
+    <p>You visited this page  <span id="total_count"></span> times.</p>
+</footer>
 </body>
+<script>
+    var temp = localStorage.getItem("total_counter");
+    if (temp === null) {
+        temp = 0;
+    }
+
+    temp++;
+
+    localStorage.setItem("total_counter", temp);
+    document.getElementById('total_count').innerHTML = temp;
+</script>
 </html>
