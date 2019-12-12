@@ -26,7 +26,6 @@ public class CreateEvent {
         this.location = location;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
-        //this.tokenField = tokenField;
         this.tokenField = Arrays.asList(tokenField.split("\\s*,\\s*")); //changing email addresses String to an ArrayList
         this.dietaryReq = dietaryReq;
     }

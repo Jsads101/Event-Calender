@@ -37,9 +37,6 @@ a("#tokenfield-2").tokenfield({
     delay:100},
 showAutocompleteOnFocus:!0,
 
-delimiter:[","," ","-","_"]});var b=new Bloodhound({local:[{value:"red"},{value:"blue"},{value:"green"},{value:"yellow"},{value:"violet"},{value:"brown"},{value:"purple"},{value:"black"},{value:"white"}],datumTokenizer:function(a){return Bloodhound.tokenizers.whitespace(a.value)},queryTokenizer:Bloodhound.tokenizers.whitespace});b.initialize(),a("#tokenfield-typeahead").tokenfield({typeahead:[null,{source:b.ttAdapter()}]}),
-
-
 a("#tokenfield-2").on("tokenfield:createtoken",function(a){var b=a.attrs.value.split("|");a.attrs.value=b[1]||b[0],a.attrs.label=b[1]?b[0]+" ("+b[1]+")":b[0]})
 // Email address validation
 .on("tokenfield:createdtoken",function(b){var c=/\S+@\S+\.\S+/,d=c.test(b.attrs.value);

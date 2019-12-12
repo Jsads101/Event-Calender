@@ -14,8 +14,8 @@ let formElements = form.elements; // get the elements in the form
 const getFormData = () => {
     let data = { [formIdentifier]: {} }; // create an empty object with the formIdentifier as the key and an empty object as its value
     for (const element of formElements) {
-      if (element.name.length > 0 && element.name !== "_csrf" && element.name !== "dietaryReq" && element.name !== "teamBased") {
-        // above if statement checks is the element contains any value AND if the element name does not equal to "_csrf" or is not a radio button
+      if (element.name.length > 0 && element.name !== "_csrf") {
+        // above if statement checks is the element contains any value AND if the element name does not equal to "_csrf"
         data[formIdentifier][element.name] = element.value;
       }
     }
@@ -30,10 +30,9 @@ const getFormData = () => {
     const message = "Form draft has been saved!";
     displayAlert(message);
   };
-  
   /**
    * This function displays a message
-   * on the page for 1 second
+   * on the page for 2 seconds
    *
    * @param {String} message
    */
@@ -44,7 +43,6 @@ const getFormData = () => {
       alertBox.style.display = "none"; // hide the alert box after 1 second
     }, 2000);
   };
-
 /**
  * This function populates the form
  * with data from localStorage
