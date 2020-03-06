@@ -67,6 +67,16 @@ public class CreateEvent {
         this.teamBased = teamBased;
     }
 
+    public CreateEvent(String eventTitle, String eventDesc, String location, String eventTime, int dietaryReq, int teamSize, int teamBased) {
+        this.eventTitle = eventTitle;
+        this.eventDesc = eventDesc;
+        this.location = location;
+        this.eventTime = eventTime;
+        this.dietaryReq = dietaryReq;
+        this.teamSize = teamSize;
+        this.teamBased = teamBased;
+    }
+
     public CreateEvent(int eventId, String eventTitle, String eventDesc, String location, String eventTime, Date eventDate, String tokenField, int dietaryReq, int teamSize, int teamBased) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
