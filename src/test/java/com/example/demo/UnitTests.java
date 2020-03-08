@@ -1,4 +1,4 @@
-package com.example.demo.MainTests;
+package com.example.demo;
 
 import com.example.demo.Data.BookingStatus;
 import com.example.demo.Data.CreateEvent;
