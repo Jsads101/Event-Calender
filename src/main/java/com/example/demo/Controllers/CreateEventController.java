@@ -17,8 +17,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class CreateEventController{
     private CreateEventRepo repo;
-    @Autowired
-    private JavaMailSender sender;
+   // @Autowired
+    //private JavaMailSender sender;
 
     @Autowired
     public CreateEventController(CreateEventRepo r) {
@@ -37,12 +37,12 @@ public class CreateEventController{
         repo.addEvent(event);
         repo.setEventID(event);
         repo.addAttendees(event);
-        createEventEmail(event);
+        //createEventEmail(event);
 
         return "redirect:/viewSpecificEvent?eventId="+String.valueOf(event.getEventId());
     }
 
-    public void createEventEmail(CreateEvent event) {
+   /* public void createEventEmail(CreateEvent event) {
         try {
             MimeMessage message = sender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message);
@@ -61,7 +61,7 @@ public class CreateEventController{
         } catch (Exception ex) {
             System.out.println("Error Sending email " + ex);
         }
-    }
+    } */
 
 }
 

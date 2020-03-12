@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+
 
 @Controller
 public class SignUpController {
@@ -26,6 +28,15 @@ public class SignUpController {
         BookingStatus newSignUp = new BookingStatus(eventId, statusId, dietReq, teamMembers);
         repo.signUp(newSignUp);
         return "redirect:/viewEvents";
+    }
+
+    @GetMapping(path = {"/greeting", "greeting/{name}"})
+    public String greeting(@PathVariable Optional<String> name) {
+        if (name.isPresent()){
+            return "Hello "+name.get();
+        } else {
+            return "Hello Guest";
+        }
     }
 
 

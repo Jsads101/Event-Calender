@@ -1,13 +1,11 @@
-package com.example.demo;
+package com.example.demo.Tests;
 
-import com.example.demo.Data.BookingStatus;
 import com.example.demo.Data.CreateEvent;
 import com.example.demo.auth.base.BaseController;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
-import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
