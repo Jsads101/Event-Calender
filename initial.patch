@@ -286,4 +286,4 @@ Index: src/test/resources/data.sql
 --- src/test/resources/data.sql	(revision 9573e1753a44a244a2b16254c5cd64625a6f7e48)
 +++ src/test/resources/data.sqlt	(date 1584023533123)
 @@ -1,0 +1,0 @@
-
+ 
