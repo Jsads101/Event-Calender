@@ -1,4 +1,4 @@
-
+drop table if exists Events;
 create table if not exists Events (
     EventId int(11) NOT NULL AUTO_INCREMENT,
     Name varchar(100) NOT NULL,
@@ -12,6 +12,7 @@ create table if not exists Events (
     TeamSize int(11) DEFAULT NULL,
     PRIMARY KEY (EventId)
 );
+drop table if exists BookingStatus;
 create table if not exists BookingStatus (
     bookingStatusId int(11) NOT NULL,
     peopleId        int(11) NOT NULL,
@@ -20,6 +21,7 @@ create table if not exists BookingStatus (
     dietReq         varchar(255) DEFAULT NULL,
     teammembers     varchar(255)
 );
+drop table if exists People;
 create table if not exists People (
     PeopleId int(11),
     FirstName varchar(20),
@@ -28,8 +30,17 @@ create table if not exists People (
     password varchar(255),
     Enabled int(4)
 );
+drop table if exists authorities;
 create table if not exists authorities (
     PeopleID int(11),
     authority varchar(50)
 );
+drop table if exists users;
+create table if not exists users (
+    username varchar(50) NOT NULL,
+    password varchar(100) NOT NULL,
+    enabled int(4),
+    PRIMARY KEY (username)
+);
+
 

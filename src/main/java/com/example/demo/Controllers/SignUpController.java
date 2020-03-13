@@ -30,15 +30,4 @@ public class SignUpController {
         return "redirect:/viewEvents";
     }
 
-    @GetMapping(path = {"/greeting", "greeting/{name}"})
-    public String greeting(@PathVariable Optional<String> name) {
-        if (name.isPresent()){
-            return "Hello "+name.get();
-        } else {
-            return "Hello Guest";
-        }
-    }
-
-
-
 }
