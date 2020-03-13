@@ -31,9 +31,7 @@ public class MockMVCs {
 
     @Autowired
     HttpSession session;
-
-
-    // Unit tests using a mock MVC
+    
 /*
     @org.junit.Test
     public void testCancelAttendingController() throws Exception {
