@@ -50,13 +50,13 @@ public class MockMVCs {
 
         mockMvc.perform(get("/CreateEventPage")).andExpect(status().isOk()).andExpect(model().attribute("createEvent", instanceOf(CreateEvent.class)));
     }
-
+/*
     @org.junit.Test
     public void testAuthController() throws Exception {
 
         session.setAttribute("SESSION_USERNAME", "SadlerJM@cardiff.ac.uk");
         this.mockMvc.perform(get("/login")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("redirect:/"));
-    }
+    } */
 
     @org.junit.Test
     public void testAuthController2() throws Exception {
