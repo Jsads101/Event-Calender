@@ -31,7 +31,7 @@ public class MockMVCs {
 
     @Autowired
     HttpSession session;
-    
+
 /*
     @org.junit.Test
     public void testCancelAttendingController() throws Exception {
