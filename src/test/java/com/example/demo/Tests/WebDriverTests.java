@@ -24,7 +24,7 @@ public class WebDriverTests {
     @Value("${local.server.port}")
     private int port;
 
-
+/*
     @Test
     public void createEventPageContainsNewEvent() {
 
@@ -53,6 +53,7 @@ public class WebDriverTests {
         assertTrue(webDriver.findElement(By.id("test3")).getText().contains("Register"));
         this.webDriver.quit();
     }
+*/
 /*
 
 @Test
