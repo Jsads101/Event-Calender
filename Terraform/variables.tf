@@ -10,4 +10,4 @@ variable "keypair" { default = "mykey" }       # you need to change this
 variable "pool" { default = "cscloud_private_floating" }
 variable "server_script" { default = "./server.sh" }
 variable "security_description" { default = "Terraform security group" }
-variable "security_name" { default = "tf_security_two" }
+variable "security_name" { default = "tf_security_three" }
