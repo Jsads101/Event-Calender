@@ -29,7 +29,7 @@ public class WebDriverTests {
     public void createEventPageContainsNewEvent() {
 
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\c1981660\\Desktop\\ChromeDriver\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\C1981660\\Desktop\\HodgeFork\\hodgebank\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-debugging-port=42227");
         this.webDriver = new ChromeDriver(options);
