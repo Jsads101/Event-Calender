@@ -1,3 +1,4 @@
+/*
 package com.example.demo.Tests;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +24,8 @@ public class WebDriverTests {
 
     @Value("${local.server.port}")
     private int port;
+
+ */
 
 /*
     @Test
@@ -87,7 +90,5 @@ public class WebDriverTests {
         this.webDriver.get("http://localhost:" + Integer.toString(port) + "/register");
         assertTrue(webDriver.findElement(By.id("registerForm")).getText().contains("Register"));
         this.webDriver.quit();
-    } */
-
-}
-
+    }
+    }*/
