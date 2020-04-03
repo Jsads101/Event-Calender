@@ -27,7 +27,6 @@
     </header>
 
     <div class="main">
-
         <section id="showevent" th:each="event : ${myEvent}">
 
             <h1><span th:text="${event.eventName}"></span></h1>
@@ -36,33 +35,27 @@
                     <th>Date</th>
                 </tr>
                 <tr>
-                    <td th:text="${event.date}"></td>
+                    <td id="date" th:text="${event.date}"></td>
                 </tr>
                 <tr>
                     <th>Time</th>
                 </tr>
                 <tr>
-                    <td th:text="${event.time}"></td>
+                    <td id="time" th:text="${event.time}"></td>
                 </tr>
 
                 <tr>
                     <th>Location</th>
                 </tr>
                 <tr>
-                    <td th:text="${event.location}"></td>
-                </tr>
-                <tr>
-                    <th>Organiser</th>
-                </tr>
-                <tr>
-                    <td th:text="${event.organiserName}"></td>
+                    <td id="location" th:text="${event.location}"></td>
                 </tr>
 
                 <tr>
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td th:text="${event.description}"></td>
+                    <td id="description" th:text="${event.description}"></td>
                 </tr><br>
             </table>
 
@@ -90,7 +83,7 @@
 
                         <!--End of hidden input-->
                         <div th:if="${event.DReq == 1}">
-                            <p id="test5">Do you have any dietary requirements?</p>
+                            <p id="dietarytest">Do you have any dietary requirements?</p>
                             <br>
                             <br>
                             <div class="radiocontainer">
@@ -139,7 +132,7 @@
 
                 <span class="close2">&times;</span>
 
-                <h1>Are you sure you wish to cancel attending the <span th:text="${event.eventName}"></span> event?</h1>
+                <h1 id="cancelattendingalert">Are you sure you wish to cancel attending the <span th:text="${event.eventName}"></span> event?</h1>
 
                 <form method="post" th:action="@{/cancelAttending(eventId=${event.eventID})}">
                     <button id="cancelBtn-two" class="submitbutton" type="submit">Yes, I'm sure</button>
@@ -156,15 +149,15 @@
 
             <!--Delete Event Button and Modal------------------------------------------------>
 <div class="deleteeventsection" th:if="${event.organiserEmail == session.SESSION_USERNAME}">
-    <button class="submitbutton" onclick="deleteEvent()">Delete Event</button>
+    <button id="deleteeventtestbutton" class="submitbutton" onclick="deleteEvent()">Delete Event</button>
     <div id="myModalTwo" class="modal">
         <div class="modal-content">
             <br>
             <br>
-            <h1> Are you sure you want to cancel the <span th:text="${event.eventName}"></span> Event?</h1>
+            <h1 id="testdeleteeventalert"> Are you sure you want to cancel the <span th:text="${event.eventName}"></span> Event?</h1>
 
             <form method="post" th:action="@{/delete(eventId=${event.eventID})}">
-                <button class="submitbutton" type="submit">Delete Event</button><br><br>
+                <button id="deleteeventtest" class="submitbutton" type="submit">Delete Event</button><br><br>
             </form>
             <button class="submitbutton" onclick="returnToEvent()">No, Take Me Back</button><br><br>
         </div>

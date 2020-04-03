@@ -34,6 +34,78 @@ public class SearchEventsRepo{
 
 
         if (val==1) {
+            return jdbcTemplate.query("select Name,Location,e.Date,e.Time,e.EventId " +
+                            "from Events e" +
+                            " WHERE DATE > NOW() ORDER BY DATE",
+                    new Object[]{},
+                    (rs, i) -> new Events(
+                            rs.getString("Name"),
+                            //rs.getString("FirstName"),
+                            //rs.getString("SurName"),
+                            rs.getString("Location"),
+                            rs.getString("Date"),
+                            rs.getString("Time"),
+                            rs.getInt("eventID")
+
+                    )
+            );
+        }
+        else if(val==2){
+            return jdbcTemplate.query("select Name,Location,e.Date,e.Time,e.EventId " +
+                            "from Events e" +
+                            " WHERE DATE > NOW() ORDER BY DATE",
+                    new Object[]{},
+                    (rs, i) -> new Events(
+                            rs.getString("Name"),
+                            rs.getString("Location"),
+                            rs.getString("Date"),
+                            rs.getString("Time"),
+                            rs.getInt("eventID")
+
+                    )
+            );
+        }
+        else if(val==3){
+            return jdbcTemplate.query("select Name,Location,e.Date,e.Time,e.EventId " +
+                            "from Events e" +
+                            " WHERE DATE < NOW() ORDER BY DATE DESC",
+                    new Object[]{},
+                    (rs, i) -> new Events(
+                            rs.getString("Name"),
+                            rs.getString("Location"),
+                            rs.getString("Date"),
+                            rs.getString("Time"),
+                            rs.getInt("eventID")
+
+                    )
+            );
+        }
+        else if(val==4){
+            return jdbcTemplate.query("select Name,Location,Date,Time,e.EventId " +
+                            "from Events e" +
+                            " WHERE DATE < NOW() ORDER BY DATE DESC",
+                    new Object[]{},
+                    (rs, i) -> new Events(
+                            rs.getString("Name"),
+                            rs.getString("Location"),
+                            rs.getString("Date"),
+                            rs.getString("Time"),
+                            rs.getInt("eventID")
+
+                    )
+            );
+        }
+        //if first time page loaded, return default
+        else
+            return null;
+
+    }
+}
+/*
+    public List<Events> findByEvent(int val) {
+
+
+        if (val==1) {
             return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time,e.EventId " +
                             "from Events e inner join People p on p.PeopleId = e.Organiser WHERE DATE > NOW() ORDER BY DATE",
                     new Object[]{},
@@ -110,3 +182,4 @@ public class SearchEventsRepo{
 
     }
 }
+*/

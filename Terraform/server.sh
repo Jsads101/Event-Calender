@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "cd to root directory..."
-cd root
+cd /home/centos
 
 echo "installing MariaDB..."
 sudo yum install mariadb-server -y
