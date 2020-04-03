@@ -31,36 +31,15 @@ import java.util.List;
             );
         }
 
-        public List<Events> showByEventId(int e) {
-            return jdbcTemplate.query("select Name, Location,e.Date,e.Time, Description, e.EventId, DietReq, TeamBased, TeamSize" +
-                            " from Events e where eventId =?",
-                    new Object[]{e},
-                    (rs, i) -> new Events(
-                            rs.getInt("eventID"),
-                            rs.getString("Name"),
-                            //rs.getString("FirstName"),
-                            //rs.getString("SurName"),
-                            rs.getString("Location"),
-                            rs.getString("Date"),
-                            rs.getString("Time"),
-                            rs.getString("Description"),
-                            rs.getInt("DietReq"),
-                            rs.getInt("TeamBased"),
-                            rs.getInt("TeamSize")
-                            //rs.getString("email")
 
-                    )
-            );
-        }
-/*
         public List<Events> showByEventId(int e) {
             return jdbcTemplate.query("select Name,FirstName,SurName,Location,e.Date,e.Time, Description, e.EventId, DietReq, TeamBased, TeamSize, p.Email " +
                             "from Events e inner join People p on p.PeopleId = e.Organiser where eventId =?",
                     new Object[]{e},
                     (rs, i) -> new Events(
                             rs.getString("Name"),
-                            //rs.getString("FirstName"),
-                            //rs.getString("SurName"),
+                            rs.getString("FirstName"),
+                            rs.getString("SurName"),
                             rs.getString("Location"),
                             rs.getString("Date"),
                             rs.getString("Time"),
@@ -69,11 +48,12 @@ import java.util.List;
                             rs.getInt("DietReq"),
                             rs.getInt("TeamBased"),
                             rs.getInt("TeamSize"),
-                            //rs.getString("email")
+                            rs.getString("email")
 
                     )
             );
-        }*/
+        }
+
 
 
 

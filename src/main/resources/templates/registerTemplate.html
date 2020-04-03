@@ -32,31 +32,28 @@
     -->
 
     <div class="container2">
-        <p id="errortest" th:if="${errors} != null" th:text="ERROR"></p>
-        <p id="alerttest" th:each="err : ${errors}" th:text="${err}"></p>
-
-
-
+    <p th:if="${errors} != null" th:text="ERROR"></p>
+    <p th:each="err : ${errors}" th:text="${err}"></p>
 
     <form id="registerForm" action="/registration" method="post" th:object="${user}">
         <!-- th:object allows the user object to be referenced in sub-elements (see username input below)
             Assuming that it is passed through as an attribute to the model
             Access user object attributes using *{NAME_OF_ATTRIBUTE} syntax (rather than ${user.NAME_OF_ATTRIBUTE})
         -->
-        <label id="testregisteremail" for="un">Email:</label>
+        <label for="un">Email:</label>
         <input id="un" name="username" type="text" th:field="*{username}"/>
         <!-- thfield: username is an attribute of the user object stored in the model.
              This allows the value of the username to remain in the form across page reloads (e.g., due to validation errors)
              The same can be achieved by using th:field="${user.username}"
              -->
-        <label id="testregisterpassword" for="pw">Password:</label>
+        <label for="pw">Password:</label>
         <input id="pw" name="password" type="password"/>
-        <label id="testregisterconfirmpassword" for="cpw">Confirm Password:</label>
+        <label for="cpw">Confirm Password:</label>
         <input id="cpw" name="cpassword" type="password"/>
 
-        <label id="testregisterfirstname" for="fn">First Name:</label>
+        <label for="fn">First Name:</label>
         <input id="fn" name="fName" type="text"/>
-        <label id="testregistersurname" for="sn">Surname:</label>
+        <label for="sn">Surname:</label>
         <input id="sn" name="sName" type="text"/>
         <!--
         Required to protect against CSRF attacks.

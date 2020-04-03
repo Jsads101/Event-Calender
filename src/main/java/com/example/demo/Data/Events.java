@@ -145,26 +145,6 @@ public class Events {
         this.teamSize=teamSize;
     }
 
-    public Events(int eventID, String eventName, String location, String date, String time, String description, int dReq, int teamBased, int teamSize) {
-        this.eventID = eventID;
-        this.eventName = eventName;
-        this.location = location;
-        this.date = date;
-        this.time = time;
-        this.description = description;
-        this.dReq = dReq;
-        this.teamBased = teamBased;
-        this.teamSize = teamSize;
-    }
-
-    public Events(String eventName, String location, String date, String time, int eventID) {
-        this.eventName = eventName;
-        this.location = location;
-        this.date = date;
-        this.time = time;
-        this.eventID = eventID;
-    }
-
     public Events(int eventID){
         this.eventID = eventID;
     }

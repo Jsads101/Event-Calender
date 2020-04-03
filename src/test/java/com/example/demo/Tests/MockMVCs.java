@@ -32,19 +32,18 @@ public class MockMVCs {
     @Autowired
     HttpSession session;
 
-
+/*
     @org.junit.Test
     public void testCancelAttendingController() throws Exception {
 
         this.mockMvc.perform(post("/cancelAttending?eventId=1")).andDo(print()).andExpect(redirectedUrl("/viewEvents"));
-    }
+    }*/
 
     @org.junit.Test
     public void testRegController() throws Exception {
 
         this.mockMvc.perform(get("/register")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("registerTemplate"));
     }
-
 
     @org.junit.Test
     public void testRegController2() throws Exception {
@@ -57,7 +56,7 @@ public class MockMVCs {
 
         session.setAttribute("SESSION_USERNAME", "SadlerJM@cardiff.ac.uk");
         this.mockMvc.perform(get("/login")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("redirect:/"));
-    }*/
+    } */
 
     @org.junit.Test
     public void testAuthController2() throws Exception {
