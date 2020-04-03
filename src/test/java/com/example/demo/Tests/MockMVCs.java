@@ -33,11 +33,11 @@ public class MockMVCs {
     HttpSession session;
 
 
-    @org.junit.Test
+   /* @org.junit.Test
     public void testCancelAttendingController() throws Exception {
 
         this.mockMvc.perform(post("/cancelAttending?eventId=1")).andDo(print()).andExpect(redirectedUrl("/viewEvents"));
-    }
+    } */
 
     @org.junit.Test
     public void testRegController() throws Exception {
