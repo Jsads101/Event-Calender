@@ -1,3 +1,5 @@
+//commented out for pipeline
+
 /*
 package com.example.demo.Tests;
 import org.junit.Test;
