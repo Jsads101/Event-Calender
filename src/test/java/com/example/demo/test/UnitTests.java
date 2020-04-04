@@ -1,8 +1,7 @@
-package com.example.demo.Tests;
+package com.example.demo.test;
 
 import com.example.demo.Data.CreateEvent;
 import com.example.demo.auth.base.BaseController;
-import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
