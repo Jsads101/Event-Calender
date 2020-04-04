@@ -27,6 +27,11 @@ import java.util.List;
         The template "returnmyAttendees" shows the people signed up to the event and their dietery
         requirements.
          */
+
+        // The /searchMyEvents controller returns the event object and a list of attendees for that event.
+        // This tests whether it returns a strong cotaining "Jenny" because that is the name who is in the h2
+        //database as attending the event where eventID = 1
+
         @GetMapping("/searchMyEvents")
         public ModelAndView getEventAttendees(@RequestParam int eventId) {
             ModelAndView mv = new ModelAndView("returnMyAttendees");

@@ -51,7 +51,7 @@ public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
         /*
             These pages can be public and not need auth
         */
-        http.authorizeRequests().antMatchers("/", "/login", "/register", "/registration","/*.css","/*.JFIF", "/cancelAttending", "/greeting", "/CreateEventPage", "/signUp", "/viewSpecificEvent", "/eventPage", "/registerTemplate", "/viewEvents", "/baseTemplate", "/returnMyEventAttendees", "/delete", "redirect:/", "/cancelAttending?eventId=1").permitAll();
+        http.authorizeRequests().antMatchers("/", "/login", "/register", "/registration","/*.css","/*.JFIF", "/cancelAttending", "/greeting", "/CreateEventPage", "/signUp", "/viewSpecificEvent", "/eventPage", "/registerTemplate", "/viewEvents", "/baseTemplate", "/returnMyEventAttendees", "/delete", "/delete?eventId=1", "redirect:/", "/cancelAttending?eventId=1", "redirect:/viewEvents", "/searchMyEvents?eventId=1", "/searchMyEvents").permitAll();
 
         /*
             Use built in login form
