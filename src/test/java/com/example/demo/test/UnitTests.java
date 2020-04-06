@@ -1,52 +1,62 @@
 package com.example.demo.test;
-
 import com.example.demo.Data.CreateEvent;
-import com.example.demo.auth.base.BaseController;
+import com.example.demo.Data.Events;
+import com.example.demo.Data.PTeam;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.servlet.ModelAndView;
-import javax.servlet.http.HttpSession;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 @SpringBootTest
 public class UnitTests {
 
-    private BaseController baseController;
-    private HttpSession session;
-
-
-    /*This test will pass if the ModelandView object returned by the home() method in the
-Base Controller is not empty when the method is called */
 
     @org.junit.Test
-    public void whenMethodIsCalledObjectIsNotEmpty() {
-        baseController = new BaseController();
-        ModelAndView result = baseController.home(session);
-        assertEquals(result.isEmpty(), false);
-    }
-
-    //This test will pass if the correct View is set by the home() method
-
-     @org.junit.Test
-    public void whenMethodIsCalledCorrectViewIsSet() {
-        baseController = new BaseController();
-        String result = baseController.home(session).getViewName();
-        assertEquals(result, "loginTemplate");
-    }
-
-    //This test will pass if the correct String is returned and therefore the user is redirected correctly to the eventpage.
-    @org.junit.Test
-    public void whenEventPageMethodRunsUserIsRedirectedToEventPage(){
-        baseController = new BaseController();
-        String result = baseController.eventPage();
-        assertEquals(result, "eventPage");
-    }
-
-    @org.junit.Test
-    public void testGetEventId(){
-        CreateEvent testCreateEvent  = new CreateEvent("Party", "Fun", "office", "7pm", 1, 1, 1);
+    public void testCreateEventGetters(){
+        CreateEvent testCreateEvent  = new CreateEvent("Party", "Xmas Party. Black Tie", "office", "7pm", 1, 3, 1);
         assertEquals("Party", testCreateEvent.getEventTitle());
+        assertEquals("Xmas Party. Black Tie", testCreateEvent.getEventDesc());
+        assertEquals("office", testCreateEvent.getLocation());
+        assertEquals("7pm", testCreateEvent.getEventTime());
+        assertEquals(1, testCreateEvent.getDietaryReq());
+        assertEquals(1, testCreateEvent.getTeamBased());
+        assertEquals(3, testCreateEvent.getTeamSize());
     }
+
+    @org.junit.Test
+    public void testCreateEventSetters(){
+        CreateEvent testCreateEvent  = new CreateEvent();
+        String a = "Summer Party";
+        String b = "office";
+        String c = "8pm";
+        testCreateEvent.setEventTitle(a);
+        testCreateEvent.setLocation(b);
+        testCreateEvent.setEventTime(c);
+        assertEquals(a, testCreateEvent.getEventTitle());
+        assertEquals(b, testCreateEvent.getLocation());
+        assertEquals(c, testCreateEvent.getEventTime());
+    }
+
+
+    @org.junit.Test
+    public void testBookingStatusGetters(){
+        PTeam testPTeam  = new PTeam(1,1);
+        assertEquals(1, testPTeam.getPersonId());
+        assertEquals(1, testPTeam.getTeamId());
+    }
+
+
+    @org.junit.Test
+    public void testEventGetters(){
+        Events testEvents  = new Events("Party", "office", "21.12.2020", "7pm", 1);
+        assertEquals("Party", testEvents.getEventName());
+        assertEquals("office", testEvents.getLocation());
+        assertEquals("7pm", testEvents.getTime());
+        assertEquals("21.12.2020", testEvents.getDate());
+        assertEquals(1, testEvents.getEventID());
+    }
+
+
+
 
 }
 

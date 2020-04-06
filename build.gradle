@@ -35,6 +35,8 @@ dependencies {
         testCompile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.13.0'
         testCompile group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '3.13.0'
         testCompile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.13.0'
+        testCompile group: 'org.openqa.selenium.firefox.FirefoxDriver'
+    
         //testCompile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.52.0'
         testCompile group: 'org.w3c.css', name: 'sac', version: '1.3'
 

@@ -1,6 +1,7 @@
 package com.example.demo.test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -8,6 +9,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.example.demo.Data.CreateEvent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -83,7 +89,7 @@ public class MockMVCs {
     @Test
     public void testViewEventsControllerReturnsUpcomingEvents() throws Exception {
         this.mockMvc.perform(get("/viewEvents")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Harry Potter"))).andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Autumn Party")));;
+                .andExpect(content().string(containsString("Harry Potter"))).andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Autumn Party")));
     }
 
     //The viewEvents controller returns a list of events in the database. Parameter for viewEvents is 3 which is
@@ -112,9 +118,4 @@ public class MockMVCs {
         this.mockMvc.perform(get("/searchMyEvents?eventId=3")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Jenny")));
     }
-
-
 }
-
-
-
