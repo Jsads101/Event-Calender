@@ -1,5 +1,5 @@
-/*
-import package com.example.demo.test;
+
+package com.example.demo.test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -151,4 +151,3 @@ public class WebDriverTests {
     }
 
 }
-*/
