@@ -2,18 +2,15 @@
 
 #echo "cd to root directory..."
 cd /home/centos
-cd ..
-ls
-cd ..
-ls
-cd /home/centos
-
 
 echo "installing MariaDB..."
 sudo yum install mariadb-server -y
 sudo systemctl start mariadb
 sudo systemctl status mariadb
 sudo systemctl enable mariadb
+
+cd root
+
 sudo yum install git -y
 touch .ssh/known_hosts
 ssh-keyscan gitlab.cs.cf.ac.uk >> .ssh/known_hosts
@@ -51,7 +48,7 @@ tDpM+Xe8kp8C65Oz+EHuOt9KPgcujHqSLG+F5nt8WSEjndF8Zns=
 EOF
 chmod 400 gitlab_hb_keypair.key
 ssh-agent bash -c 'ssh-add gitlab_hb_keypair.key; git clone -b master git@gitlab.cs.cf.ac.uk:c1981660/hodgebank.git'
-cd root
+
 cd hodgebank/
 mysql -u root < hodge.sql
 
