@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #echo "cd to root directory..."
-cd /home/centos
+cd root
+#cd /home/centos
 
 echo "installing MariaDB..."
 sudo yum install mariadb-server -y
@@ -9,7 +10,7 @@ sudo systemctl start mariadb
 sudo systemctl status mariadb
 sudo systemctl enable mariadb
 
-cd /
+
 
 sudo yum install git -y
 touch .ssh/known_hosts
