@@ -9,7 +9,7 @@ sudo systemctl start mariadb
 sudo systemctl status mariadb
 sudo systemctl enable mariadb
 
-cd root
+cd /
 
 sudo yum install git -y
 touch .ssh/known_hosts
