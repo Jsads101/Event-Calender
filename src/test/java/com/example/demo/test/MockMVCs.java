@@ -33,42 +33,42 @@ public class MockMVCs {
 //UNIT TESTS USING MOCKMVC
 
     @org.junit.Test
-    public void testRegController() throws Exception {
+    public void testRegisterControllerDirectsToRegisterPage() throws Exception {
 
         this.mockMvc.perform(get("/register")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("registerTemplate"));
     }
 
 
     @org.junit.Test
-    public void testRegController2() throws Exception {
+    public void testCreateEventPageControllerHasAttribute() throws Exception {
 
         mockMvc.perform(get("/CreateEventPage")).andExpect(status().isOk()).andExpect(model().attribute("createEvent", instanceOf(CreateEvent.class)));
     }
 
 
     @org.junit.Test
-    public void testAuthController2() throws Exception {
+    public void testAuthControllerDirectsToLogIn() throws Exception {
         session.setAttribute("SESSION_USERNAME", null);
         this.mockMvc.perform(get("/login")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("loginTemplate"));
     }
 
 
     @org.junit.Test
-    public void testViewSpecificEventController() throws Exception {
+    public void testViewSpecificEventControllerCorrectViewAndAttribute() throws Exception {
 
         this.mockMvc.perform(get("/viewSpecificEvent?eventId=1")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("eventPage")).andExpect((model().attributeExists("myEvent")));
     }
 
 
     @org.junit.Test
-    public void testViewEventsController() throws Exception {
+    public void testViewEventsControllerCorrectViewAndAttribute() throws Exception {
 
         this.mockMvc.perform(get("/viewEvents")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("viewEvents")).andExpect((model().attributeExists("myEvent")));
     }
 
 
     @org.junit.Test
-    public void testGetEventAttendeesController() throws Exception {
+    public void testGetEventAttendeesControllerCorrectViewAndAttribute() throws Exception {
 
         this.mockMvc.perform(get("/searchMyEvents?eventId=1")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("returnMyAttendees")).andExpect((model().attributeExists("myEvent"))).andExpect((model().attributeExists("myPeople")));
     }
@@ -98,7 +98,7 @@ public class MockMVCs {
     //The viewSpecificEventController returns info about a specific event (identified by parameter)
     //This test checks if the right event is returned i.e.the correct title is present in contents.
     @Test
-    public void testViewSpecificEventReturnsRightObjectPropertyValues() throws Exception {
+    public void testViewSpecificEventReturnsRightContent() throws Exception {
         this.mockMvc.perform(get("/viewSpecificEvent?eventId=1")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Harry Potter Marathon")));
     }
@@ -108,7 +108,7 @@ public class MockMVCs {
     // This tests whether the controller returns a string containing the correct event title "Summer Party"
     // and the string "Jenny" as that is the person in the database attending the event where eventID = 3
     @Test
-    public void testSearchMyEventsController() throws Exception {
+    public void testSearchMyEventsControllerReturnsRightContent() throws Exception {
         this.mockMvc.perform(get("/searchMyEvents?eventId=3")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Jenny")));
     }

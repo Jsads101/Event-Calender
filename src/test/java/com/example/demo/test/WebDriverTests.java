@@ -106,7 +106,7 @@ public class WebDriverTests {
     //FIREFOX DRIVER TESTs x 2
 
     @Test
-    public void errorAlertIfRegstrationFormNotComplete() {
+    public void errorAlertIfRegistrationFormNotComplete() {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\c1981660\\Desktop\\GeckoDriver\\geckodriver.exe");
         this.webDriver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(webDriver, 20);
