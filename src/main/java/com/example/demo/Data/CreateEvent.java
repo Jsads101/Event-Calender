@@ -103,6 +103,10 @@ public class CreateEvent {
         this.teamBased = teamBased;
     }
 
+    public CreateEvent(int i, String party, String office, String s, String s1) {
+    }
+
+
     public int getEventId() {
         return eventId;
     }
