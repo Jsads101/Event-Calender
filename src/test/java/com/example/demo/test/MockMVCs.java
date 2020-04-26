@@ -2,29 +2,19 @@ package com.example.demo.test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasProperty;
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import com.example.demo.Data.CreateEvent;
-import com.example.demo.Data.Events;
-import com.example.demo.Data.SearchDatabaseInterface;
-import com.example.demo.Data.SearchDatabaseRepo;
-import jdk.jfr.Event;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
 
 
 @RunWith(SpringRunner.class)
@@ -40,11 +30,7 @@ public class MockMVCs {
 
 
 
-
-
 //UNIT TESTS USING MOCKMVC
-
-
 
     @org.junit.Test
     public void testRegisterControllerDirectsToRegisterPage() throws Exception {
@@ -68,24 +54,12 @@ public class MockMVCs {
 
 
     @org.junit.Test
-    public void testViewSpecificEventControllerCorrectViewAndAttribute() throws Exception {
-
-        this.mockMvc.perform(get("/viewSpecificEvent?eventId=1")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("eventPage")).andExpect((model().attributeExists("myEvent")));
-    }
-
-
-    @org.junit.Test
     public void testViewEventsControllerCorrectViewAndAttribute() throws Exception {
 
         this.mockMvc.perform(get("/viewEvents")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("viewEvents")).andExpect((model().attributeExists("myEvent")));
     }
 
 
-    @org.junit.Test
-    public void testGetEventAttendeesControllerCorrectViewAndAttribute() throws Exception {
-
-        this.mockMvc.perform(get("/searchMyEvents?eventId=1")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("returnMyAttendees")).andExpect((model().attributeExists("myEvent"))).andExpect((model().attributeExists("myPeople")));
-    }
 
 //COMPONENT TESTS USING MOCK MVC AND H2 DATABASE
 
@@ -100,30 +74,84 @@ public class MockMVCs {
                 .andExpect(content().string(containsString("Harry Potter"))).andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Autumn Party")));
     }
 
-    //The viewEvents controller returns a list of events in the database. Parameter for viewEvents is 3 which is
-    //all previous events. Previous event in h2 is Xmas Party - this test tests for the presence of this in
-    // contents returned.
+    //The viewEvents controller returns a list of events in the database. Parameter for viewEvents is 3 which returns
+    //all previous events. Previous event in h2 is Xmas Party - this test checks the correct content is returned
     @Test
     public void testViewEventsControllerReturnsPreviousEvent() throws Exception {
         this.mockMvc.perform(get("/viewEvents?selectSQL=3")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Xmas Party")));
+                .andExpect(model().attribute("myEvent", hasItem(
+                        allOf(
+                                hasProperty("eventName", is("Xmas Party")),
+                                hasProperty("location", is("Board Room, The Office")),
+                                hasProperty("date", is("2019-12-21")),
+                                hasProperty("time", is("1900"))
+                        ))));
     }
 
-    //The viewSpecificEventController returns info about a specific event (identified by parameter)
-    //This test checks if the right event is returned i.e.the correct title is present in contents.
+
+    //viewEVents with parameter 1 shows all upcoming events. This test checks if the content of the myEvent list is correct
+    //and returns content of all upcoming events in the test database.
+    @Test
+    public void testViewEventsControllerReturnsUpcomingEvent2() throws Exception {
+        this.mockMvc.perform(get("/viewEvents?selectSQL=1")).andDo(print()).andExpect(status().isOk())
+                .andExpect(model().attribute("myEvent", hasItem(
+                        allOf(
+                                hasProperty("eventName", is("Autumn Party")),
+                                hasProperty("location", is("Board Room, The Office")),
+                                hasProperty("date", is("2020-10-21")),
+                                hasProperty("time", is("1900"))
+                        )))).andExpect(model().attribute("myEvent", hasItem(
+                allOf(
+                        hasProperty("eventName", is("Summer Party")),
+                        hasProperty("location", is("Board Room, The Office")),
+                        hasProperty("date", is("2020-08-21")),
+                        hasProperty("time", is("1900"))
+                )))).andExpect(model().attribute("myEvent", hasItem(
+                allOf(
+                        hasProperty("eventName", is("Summer Party")),
+                        hasProperty("location", is("Board Room, The Office")),
+                        hasProperty("date", is("2020-08-21")),
+                        hasProperty("time", is("1900"))
+                ))));
+    }
+
+
+
+    //The viewSpecificEventController returns info about a specific event (identified by parameter). This test checks
+    //the model attribute contains the correct values for the event.
+
     @Test
     public void testViewSpecificEventReturnsRightContent() throws Exception {
         this.mockMvc.perform(get("/viewSpecificEvent?eventId=1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Harry Potter Marathon")));
+                .andExpect(model().attribute("myEvent", hasItem(
+                allOf(
+                        hasProperty("eventName", is("Harry Potter Marathon")),
+                        hasProperty("location", is("Board Room, The Office")),
+                        hasProperty("date", is("2020-12-31")),
+                        hasProperty("time", is("1900")),
+                        hasProperty("description", is("8 Full movies of Wizardry"))
+                ))));
     }
 
 
     // The /searchMyEvents controller returns the event object and a list of attendees for the event identified by the parameter.
-    // This tests whether the controller returns a string containing the correct event title "Summer Party"
+    // This tests whether the controller returns a string containing the correct event "Summer Party"
     // and the string "Jenny" as that is the person in the database attending the event where eventID = 3
+
     @Test
     public void testSearchMyEventsControllerReturnsRightContent() throws Exception {
         this.mockMvc.perform(get("/searchMyEvents?eventId=3")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Summer Party"))).andExpect(content().string(containsString("Jenny")));
+                .andExpect(model().attribute("myEvent", hasItem(
+                        allOf(
+                                hasProperty("eventName", is("Summer Party")),
+                                hasProperty("location", is("Board Room, The Office")),
+                                hasProperty("date", is("2020-08-21")),
+                                hasProperty("time", is("1900")),
+                                hasProperty("description", is("Office Summer Party"))
+                        )))).andExpect(model().attribute("myPeople", hasItem(
+                allOf(
+                        hasProperty("name", is("Jenny Sadler"))
+
+                ))));
     }
 }
